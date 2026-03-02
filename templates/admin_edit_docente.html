@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Editar Docente</h2>
+  <form method="post">
+    <label>Nombre: <input name="nombre" required value="{{ docente.nombre or '' }}"></label><br>
+    <label>Correo institucional: <input name="correo" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co" value="{{ docente.correo or '' }}"></label><br>
+    <label>Nueva contraseña (opcional): <input name="password" type="password" minlength="4"></label><br>
+    <button type="submit">Guardar cambios</button>
+    <a class="btn" href="{{ url_for('admin_dashboard') }}">Cancelar</a>
+  </form>
+  <script>
+    (function(){
+      const form = document.querySelector('form');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        const correo = form.querySelector('input[name="correo"]');
+        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
+          e.preventDefault();
+          alert('El correo institucional debe terminar en @campusucc.edu.co');
+        }
+      });
+    })();
+  </script>
+{% endblock %}

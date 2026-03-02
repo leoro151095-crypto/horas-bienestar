@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Panel Estudiante</h2>
+  <div class="card">
+    <div class="card-header">
+      <h3>Bienvenido, {{ current_user.nombre }}</h3>
+    </div>
+    <div class="card-body">
+      <p>Correo: {{ current_user.correo }}</p>
+      <p>Rol: {{ current_user.rol }}</p>
+      <p>Horas acumuladas: {{ '%.2f'|format(total_horas) }}</p>
+      <p>Horas faltantes: {{ '%.2f'|format(horas_faltantes) }} de {{ '%.2f'|format(required_hours) }}</p>
+      <div class="progress-wrap" aria-label="Progreso de horas de bienestar">
+        <div class="progress-track">
+          <div class="progress-fill" style="width: {{ '%.2f'|format(progress_percent) }}%"></div>
+        </div>
+        <p class="progress-text">Progreso: {{ '%.2f'|format(progress_percent) }}%</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

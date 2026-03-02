@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Panel Admin</h2>
+  <div class="actions-row">
+    <a class="btn" href="{{ url_for('register_student') }}">Registrar estudiante</a>
+    <a class="btn" href="{{ url_for('register_docente') }}">Crear docente</a>
+    <a class="btn" href="{{ url_for('create_activity') }}">Crear actividad</a>
+    <a class="btn" href="{{ url_for('admin_reports') }}">Ver reportes</a>
+    <a class="btn" href="{{ url_for('export_students') }}">Exportar Excel</a>
+    <a class="btn" href="{{ url_for('import_students') }}">Importar Excel</a>
+    <a class="btn" href="{{ url_for('admin_audit_logs') }}">Auditoría</a>
+  </div>
+
+  <form method="get" class="actions-row">
+    <input class="admin-search-input" type="text" name="cedula" placeholder="Buscar por cédula" value="{{ cedula_query or '' }}">
+    <button class="btn" type="submit">Buscar</button>
+    {% if cedula_query %}
+      <a class="btn" href="{{ url_for('admin_dashboard') }}">Limpiar</a>
+    {% endif %}
+  </form>
+
+  <div class="card">
+    <div class="card-header">
+      <h3>Estudiantes</h3>
+    </div>
+    <table class="dashboard-table">
+      <thead>
+        <tr><th>Documento</th><th>Nombre</th><th>Programa</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+      {% for s in students %}
+        <tr>
+          <td data-label="Documento">{{ s.numero_documento }}</td>
+          <td data-label="Nombre">{{ s.primer_nombre }} {% if s.segundo_nombre %}{{ s.segundo_nombre }}{% endif %} {{ s.primer_apellido }} {% if s.segundo_apellido %}{{ s.segundo_apellido }}{% endif %}</td>
+          <td data-label="Programa">{{ s.programa or '-' }}</td>
+          <td data-label="Acciones">
+            <div class="actions-row">
+              <a class="btn" href="{{ url_for('edit_student', student_id=s.id) }}">Editar</a>
+              <form method="post" action="{{ url_for('reset_student_password', student_id=s.id) }}" onsubmit="return confirm('¿Resetear contraseña a los últimos 4 dígitos del documento?');">
+                <button class="btn" type="submit">Reset clave</button>
+              </form>
+              <form method="post" action="{{ url_for('delete_student', student_id=s.id) }}" onsubmit="return confirm('¿Eliminar este estudiante? Esta acción no se puede deshacer.');">
+                <button class="btn" type="submit">Eliminar</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      {% else %}
+        <tr class="empty-row"><td colspan="4">No hay estudiantes</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header">
+      <h3>Docentes</h3>
+    </div>
+    <table class="dashboard-table">
+      <thead>
+        <tr><th>Nombre</th><th>Correo</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+      {% for d in docentes %}
+        <tr>
+          <td data-label="Nombre">{{ d.nombre }}</td>
+          <td data-label="Correo">{{ d.correo }}</td>
+          <td data-label="Acciones">
+            <div class="actions-row">
+              <a class="btn" href="{{ url_for('edit_docente', docente_id=d.id) }}">Editar</a>
+              <form method="post" action="{{ url_for('delete_docente', docente_id=d.id) }}" onsubmit="return confirm('¿Eliminar este docente? Esta acción no se puede deshacer.');">
+                <button class="btn" type="submit">Eliminar</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      {% else %}
+        <tr class="empty-row"><td colspan="3">No hay docentes</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

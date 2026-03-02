@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Crear actividad</h2>
+  <form method="post" id="create-activity-form">
+    <label>Nombre: <input name="nombre" id="act-nombre" required></label><br>
+    <label>Fecha (opcional): <input name="fecha" type="date"></label><br>
+    <label>Horas: <input name="horas" id="act-horas" type="number" step="0.5" min="0"></label><br>
+    <button type="submit">Crear</button>
+  </form>
+
+  <script>
+    // Client-side validation for create activity
+    (function(){
+      const form = document.getElementById('create-activity-form');
+      form.addEventListener('submit', function(e){
+        const nombre = document.getElementById('act-nombre').value.trim();
+        const horas = document.getElementById('act-horas').value;
+        if (!nombre){ e.preventDefault(); alert('El nombre de la actividad es obligatorio'); return; }
+        if (horas && Number(horas) < 0){ e.preventDefault(); alert('Horas debe ser un número positivo'); return; }
+      });
+    })();
+  </script>
+{% endblock %}

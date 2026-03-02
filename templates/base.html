@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bienestar Universitario UCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body class="{% if request.endpoint == 'login' %}login-page{% endif %}{% if current_user.is_authenticated %} has-bg user-{{ current_user.rol }}{% endif %}">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-badge">UCC</div>
+        <div>
+          <h1>Bienestar Universitario UCC</h1>
+          <small>Control de asistencia académica</small>
+        </div>
+      </div>
+      <div class="actions">
+        {% if current_user.is_authenticated %}
+          <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        {% endif %}
+      </div>
+    </header>
+    <main class="container {% if request.endpoint == 'login' %}login-wrap{% endif %}">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flash-list">
+          {% for category, msg in messages %}
+            <li class="{{ category }}">{{ msg }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

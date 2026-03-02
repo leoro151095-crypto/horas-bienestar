@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Asistencia ya registrada</h2>
+  <p>El estudiante {{ student.primer_nombre }} ({{ student.numero_documento }}) ya registró asistencia para la actividad: <strong>{{ actividad.nombre }}</strong>.</p>
+{% endblock %}

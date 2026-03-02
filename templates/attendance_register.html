@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Registrar asistencia - {{ actividad.nombre }}</h2>
+  <form method="post" action="{{ url_for('attendance_submit', token=token) }}">
+    <label>Tipo documento: <input name="tipo_documento" required></label><br>
+    <label>Número documento: <input name="numero_documento" required></label><br>
+    <button type="submit">Registrar</button>
+  </form>
+{% endblock %}

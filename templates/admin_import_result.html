@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Resultado de importación</h2>
+  <p>Registros creados: {{ created }}, actualizados: {{ updated }}</p>
+  {% if row_errors %}
+    <h3>Filas con errores</h3>
+    <table>
+      <tr><th>Fila Excel</th><th>Errores</th></tr>
+      {% for e in row_errors %}
+        <tr>
+          <td>{{ e.row }}</td>
+          <td>
+            <ul>
+            {% for m in e.messages %}
+              <li>{{ m }}</li>
+            {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No hubo errores por fila.</p>
+  {% endif %}
+  <p><a href="{{ url_for('admin_dashboard') }}">Volver al panel</a></p>
+{% endblock %}

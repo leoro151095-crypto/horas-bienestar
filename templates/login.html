@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="login-card">
+    <div class="login-logos">
+      <div class="logo-pill">CAMPUS virtual</div>
+      <div class="logo-ucc">UCC</div>
+    </div>
+
+    <h2>Login</h2>
+    <p>Bienestar Universitario UCC</p>
+
+    <form method="post" id="login-form">
+      <div class="field">
+        <label for="correo">Usuario</label>
+        <input id="correo" type="email" name="correo" placeholder="usuario@campusucc.edu.co" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co">
+      </div>
+
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" name="password" placeholder="••••••••" required>
+      </div>
+
+      <button class="btn" type="submit">Login</button>
+      <a class="login-help" href="#">¿Olvidó su contraseña?</a>
+    </form>
+    <script>
+      // Client-side guard: prevent submit if domain is not @campusucc.edu.co
+      (function(){
+        const form = document.getElementById('login-form');
+        form.addEventListener('submit', function(e){
+          const correo = document.getElementById('correo').value || '';
+          if (!correo.toLowerCase().endsWith('@campusucc.edu.co')){
+            e.preventDefault();
+            alert('El correo debe terminar en @campusucc.edu.co');
+          }
+        });
+      })();
+    </script>
+  </section>
+{% endblock %}

@@ -1,0 +1,326 @@
+:root {
+  --ucc-azul-900: #13253d;
+  --ucc-azul-800: #1a324f;
+  --ucc-azul-700: #284a72;
+  --ucc-azul-500: #2f7fc1;
+  --ucc-cyan-400: #58b6cc;
+  --campus-btn: #58b6cc;
+  --campus-btn-hover: #6ec4d8;
+  --text-100: #f6fbff;
+  --text-900: #102033;
+  --bg-soft: #f3f7fb;
+  --ok: #1f8a43;
+  --warn: #ad7300;
+  --bad: #b43838;
+  --card-shadow: 0 10px 28px rgba(15, 39, 66, 0.16);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-soft);
+  /* Prefer WebP if available, fallback to JPG */
+  background-image: url('/static/background.webp'), url('/static/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-900);
+}
+
+/* Global overlay behind content to improve contrast on all pages */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.36);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep structural elements above the overlay */
+.topbar,
+.container,
+main,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  background: linear-gradient(90deg, var(--ucc-azul-900), var(--ucc-azul-700));
+  color: var(--text-100);
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(15, 39, 66, 0.2);
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #8ee5f5, var(--ucc-cyan-400));
+  color: #05304d;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+}
+
+.brand small {
+  opacity: 0.9;
+}
+
+.actions a {
+  color: #d6efff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px 24px;
+}
+
+.flash-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.flash-list li {
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #e6f0fa;
+  border-left: 4px solid var(--ucc-azul-500);
+}
+
+.flash-list li.success { background: #e9f8ef; border-left-color: var(--ok); }
+.flash-list li.warning { background: #fff6e4; border-left-color: var(--warn); }
+.flash-list li.danger,
+.flash-list li.error { background: #ffecec; border-left-color: var(--bad); }
+
+.card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  padding: 18px;
+}
+
+/* Card header / actions for dashboards */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.card-header h3 { margin: 0; font-size: 1.15rem; }
+.card-actions { display:flex; gap:8px; }
+.card-body { padding-top: 6px; }
+
+.dashboard-table tbody tr:hover { background: linear-gradient(90deg, rgba(47,127,193,0.03), rgba(47,127,193,0.02)); }
+.dashboard-table tbody td .muted { color: rgba(0,0,0,0.46); }
+.empty-row td { text-align: center; color: rgba(0,0,0,0.5); padding: 18px 12px; }
+
+/* Dashboard table styles */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dashboard-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.06);
+}
+.dashboard-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.actions-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+.actions-row .btn { padding:8px 12px; }
+
+.admin-search-input {
+  border: 1px solid var(--ucc-azul-500);
+  padding: 8px 10px;
+  min-width: 240px;
+}
+
+.progress-wrap {
+  margin-top: 12px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--ucc-azul-500);
+}
+
+.progress-text {
+  margin: 8px 0 0;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .dashboard-table thead { display: none; }
+  .dashboard-table tbody td { display: block; width: 100%; }
+  .dashboard-table tbody tr { display: block; margin-bottom: 10px; background: #fff; border-radius: 8px; padding: 8px; }
+  .dashboard-table tbody td::before { content: attr(data-label); font-weight:700; display:block; margin-bottom:6px; }
+}
+
+.login-page {
+  min-height: 100vh;
+  /* Login keeps a dark overlay on top of the global background image */
+  /* Use the project background image specifically for the login page */
+  background-image: url('/static/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* add a subtle darker overlay via a gradient layer to improve contrast */
+  background-color: rgba(24,48,76,0.36);
+  background-blend-mode: overlay;
+}
+
+.login-page .topbar {
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(210, 236, 255, 0.22);
+}
+
+.login-wrap {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 28px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(17, 38, 62, 0.86);
+  color: #eff8ff;
+  border: 1px solid rgba(151, 193, 226, 0.34);
+  backdrop-filter: blur(5px);
+  border-radius: 6px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  padding: 24px;
+}
+
+.login-card h2 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-card p { margin: 0 0 16px; color: #d9f0ff; font-size: 0.95rem; }
+
+.login-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.logo-pill {
+  background: #f8fbff;
+  color: #2d3f54;
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logo-ucc {
+  color: #8fe4f3;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 1rem;
+}
+
+.field { margin-bottom: 12px; }
+.field label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #e9f5ff;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid #d5e1ea;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 0.95rem;
+  background: #eef3f7;
+}
+
+.btn {
+  border: 0;
+  border-radius: 0;
+  padding: 11px 18px;
+  min-width: 120px;
+  font-weight: 700;
+  background: var(--campus-btn);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--campus-btn-hover); }
+
+.login-help {
+  margin-left: 10px;
+  color: #e6f6ff;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .login-wrap { justify-content: center; padding: 20px 14px; }
+  .login-card { max-width: 430px; }
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 800px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
+  .brand { gap: 8px; }
+  .brand h1 { font-size: 0.95rem; }
+  .container { margin: 12px auto; padding: 0 12px 20px; }
+  .card { padding: 14px; }
+  .flash-list li { font-size: 0.95rem; }
+  .login-card { margin: 0 8px; }
+  /* Dashboards: make lists stack and cards full width */
+  .container ul { padding: 0; }
+  .container ul li { display: block; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
+}
+
+/* Improve touch targets */
+button, .btn { padding: 12px 18px; font-size: 1rem; }

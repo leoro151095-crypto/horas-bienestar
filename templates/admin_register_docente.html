@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Crear Docente</h2>
+  <form method="post">
+    <label>Nombre: <input name="nombre" required></label><br>
+    <label>Correo institucional: <input name="correo" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co"></label><br>
+    <label>Contraseña: <input name="password" type="password" required minlength="4"></label><br>
+    <button type="submit">Crear docente</button>
+  </form>
+  <script>
+    (function(){
+      const form = document.querySelector('form');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        const correo = form.querySelector('input[name="correo"]');
+        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
+          e.preventDefault();
+          alert('El correo institucional debe terminar en @campusucc.edu.co');
+        }
+      });
+    })();
+  </script>
+{% endblock %}
