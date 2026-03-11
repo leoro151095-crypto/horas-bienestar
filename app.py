@@ -1,10 +1,13 @@
 import json
 import logging
-from datetime import datetime, timezone
+import secrets
+from hmac import compare_digest
+from datetime import datetime, timezone, timedelta
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from models import db, User, Student, Activity, Attendance, AuditLog
 from werkzeug.routing import BuildError
+from werkzeug.middleware.proxy_fix import ProxyFix
 from sqlalchemy import func
 from config import Config
 from qr_utils import generate_token, generate_qr_image, verify_token
@@ -15,6 +18,16 @@ from notifications import send_email, send_sms
 app = Flask(__name__)
 app.config.from_object(Config)
 INSTITUTIONAL_DOMAIN = '@campusucc.edu.co'
+
+if app.config.get('TRUST_PROXY_HEADERS', False):
+    # Trust X-Forwarded-* headers from the first proxy hop.
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
+
+if app.config.get('REQUIRE_STRONG_SECRET_KEY', False):
+    secret_key = app.config.get('SECRET_KEY', '')
+    weak_defaults = {'dev_secret_key_change_this', 'changeme', 'secret', '123456'}
+    if len(secret_key) < 32 or secret_key.lower() in weak_defaults:
+        raise RuntimeError('SECRET_KEY insegura para este entorno. Define una clave fuerte de al menos 32 caracteres.')
 
 logging.basicConfig(
     level=getattr(logging, app.config.get('LOG_LEVEL', 'INFO').upper(), logging.INFO),
@@ -61,6 +74,128 @@ def get_last4_digits(value):
     if len(digits) < 4:
         return None
     return digits[-4:]
+
+
+def get_csrf_token():
+    token = session.get('_csrf_token')
+    if not token:
+        token = secrets.token_urlsafe(32)
+        session['_csrf_token'] = token
+    return token
+
+
+@app.context_processor
+def inject_csrf_token():
+    return {'csrf_token': get_csrf_token}
+
+
+@app.before_request
+def protect_from_csrf():
+    if request.method not in ('POST', 'PUT', 'PATCH', 'DELETE'):
+        return None
+    if app.config.get('TESTING', False):
+        return None
+    if request.endpoint == 'static':
+        return None
+
+    sent_token = request.form.get('_csrf_token') or request.headers.get('X-CSRF-Token')
+    expected_token = session.get('_csrf_token')
+    if not sent_token or not expected_token or not compare_digest(sent_token, expected_token):
+        write_audit('csrf_failed', 'request', None, {
+            'endpoint': request.endpoint,
+            'method': request.method
+        })
+        db.session.commit()
+        flash('Solicitud invalida (CSRF). Recarga la pagina e intenta de nuevo.', 'danger')
+        return redirect(request.referrer or url_for('index'))
+    return None
+
+
+@app.after_request
+def set_security_headers(response):
+    # Basic browser-side hardening headers.
+    response.headers.setdefault('X-Content-Type-Options', 'nosniff')
+    response.headers.setdefault('X-Frame-Options', 'DENY')
+    response.headers.setdefault('X-XSS-Protection', '0')
+    response.headers.setdefault('Referrer-Policy', 'strict-origin-when-cross-origin')
+    response.headers.setdefault('Permissions-Policy', 'geolocation=(), microphone=(), camera=()')
+    response.headers.setdefault('Cross-Origin-Opener-Policy', 'same-origin')
+    response.headers.setdefault('Cross-Origin-Resource-Policy', 'same-origin')
+    response.headers.setdefault('Content-Security-Policy', "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';")
+
+    # Prevent cached authenticated pages being reused from browser history.
+    if getattr(current_user, 'is_authenticated', False):
+        response.headers.setdefault('Cache-Control', 'no-store, max-age=0')
+
+    # Emit HSTS only over HTTPS to avoid breaking local HTTP development.
+    if request.is_secure:
+        hsts_seconds = int(app.config.get('HSTS_SECONDS', 0) or 0)
+        if hsts_seconds > 0:
+            hsts = f'max-age={hsts_seconds}'
+            if app.config.get('HSTS_INCLUDE_SUBDOMAINS', True):
+                hsts += '; includeSubDomains'
+            if app.config.get('HSTS_PRELOAD', False):
+                hsts += '; preload'
+            response.headers.setdefault('Strict-Transport-Security', hsts)
+    return response
+
+
+def _is_login_temporarily_blocked():
+    blocked_until_raw = session.get('login_block_until')
+    if not blocked_until_raw:
+        return False
+    try:
+        blocked_until = datetime.fromisoformat(blocked_until_raw)
+    except Exception:
+        session.pop('login_block_until', None)
+        return False
+    return datetime.now(timezone.utc) < blocked_until
+
+
+def _register_failed_login_attempt():
+    failed = int(session.get('login_failed_attempts', 0)) + 1
+    session['login_failed_attempts'] = failed
+    if failed >= 5:
+        block_until = datetime.now(timezone.utc) + timedelta(minutes=5)
+        session['login_block_until'] = block_until.isoformat()
+
+
+def _clear_login_attempt_tracking():
+    session.pop('login_failed_attempts', None)
+    session.pop('login_block_until', None)
+
+
+@app.before_request
+def enforce_session_inactivity_timeout():
+    if not getattr(current_user, 'is_authenticated', False):
+        session.pop('last_activity_at', None)
+        return None
+
+    timeout_minutes = int(app.config.get('SESSION_INACTIVITY_TIMEOUT_MINUTES', 30))
+    if timeout_minutes <= 0:
+        session['last_activity_at'] = datetime.now(timezone.utc).isoformat()
+        return None
+
+    now = datetime.now(timezone.utc)
+    last_activity_raw = session.get('last_activity_at')
+    if last_activity_raw:
+        try:
+            last_activity = datetime.fromisoformat(last_activity_raw)
+            if now - last_activity > timedelta(minutes=timeout_minutes):
+                user_id = current_user.id
+                user_email = current_user.correo
+                session.clear()
+                logout_user()
+                write_audit('session_timeout_logout', 'user', user_id, {'correo': user_email, 'timeout_minutes': timeout_minutes})
+                db.session.commit()
+                flash('Sesion cerrada por inactividad. Inicia sesion nuevamente.', 'warning')
+                return redirect(url_for('login'))
+        except Exception:
+            # Reset malformed activity timestamp instead of breaking user flow.
+            session.pop('last_activity_at', None)
+
+    session['last_activity_at'] = now.isoformat()
+    return None
 
 
 def ensure_student_login(student, reset_password=False):
@@ -180,6 +315,12 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        if _is_login_temporarily_blocked():
+            write_audit('login_blocked_rate_limit', 'user', None, {'reason': 'too_many_attempts'})
+            db.session.commit()
+            flash('Demasiados intentos fallidos. Espera 5 minutos e intenta de nuevo.', 'danger')
+            return render_template('login.html')
+
         correo = request.form.get('correo')
         # Requerir dominio institucional (se omite en modo TESTING)
         if not app.config.get('TESTING', False):
@@ -191,6 +332,7 @@ def login():
         usuario = User.query.filter_by(correo=correo).first()
         if usuario and usuario.check_password(password):
             login_user(usuario)
+            _clear_login_attempt_tracking()
             if usuario.rol == 'estudiante':
                 student = Student.query.filter_by(correo_institucional=usuario.correo).first()
                 student_initial = get_last4_digits(student.numero_documento) if student else None
@@ -211,6 +353,7 @@ def login():
             else:
                 return redirect(url_for('estudiante_dashboard'))
         write_audit('login_failed', 'user', None, {'correo': correo})
+        _register_failed_login_attempt()
         db.session.commit()
         flash('Credenciales inválidas', 'danger')
     return render_template('login.html')
@@ -239,6 +382,15 @@ def admin_dashboard():
     students = students_query.order_by(Student.id.desc()).all()
     docentes = User.query.filter_by(rol='docente').order_by(User.id.desc()).all()
     return render_template('admin_dashboard.html', students=students, docentes=docentes, cedula_query=cedula_query)
+
+
+@app.route('/admin/multimedia-demo')
+@login_required
+def admin_multimedia_demo():
+    if current_user.rol != 'admin':
+        flash('Acceso denegado', 'danger')
+        return redirect(url_for('index'))
+    return render_template('admin_multimedia_demo.html')
 
 
 @app.route('/admin/students/<int:student_id>/edit', methods=['GET', 'POST'])
@@ -569,7 +721,7 @@ def register_student():
             return render_template('admin_register.html')
         write_audit('student_created', 'student', student.id, {'source': 'manual_admin'})
         db.session.commit()
-        flash(f'Estudiante registrado. Contraseña inicial: últimos 4 dígitos del documento ({result})', 'success')
+        flash('Estudiante registrado. Contraseña inicial: últimos 4 dígitos del documento.', 'success')
         return redirect(url_for('admin_dashboard'))
     return render_template('admin_register.html')
 
@@ -737,11 +889,10 @@ def reset_student_password(student_id):
 
     write_audit('student_password_reset', 'user', None, {
         'student_id': student.id,
-        'correo': student.correo_institucional,
-        'temporary_password': result
+        'correo': student.correo_institucional
     })
     db.session.commit()
-    flash(f'Contraseña reseteada para {student.correo_institucional}. Temporal: {result}', 'success')
+    flash(f'Contraseña reseteada para {student.correo_institucional}. Temporal: últimos 4 dígitos del documento.', 'success')
     return redirect(url_for('admin_dashboard'))
 
 @app.route('/docente')
@@ -797,7 +948,10 @@ def estudiante_dashboard():
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    debug_mode = bool(app.config.get('DEBUG', False))
+    if debug_mode and app.config.get('IS_PRODUCTION', False):
+        raise RuntimeError('No se permite FLASK_DEBUG=true en produccion.')
+    app.run(debug=debug_mode)
 
 
 @app.route('/asistencia/<token>', endpoint='attendance_scan')

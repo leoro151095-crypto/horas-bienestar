@@ -17,6 +17,9 @@
       </div>
       <div class="actions">
         {% if current_user.is_authenticated %}
+          {% if current_user.rol == 'admin' %}
+            <a href="{{ url_for('admin_multimedia_demo') }}">Multimedia (Profesor)</a>
+          {% endif %}
           <a href="{{ url_for('logout') }}">Cerrar sesión</a>
         {% endif %}
       </div>

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Demostracion Multimedia</h2>
+  <p>
+    Esta vista integra los cinco componentes multimedia solicitados: texto,
+    imagen, audio, video y animacion.
+  </p>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header"><h3>1) Texto</h3></div>
+    <p>
+      Bienestar Universitario UCC: sistema de registro de asistencia por QR,
+      con seguimiento de horas y control por roles.
+    </p>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header"><h3>2) Imagen</h3></div>
+    <img
+      src="{{ url_for('static', filename='background.webp') }}"
+      alt="Imagen institucional de bienestar"
+      style="width: 100%; max-width: 640px; border-radius: 12px; border: 1px solid #d9d9d9;"
+    >
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header"><h3>3) Audio</h3></div>
+    <p>Audio de muestra para presentar uso de contenido sonoro en la interfaz.</p>
+    <audio controls preload="none">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproduccion de audio.
+    </audio>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header"><h3>4) Video</h3></div>
+    <p>Video de muestra para evidenciar componente audiovisual.</p>
+    <video controls preload="metadata" width="640" style="max-width: 100%; border-radius: 12px; border: 1px solid #d9d9d9;">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+      Tu navegador no soporta la reproduccion de video.
+    </video>
+  </div>
+
+  <div class="card" style="margin-top: 16px;">
+    <div class="card-header"><h3>5) Animacion</h3></div>
+    <p>Animacion CSS para reforzar retroalimentacion visual.</p>
+    <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <div class="pulse-dot" aria-hidden="true"></div>
+      <span>Estado activo de demostracion multimedia.</span>
+    </div>
+  </div>
+
+  <style>
+    .pulse-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #0a7a3a;
+      box-shadow: 0 0 0 rgba(10, 122, 58, 0.45);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(10, 122, 58, 0.45);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 16px rgba(10, 122, 58, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(10, 122, 58, 0);
+      }
+    }
+  </style>
+{% endblock %}
