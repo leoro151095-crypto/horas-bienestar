@@ -95,7 +95,7 @@ def protect_from_csrf():
         return None
     if app.config.get('TESTING', False):
         return None
-    if request.endpoint == 'static':
+    if request.endpoint in {'static', 'login'}:
         return None
 
     sent_token = request.form.get('_csrf_token') or request.headers.get('X-CSRF-Token')
