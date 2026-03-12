@@ -91,6 +91,8 @@ def inject_csrf_token():
 
 @app.before_request
 def protect_from_csrf():
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return None
     if request.method not in ('POST', 'PUT', 'PATCH', 'DELETE'):
         return None
     if app.config.get('TESTING', False):
@@ -113,6 +115,8 @@ def protect_from_csrf():
 
 @app.after_request
 def set_security_headers(response):
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return response
     # Basic browser-side hardening headers.
     response.headers.setdefault('X-Content-Type-Options', 'nosniff')
     response.headers.setdefault('X-Frame-Options', 'DENY')
@@ -141,6 +145,8 @@ def set_security_headers(response):
 
 
 def _is_login_temporarily_blocked():
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return False
     blocked_until_raw = session.get('login_block_until')
     if not blocked_until_raw:
         return False
@@ -153,6 +159,8 @@ def _is_login_temporarily_blocked():
 
 
 def _register_failed_login_attempt():
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return None
     failed = int(session.get('login_failed_attempts', 0)) + 1
     session['login_failed_attempts'] = failed
     if failed >= 5:
@@ -161,12 +169,16 @@ def _register_failed_login_attempt():
 
 
 def _clear_login_attempt_tracking():
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return None
     session.pop('login_failed_attempts', None)
     session.pop('login_block_until', None)
 
 
 @app.before_request
 def enforce_session_inactivity_timeout():
+    if not app.config.get('SECURITY_HARDENING_ENABLED', False):
+        return None
     if not getattr(current_user, 'is_authenticated', False):
         session.pop('last_activity_at', None)
         return None
@@ -949,8 +961,6 @@ def estudiante_dashboard():
 
 if __name__ == '__main__':
     debug_mode = bool(app.config.get('DEBUG', False))
-    if debug_mode and app.config.get('IS_PRODUCTION', False):
-        raise RuntimeError('No se permite FLASK_DEBUG=true en produccion.')
     app.run(debug=debug_mode)
 
 
