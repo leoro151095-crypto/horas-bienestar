@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Crear Docente</h2>
+  <form method="post">
+    <label>Nombres: <input name="nombre" required></label><br>
+    <label>Apellidos: <input name="apellido" required></label><br>
+    <label>Cédula: <input name="cedula" required></label><br>
+    <label>Celular: <input name="celular"></label><br>
+    <div class="field-row">
+      <label for="correo_personal">Correo personal:</label>
+      <input id="correo_personal" name="correo_personal" type="email">
+    </div>
+    <div class="field-row">
+      <label for="correo_institucional">Correo institucional:</label>
+      <input id="correo_institucional" name="correo" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co">
+    </div>
+    <label>Área:
+      <select name="area" required>
+        <option value="" disabled selected>Seleccione...</option>
+        <option value="FUTBOL">FUTBOL</option>
+        <option value="DANZA">DANZA</option>
+      </select>
+    </label><br>
+    <button type="submit">Crear docente</button>
+    <p>Contraseña inicial del docente: últimos 4 dígitos de la cédula. El docente deberá cambiarla en su primer acceso.</p>
+  </form>
+  <script>
+    (function(){
+      const form = document.querySelector('form');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        const correo = form.querySelector('input[name="correo"]');
+        const correoPersonal = form.querySelector('input[name="correo_personal"]');
+        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
+          e.preventDefault();
+          alert('El correo institucional debe terminar en @campusucc.edu.co');
+          return;
+        }
+        if (correoPersonal && correoPersonal.value && correoPersonal.type === 'email' && !correoPersonal.value.includes('@')){
+          e.preventDefault();
+          alert('El correo personal no es válido');
+        }
+      });
+    })();
+  </script>
+{% endblock %}

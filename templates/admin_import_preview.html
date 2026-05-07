@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Vista previa de importación</h2>
+  <p>Corrige los campos que necesites y pulsa Confirmar para guardar los registros.</p>
+  <form method="post" action="{{ url_for('import_confirm') }}" id="import-form">
+    <table border="1" id="preview-table">
+      <tr>
+        <th>#</th>
+        {% for h in headers %}
+          <th>{{ h }}</th>
+        {% endfor %}
+        <th>Errores</th>
+      </tr>
+      {% for row in rows %}
+        {% set i = loop.index0 %}
+        <tr>
+          <td>{{ i+1 }}</td>
+          {% for h in headers %}
+            <td><input id="rows-{{ i }}-{{ h }}" name="rows-{{ i }}-{{ h }}" value="{{ row.get(h) or '' }}"></td>
+          {% endfor %}
+          <td id="error-{{ i }}" style="color:red"></td>
+        </tr>
+      {% endfor %}
+    </table>
+    <input type="hidden" name="rows_count" value="{{ rows|length }}">
+    <button type="submit" id="confirm-btn">Confirmar importación</button>
+  </form>
+  {% if row_errors %}
+    <h3>Errores detectados</h3>
+    <ul>
+    {% for e in row_errors %}
+      <li>Fila {{ e.row }}: <ul>{% for m in e.messages %}<li>{{ m }}</li>{% endfor %}</ul></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  <script>
+    (function(){
+      const headers = {{ headers|tojson }};
+      const rowsCount = {{ rows|length }};
+      const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      const phoneRe = /^[0-9+\-()\s]+$/;
+
+      function validateCell(field, value){
+        if(['numero_documento','primer_nombre','primer_apellido'].includes(field)){
+          if(!value || !value.trim()) return field + ' requerido';
+        }
+        if((field==='correo_institucional' || field==='correo_personal') && value){
+          if(!emailRe.test(value.trim())) return field + ' formato inválido';
+        }
+        if(field==='celular' && value){
+          if(!phoneRe.test(value.trim())) return 'celular formato inválido';
+          const digits = value.replace(/\D/g,'');
+          if(digits.length<6 || digits.length>15) return 'celular longitud inválida';
+        }
+        return null;
+      }
+
+      function validateRow(i){
+        let errors = [];
+        headers.forEach(function(h){
+          const el = document.getElementById(`rows-${i}-${h}`);
+          if(!el) return;
+          const val = el.value;
+          const err = validateCell(h, val);
+          if(err){
+            errors.push(err);
+            el.style.border = '2px solid red';
+          } else {
+            el.style.border = '';
+          }
+        });
+        const errTd = document.getElementById(`error-${i}`);
+        if(errors.length) errTd.innerHTML = errors.join('<br>'); else errTd.innerHTML = '';
+        return errors.length===0;
+      }
+
+      function validateAll(){
+        let ok = true;
+        for(let i=0;i<rowsCount;i++){
+          if(!validateRow(i)) ok = false;
+        }
+        document.getElementById('confirm-btn').disabled = !ok;
+      }
+
+      // attach listeners
+      for(let i=0;i<rowsCount;i++){
+        headers.forEach(function(h){
+          const el = document.getElementById(`rows-${i}-${h}`);
+          if(!el) return;
+          el.addEventListener('input', function(){ validateRow(i); validateAll(); });
+        });
+      }
+
+      // initial
+      validateAll();
+    })();
+  </script>
+{% endblock %}

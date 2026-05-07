@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Panel Docente</h2>
+  <div class="actions-row">
+    <a class="btn" href="{{ url_for('create_activity') }}">Crear actividad</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3>Actividades</h3>
+      <div class="card-actions">
+        <a class="btn" href="{{ url_for('create_activity') }}">Crear actividad</a>
+      </div>
+    </div>
+    <table class="dashboard-table">
+      <thead>
+        <tr><th>Nombre</th><th>Fecha y hora</th><th>Horas</th><th>Acciones</th></tr>
+      </thead>
+      <tbody>
+      {% for a in activities %}
+        <tr>
+          <td data-label="Nombre">{{ a.nombre }}</td>
+          <td data-label="Fecha y hora">{{ a.fecha.strftime('%d/%m/%Y %H:%M') if a.fecha else '-' }}</td>
+          <td data-label="Horas">{{ a.horas or 0 }}</td>
+          <td data-label="Acciones">
+            <a class="btn" href="{{ url_for('docente_generate_qr', actividad_id=a.id) }}">Generar QR</a>
+            <a class="btn" href="{{ url_for('edit_activity', actividad_id=a.id) }}">Editar</a>
+          </td>
+        </tr>
+      {% else %}
+        <tr class="empty-row"><td colspan="4">No hay actividades</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

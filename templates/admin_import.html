@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Importar estudiantes (Excel)</h2>
+  <p>El archivo Excel debe tener columnas: tipo_documento, numero_documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_institucional, correo_personal, celular, direccion, programa</p>
+  <p><a href="{{ url_for('download_template') }}">Descargar plantilla Excel</a></p>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul>
+      {% for category, msg in messages %}
+        <li style="color: {% if category=='danger' %}red{% else %}green{% endif %}">{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx" required>
+    <button type="submit">Importar</button>
+  </form>
+{% endblock %}

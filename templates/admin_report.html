@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Reporte de horas</h2>
+  <table>
+    <tr><th>Documento</th><th>Nombre</th><th>Horas acumuladas</th><th>Horas faltantes</th></tr>
+    {% for r in report %}
+      <tr>
+        <td>{{ r.student.numero_documento }}</td>
+        <td>{{ r.student.primer_nombre }} {{ r.student.primer_apellido }}</td>
+        <td>{{ '%.2f'|format(r.total_horas) }}</td>
+        <td>{{ r.horas_faltantes }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="4">No hay datos</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

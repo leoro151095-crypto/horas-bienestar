@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Editar Docente</h2>
+  <form method="post">
+    <label>Nombres: <input name="nombre" required value="{{ docente.nombre or '' }}"></label><br>
+    <label>Apellidos: <input name="apellido" required value="{{ docente.apellido or '' }}"></label><br>
+    <label>Cédula: <input name="cedula" required value="{{ docente.cedula or '' }}"></label><br>
+    <label>Celular: <input name="celular" value="{{ docente.celular or '' }}"></label><br>
+    <div class="field-row">
+      <label for="correo_personal">Correo personal:</label>
+      <input id="correo_personal" name="correo_personal" type="email" value="{{ docente.correo_personal or '' }}">
+    </div>
+    <div class="field-row">
+      <label for="correo_institucional">Correo institucional:</label>
+      <input id="correo_institucional" name="correo" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co" value="{{ docente.correo or '' }}">
+    </div>
+    <label>Área:
+      <select name="area" required>
+        <option value="" disabled {% if not docente.area %}selected{% endif %}>Seleccione...</option>
+        <option value="FUTBOL" {% if docente.area == 'FUTBOL' %}selected{% endif %}>FUTBOL</option>
+        <option value="DANZA" {% if docente.area == 'DANZA' %}selected{% endif %}>DANZA</option>
+      </select>
+    </label><br>
+    <label>Nueva contraseña (opcional): <input name="password" type="password" minlength="4"></label><br>
+    <button type="submit">Guardar cambios</button>
+    <a class="btn" href="{{ url_for('admin_dashboard') }}">Cancelar</a>
+  </form>
+  <script>
+    (function(){
+      const form = document.querySelector('form');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        const correo = form.querySelector('input[name="correo"]');
+        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
+          e.preventDefault();
+          alert('El correo institucional debe terminar en @campusucc.edu.co');
+        }
+      });
+    })();
+  </script>
+{% endblock %}

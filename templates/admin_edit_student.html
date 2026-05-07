@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Editar Estudiante</h2>
+  <form method="post">
+    <label>Tipo documento:
+      <select name="tipo_documento" required>
+        <option value="" disabled {% if not student.tipo_documento %}selected{% endif %}>Seleccione...</option>
+        <option value="cc" {% if student.tipo_documento == 'cc' %}selected{% endif %}>CC</option>
+        <option value="ti" {% if student.tipo_documento == 'ti' %}selected{% endif %}>TI</option>
+        <option value="cex" {% if student.tipo_documento == 'cex' %}selected{% endif %}>CEX</option>
+      </select>
+    </label><br>
+    <label>Número documento: <input name="numero_documento" required value="{{ student.numero_documento or '' }}"></label><br>
+    <label>Primer nombre: <input name="primer_nombre" required value="{{ student.primer_nombre or '' }}"></label><br>
+    <label>Segundo nombre: <input name="segundo_nombre" value="{{ student.segundo_nombre or '' }}"></label><br>
+    <label>Primer apellido: <input name="primer_apellido" required value="{{ student.primer_apellido or '' }}"></label><br>
+    <label>Segundo apellido: <input name="segundo_apellido" value="{{ student.segundo_apellido or '' }}"></label><br>
+    <div class="field-row">
+      <label for="correo_institucional">Correo institucional:</label>
+      <input id="correo_institucional" name="correo_institucional" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co" value="{{ student.correo_institucional or '' }}">
+    </div>
+    <div class="field-row">
+      <label for="correo_personal">Correo personal:</label>
+      <input id="correo_personal" name="correo_personal" type="email" value="{{ student.correo_personal or '' }}">
+    </div>
+    <label>Celular: <input name="celular" value="{{ student.celular or '' }}"></label><br>
+    <label>Dirección: <input name="direccion" value="{{ student.direccion or '' }}"></label><br>
+    <label>Programa: <input name="programa" value="{{ student.programa or '' }}"></label><br>
+    <button type="submit">Guardar cambios</button>
+    <a class="btn" href="{{ url_for('admin_dashboard') }}">Cancelar</a>
+  </form>
+  <script>
+    (function(){
+      const form = document.querySelector('form');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        const correo = form.querySelector('input[name="correo_institucional"]');
+        const pn = form.querySelector('input[name="primer_nombre"]');
+        const pa = form.querySelector('input[name="primer_apellido"]');
+        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
+          e.preventDefault();
+          alert('El correo institucional debe terminar en @campusucc.edu.co');
+          return;
+        }
+        if ((pn && !pn.value.trim()) || (pa && !pa.value.trim())){
+          e.preventDefault();
+          alert('Primer nombre y primer apellido son obligatorios');
+        }
+      });
+    })();
+  </script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Asistencia registrada</h2>
+  <p>Estudiante: {{ student.primer_nombre }} - {{ student.numero_documento }}</p>
+  <p>Actividad: {{ actividad.nombre }}</p>
+  {% if notify_result %}
+    <h3>Notificaciones</h3>
+    <ul>
+      <li>Email: {% if notify_result.email_ok %}enviado{% else %}no enviado{% endif %} ({{ notify_result.email_msg }})</li>
+      <li>SMS: {% if notify_result.sms_ok %}enviado{% else %}no enviado{% endif %} ({{ notify_result.sms_msg }})</li>
+    </ul>
+  {% endif %}
+{% endblock %}

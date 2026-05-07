@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Registrar Estudiante</h2>
+  <form method="post">
+    <label>Tipo documento:
+      <select name="tipo_documento" required>
+        <option value="" disabled selected>Seleccione...</option>
+        <option value="cc">CC</option>
+        <option value="ti">TI</option>
+        <option value="cex">CEX</option>
+      </select>
+    </label><br>
+    <label>Número documento: <input name="numero_documento" required></label><br>
+    <label>Primer nombre: <input name="primer_nombre" required></label><br>
+    <label>Segundo nombre: <input name="segundo_nombre"></label><br>
+    <label>Primer apellido: <input name="primer_apellido" required></label><br>
+    <label>Segundo apellido: <input name="segundo_apellido"></label><br>
+      <div class="field-row">
+      <label for="correo_institucional">Correo institucional:</label>
+      <input id="correo_institucional" name="correo_institucional" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co">
+    </div>
+    <div class="field-row">
+      <label for="correo_personal">Correo personal:</label>
+      <input id="correo_personal" name="correo_personal" type="email">
+    </div>
+    <label>Celular: <input name="celular"></label><br>
+    <label>Dirección: <input name="direccion"></label><br>
+    <label>Programa:
+      <select name="programa" required>
+        <option value="" disabled selected>Seleccione programa...</option>
+        <option value="Ingenieria de Sistemas">Ingeniería de Sistemas</option>
+        <option value="Derecho">Derecho</option>
+        <option value="Enfermeria">Enfermería</option>
+        <option value="Administracion de Empresas">Administración de Empresas</option>
+        <option value="Contaduria Publica">Contaduría Pública</option>
+        <option value="Psicologia">Psicología</option>
+      </select>
+    </label><br>
+    <button type="submit">Registrar</button>
+    <p>Contraseña inicial del estudiante: últimos 4 dígitos del número de documento.</p>
+  </form>
+    <script>
+      // Optional: client-side validation for register form
+      (function(){
+        const form = document.querySelector('form');
+        if (!form) return;
+        form.addEventListener('submit', function(e){
+          const input = form.querySelector('input[name="correo_institucional"]');
+          if (input && input.value){
+            if (!input.value.toLowerCase().endsWith('@campusucc.edu.co')){
+              e.preventDefault();
+              alert('El correo institucional debe terminar en @campusucc.edu.co');
+            }
+          }
+          // Additional basic validation: nombres/apellidos
+          const pn = form.querySelector('input[name="primer_nombre"]');
+          const pa = form.querySelector('input[name="primer_apellido"]');
+          if (pn && pa){
+            if (!pn.value.trim() || !pa.value.trim()){
+              e.preventDefault();
+              alert('Primer nombre y primer apellido son obligatorios');
+            }
+          }
+        });
+      })();
+    </script>
+{% endblock %}
