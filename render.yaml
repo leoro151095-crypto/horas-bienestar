@@ -11,3 +11,5 @@ services:
         value: INFO
       - key: REQUIRED_WELLBEING_HOURS
         value: "40"
+      - key: DATABASE_URL
+        value: "sqlite:////tmp/horas-bienestar/app.db"
