@@ -1178,20 +1178,17 @@ def estudiante_dashboard():
         progress_percent=progress_percent,
         student=student,
         activities=activities
-    
-    return render_template(
-        'estudiante_dashboard.html',
-        total_horas=total_horas,
-        horas_faltantes=horas_faltantes,
-        required_hours=required_hours,
-        progress_percent=progress_percent,
-        student=student,
-        activities=activities
     )
 
-if __name__ == '__main__':
-    debug_mode = bool(app.config.get('DEBUG', False))
-    app.run(debug=debug_mode)
+
+@app.route('/docente')
+@login_required
+def docente_dashboard():
+    if current_user.rol != 'docente':
+        flash('Acceso denegado', 'danger')
+        return redirect(url_for('index'))
+    activities = Activity.query.all()
+    return render_template('docente_dashboard.html', activities=activities)
 
 
 @app.route('/asistencia/<token>', endpoint='attendance_scan')
