@@ -311,6 +311,11 @@ def ensure_user_columns():
     if 'users' not in inspector.get_table_names():
         return
     existing_columns = {col['name'] for col in inspector.get_columns('users')}
+    
+    # Detectar tipo de BD para usar el tipo de dato correcto
+    dialect_name = engine.dialect.name.lower()
+    timestamp_type = 'TIMESTAMP' if 'postgres' in dialect_name else 'DATETIME'
+    
     column_specs = [
         ('apellido', 'VARCHAR(120)'),
         ('cedula', 'VARCHAR(50)'),
@@ -318,12 +323,18 @@ def ensure_user_columns():
         ('correo_personal', 'VARCHAR(120)'),
         ('area', 'VARCHAR(80)'),
         ('password_reset_token', 'VARCHAR(256)'),
-        ('password_reset_expires', 'DATETIME')
+        ('password_reset_expires', timestamp_type)
     ]
     with engine.connect() as conn:
         for column_name, column_type in column_specs:
             if column_name not in existing_columns:
-                conn.execute(text(f'ALTER TABLE users ADD COLUMN {column_name} {column_type}'))
+                try:
+                    conn.execute(text(f'ALTER TABLE users ADD COLUMN {column_name} {column_type}'))
+                except Exception as e:
+                    # Si la columna ya existe, continuar
+                    if 'already exists' not in str(e).lower() and 'column' not in str(e).lower():
+                        logging.warning(f'Error agregando columna {column_name}: {e}')
+        conn.commit()
 
 
 def bootstrap_persistent_data():
