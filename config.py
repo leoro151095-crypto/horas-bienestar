@@ -20,6 +20,9 @@ def _normalize_database_url(database_url):
         return database_url
 
     if sqlite_path.startswith("/"):
+        # Crear el directorio si no existe (para /tmp en Render)
+        db_path = Path(sqlite_path)
+        db_path.parent.mkdir(parents=True, exist_ok=True)
         return database_url
 
     if len(sqlite_path) >= 3 and sqlite_path[1] == ":" and sqlite_path[2] in ("/", "\\"):
