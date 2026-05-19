@@ -288,7 +288,32 @@ def ensure_default_admin():
     if not is_institutional_email(correo):
         raise ValueError(f'El correo admin debe terminar en {INSTITUTIONAL_DOMAIN}')
 
-    admin = User.query.filter_by(correo=correo).first()
+    try:
+        # Intenta la query normal
+        admin = User.query.filter_by(correo=correo).first()
+    except Exception as e:
+        # Si falla (ej: columna falta), intenta con solo las columnas básicas
+        logging.warning(f'Query User normal falló: {e}. Intentando con columnas limitadas.')
+        try:
+            from sqlalchemy import text
+            engine = db.get_engine()
+            with engine.connect() as conn:
+                result = conn.execute(text(f"SELECT id, nombre, apellido, rol, area, correo FROM users WHERE correo = '{correo}' LIMIT 1"))
+                row = result.fetchone()
+                if row:
+                    admin = User()
+                    admin.id = row[0]
+                    admin.nombre = row[1]
+                    admin.apellido = row[2]
+                    admin.rol = row[3]
+                    admin.area = row[4]
+                    admin.correo = row[5]
+                else:
+                    admin = None
+        except Exception as query_error:
+            logging.error(f'Ambas queries fallaron: {query_error}')
+            admin = None
+    
     if admin:
         changed = False
         if not (admin.nombre or '').strip():
@@ -307,43 +332,53 @@ def ensure_default_admin():
 
 def ensure_user_columns():
     """Asegurar que la tabla users tiene todas las columnas necesarias."""
-    engine = db.get_engine()
-    inspector = inspect(engine)
-    if 'users' not in inspector.get_table_names():
-        return
-    
-    existing_columns = {col['name'] for col in inspector.get_columns('users')}
-    dialect_name = engine.dialect.name.lower()
-    
-    # Specs de columnas: (nombre, tipo_para_otros, tipo_para_postgres)
-    column_specs = [
-        ('apellido', 'VARCHAR(120)', 'VARCHAR(120)'),
-        ('cedula', 'VARCHAR(50)', 'VARCHAR(50)'),
-        ('celular', 'VARCHAR(40)', 'VARCHAR(40)'),
-        ('correo_personal', 'VARCHAR(120)', 'VARCHAR(120)'),
-        ('area', 'VARCHAR(80)', 'VARCHAR(80)'),
-        ('password_reset_token', 'VARCHAR(256)', 'VARCHAR(256)'),
-        ('password_reset_expires', 'DATETIME', 'TIMESTAMP'),  # Importante: TIMESTAMP para PostgreSQL
-    ]
-    
-    with engine.connect() as conn:
+    try:
+        engine = db.get_engine()
+        inspector = inspect(engine)
+        
+        if 'users' not in inspector.get_table_names():
+            logging.warning('Tabla users no existe aún, será creada por db.create_all()')
+            return
+        
+        existing_columns = {col['name'] for col in inspector.get_columns('users')}
+        dialect_name = engine.dialect.name.lower()
+        is_postgres = 'postgres' in dialect_name
+        
+        # Specs de columnas: (nombre, tipo_para_otros, tipo_para_postgres)
+        column_specs = [
+            ('apellido', 'VARCHAR(120)', 'VARCHAR(120)'),
+            ('cedula', 'VARCHAR(50)', 'VARCHAR(50)'),
+            ('celular', 'VARCHAR(40)', 'VARCHAR(40)'),
+            ('correo_personal', 'VARCHAR(120)', 'VARCHAR(120)'),
+            ('area', 'VARCHAR(80)', 'VARCHAR(80)'),
+            ('password_reset_token', 'VARCHAR(256)', 'VARCHAR(256)'),
+            ('password_reset_expires', 'DATETIME', 'TIMESTAMP'),  # TIMESTAMP para PostgreSQL
+        ]
+        
         for column_name, column_type_other, column_type_pg in column_specs:
             if column_name not in existing_columns:
-                # Seleccionar el tipo correcto según la BD
-                column_type = column_type_pg if 'postgres' in dialect_name else column_type_other
+                column_type = column_type_pg if is_postgres else column_type_other
                 try:
                     sql = f'ALTER TABLE users ADD COLUMN {column_name} {column_type}'
-                    logging.info(f'Ejecutando: {sql}')
-                    conn.execute(text(sql))
-                    conn.commit()
-                except Exception as e:
-                    conn.rollback()
-                    error_msg = str(e).lower()
-                    # Solo loguear si es un error real (no si la columna ya existe)
-                    if 'already exists' not in error_msg and 'duplicate' not in error_msg:
-                        logging.warning(f'Error agregando columna {column_name}: {e}')
+                    logging.info(f'Agregando columna: {sql}')
+                    
+                    with engine.begin() as connection:
+                        connection.execute(text(sql))
+                    
+                    logging.info(f'Columna {column_name} agregada exitosamente')
+                except Exception as add_error:
+                    error_msg = str(add_error).lower()
+                    # Ignorar si ya existe
+                    if 'already exists' in error_msg or 'duplicate' in error_msg or 'column' in error_msg:
+                        logging.debug(f'Columna {column_name} ya existe')
+                    else:
+                        logging.error(f'Error agregando columna {column_name}: {add_error}')
+                        raise
             else:
                 logging.debug(f'Columna {column_name} ya existe')
+    except Exception as e:
+        logging.error(f'Error en ensure_user_columns: {e}', exc_info=True)
+        # No lanzar excepción para no bloquear el startup
 
 
 def bootstrap_persistent_data():
