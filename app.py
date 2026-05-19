@@ -1055,8 +1055,18 @@ def docente_dashboard():
     if current_user.rol != 'docente':
         flash('Acceso denegado', 'danger')
         return redirect(url_for('index'))
-    activities = Activity.query.all()
-    return render_template('docente_dashboard.html', activities=activities)
+    
+    now = datetime.now(timezone.utc)
+    
+    # Actividades presentes y futuras
+    activities_pending = Activity.query.filter(Activity.fecha >= now).order_by(Activity.fecha).all()
+    
+    # Actividades pasadas
+    activities_completed = Activity.query.filter(Activity.fecha < now).order_by(Activity.fecha.desc()).all()
+    
+    return render_template('docente_dashboard.html', 
+                         activities_pending=activities_pending,
+                         activities_completed=activities_completed)
 
 
 @app.route('/admin/activities/<int:actividad_id>/edit', methods=['GET', 'POST'])

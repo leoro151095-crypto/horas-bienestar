@@ -10,15 +10,16 @@
   </div>
 </div>
 
-<div class="card">
+<!-- ACTIVIDADES POR REALIZAR -->
+<div class="card" style="margin-bottom: 2rem;">
   <div class="card-header">
     <div>
-      <div class="card-title">Tus actividades</div>
-      <div class="card-subtitle">{{ activities|length }} actividades registradas</div>
+      <div class="card-title">📅 Actividades por realizar</div>
+      <div class="card-subtitle">{{ activities_pending|length }} actividades presentes y futuras</div>
     </div>
   </div>
   <div class="card-content">
-    {% if activities %}
+    {% if activities_pending %}
       <div class="table-wrapper">
         <table class="table">
           <thead>
@@ -30,8 +31,8 @@
             </tr>
           </thead>
           <tbody>
-          {% for a in activities %}
-            <tr>
+          {% for a in activities_pending %}
+            <tr style="background: linear-gradient(90deg, rgba(139, 198, 63, 0.05), transparent);">
               <td>
                 <div style="font-weight: 600; color: var(--gray-900);">{{ a.nombre }}</div>
                 {% if a.descripcion %}
@@ -51,7 +52,7 @@
               </td>
               <td>
                 <div class="table-actions">
-                  <a href="{{ url_for('docente_generate_qr', actividad_id=a.id) }}" class="btn btn-sm btn-primary" title="Generar código QR">QR</a>
+                  <a href="{{ url_for('docente_generate_qr', actividad_id=a.id) }}" class="btn btn-sm btn-primary" title="Generar código QR para estudiantes">QR</a>
                   <a href="{{ url_for('edit_activity', actividad_id=a.id) }}" class="btn btn-sm btn-secondary">Editar</a>
                 </div>
               </td>
@@ -61,13 +62,80 @@
         </table>
       </div>
     {% else %}
-      <div style="text-align: center; padding: 3rem 1rem; color: var(--gray-500);">
-        <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300);">📝</div>
-        <p style="font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem;">No tienes actividades registradas aún</p>
-        <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Crea una nueva actividad para que los estudiantes puedan registrar su asistencia.</p>
-        <a href="{{ url_for('create_activity') }}" class="btn btn-primary">Crear primera actividad</a>
+      <div style="text-align: center; padding: 2rem 1rem; color: var(--gray-500);">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--gray-300);">✨</div>
+        <p style="font-size: 1rem; font-weight: 500;">Sin actividades pendientes</p>
+        <p style="font-size: 0.875rem; color: var(--gray-400);">Todas tus actividades están completadas</p>
       </div>
     {% endif %}
   </div>
 </div>
+
+<!-- ACTIVIDADES REALIZADAS -->
+{% if activities_completed %}
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="card-title">✅ Actividades realizadas</div>
+      <div class="card-subtitle">{{ activities_completed|length }} actividades completadas</div>
+    </div>
+  </div>
+  <div class="card-content">
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Actividad</th>
+            <th>Fecha y hora</th>
+            <th>Créditos</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for a in activities_completed %}
+          <tr style="background: rgba(200, 200, 200, 0.05); opacity: 0.8;">
+            <td>
+              <div style="font-weight: 600; color: var(--gray-900);">{{ a.nombre }}</div>
+              {% if a.descripcion %}
+                <div style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.25rem;">{{ a.descripcion[:60] }}</div>
+              {% endif %}
+            </td>
+            <td style="white-space: nowrap;">
+              {% if a.fecha %}
+                <div style="font-weight: 500; color: var(--gray-900);">{{ a.fecha.strftime('%d/%m/%Y') }}</div>
+                <div style="font-size: 0.875rem; color: var(--gray-500);">{{ a.fecha.strftime('%H:%M') }}</div>
+              {% else %}
+                <span style="color: var(--gray-400);">Sin fecha</span>
+              {% endif %}
+            </td>
+            <td>
+              <span class="badge badge-gray">{{ a.horas or 0 }} hrs</span>
+            </td>
+            <td>
+              <div class="table-actions">
+                <a href="{{ url_for('edit_activity', actividad_id=a.id) }}" class="btn btn-sm btn-secondary">Ver</a>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- SI NO HAY ACTIVIDADES EN ABSOLUTO -->
+{% if not activities_pending and not activities_completed %}
+<div class="card">
+  <div class="card-content">
+    <div style="text-align: center; padding: 3rem 1rem; color: var(--gray-500);">
+      <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300);">📝</div>
+      <p style="font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem;">No tienes actividades registradas aún</p>
+      <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Crea una nueva actividad para que los estudiantes puedan registrar su asistencia.</p>
+      <a href="{{ url_for('create_activity') }}" class="btn btn-primary">Crear primera actividad</a>
+    </div>
+  </div>
+</div>
+{% endif %}
 {% endblock %}
