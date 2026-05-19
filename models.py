@@ -17,6 +17,8 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(512), nullable=False)
     rol = db.Column(db.String(30), nullable=False)
     area = db.Column(db.String(80))
+    password_reset_token = db.Column(db.String(256), nullable=True)
+    password_reset_expires = db.Column(db.DateTime, nullable=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

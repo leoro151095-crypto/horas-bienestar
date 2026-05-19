@@ -407,6 +407,122 @@ def logout():
     # Después de cerrar sesión redirigimos al login
     return redirect(url_for('login'))
 
+@app.route('/forgot-password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        correo = request.form.get('correo', '').strip()
+        if not correo:
+            flash('Por favor ingresa tu correo', 'warning')
+            return render_template('forgot_password.html')
+        
+        usuario = User.query.filter_by(correo=correo).first()
+        if not usuario:
+            # No revelar si el correo existe (seguridad)
+            write_audit('forgot_password_nonexistent', 'user', None, {'correo': correo})
+            db.session.commit()
+            flash('Si el correo existe en el sistema, recibirás un código de recuperación', 'info')
+            return redirect(url_for('login'))
+        
+        # Generar token seguro
+        reset_token = secrets.token_urlsafe(32)
+        usuario.password_reset_token = reset_token
+        usuario.password_reset_expires = datetime.now(timezone.utc) + timedelta(minutes=30)
+        write_audit('forgot_password_requested', 'user', usuario.id, {'correo': correo})
+        db.session.commit()
+        
+        # Determinar qué canal usar (email o SMS)
+        delivery_method = request.form.get('delivery_method', 'email')
+        success = False
+        message = ''
+        
+        if delivery_method == 'email':
+            # Usar correo personal si está disponible, sino correo institucional
+            email_to = usuario.correo_personal or usuario.correo
+            if email_to:
+                reset_link = url_for('reset_password', token=reset_token, _external=True)
+                email_body = f"""Hola {usuario.nombre},
+
+Recibimos una solicitud de recuperación de contraseña. Si no fuiste tú, ignora este mensaje.
+
+Código de recuperación: {reset_token}
+
+O haz clic en el siguiente enlace (válido por 30 minutos):
+{reset_link}
+
+Si el enlace no funciona, copia el código anterior y pégalo en el formulario de recuperación.
+
+Saludos,
+Sistema de Horas de Bienestar"""
+                success, message = send_email(app.config, email_to, 'Recuperar contraseña - Horas Bienestar', email_body)
+                if success:
+                    write_audit('forgot_password_email_sent', 'user', usuario.id, {'correo': correo})
+                else:
+                    write_audit('forgot_password_email_failed', 'user', usuario.id, {'correo': correo, 'error': message})
+        
+        elif delivery_method == 'sms' and usuario.celular:
+            reset_code = reset_token[:8]  # Mostrar solo primeros 8 caracteres por SMS
+            sms_body = f"Tu código de recuperación de contraseña es: {reset_code}\nVálido por 30 minutos.\nNo compartas este código."
+            success, message = send_sms(app.config, usuario.celular, sms_body)
+            if success:
+                write_audit('forgot_password_sms_sent', 'user', usuario.id, {'celular': usuario.celular})
+            else:
+                write_audit('forgot_password_sms_failed', 'user', usuario.id, {'celular': usuario.celular, 'error': message})
+        
+        db.session.commit()
+        flash('Si el correo existe en el sistema, recibirás un código de recuperación', 'info')
+        return redirect(url_for('login'))
+    
+    return render_template('forgot_password.html')
+
+@app.route('/reset-password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    usuario = User.query.filter_by(password_reset_token=token).first()
+    
+    if not usuario:
+        write_audit('reset_password_invalid_token', 'user', None, {'token_provided': True})
+        db.session.commit()
+        flash('Enlace inválido o expirado', 'danger')
+        return redirect(url_for('login'))
+    
+    if usuario.password_reset_expires and usuario.password_reset_expires < datetime.now(timezone.utc):
+        usuario.password_reset_token = None
+        usuario.password_reset_expires = None
+        write_audit('reset_password_expired', 'user', usuario.id, {'correo': usuario.correo})
+        db.session.commit()
+        flash('El código de recuperación ha expirado. Solicita uno nuevo.', 'danger')
+        return redirect(url_for('forgot_password'))
+    
+    if request.method == 'POST':
+        new_password = request.form.get('new_password', '').strip()
+        confirm_password = request.form.get('confirm_password', '').strip()
+        
+        if len(new_password) < 6:
+            flash('La contraseña debe tener al menos 6 caracteres', 'danger')
+            return render_template('reset_password.html', token=token)
+        
+        if new_password != confirm_password:
+            flash('Las contraseñas no coinciden', 'danger')
+            return render_template('reset_password.html', token=token)
+        
+        # Validar que no sea la contraseña inicial si es estudiante
+        if usuario.rol == 'estudiante':
+            student = Student.query.filter_by(correo_institucional=usuario.correo).first()
+            student_initial = get_last4_digits(student.numero_documento) if student else None
+            if student_initial and new_password == student_initial:
+                flash('La contraseña no puede ser los últimos 4 dígitos del documento', 'danger')
+                return render_template('reset_password.html', token=token)
+        
+        usuario.set_password(new_password)
+        usuario.password_reset_token = None
+        usuario.password_reset_expires = None
+        write_audit('password_reset', 'user', usuario.id, {'correo': usuario.correo})
+        db.session.commit()
+        
+        flash('Contraseña actualizada correctamente. Ahora puedes iniciar sesión.', 'success')
+        return redirect(url_for('login'))
+    
+    return render_template('reset_password.html', token=token)
+
 @app.route('/admin')
 @login_required
 def admin_dashboard():
