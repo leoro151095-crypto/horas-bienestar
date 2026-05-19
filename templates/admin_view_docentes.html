@@ -42,9 +42,7 @@
                 <span style="font-size: 0.85rem;">{{ d.email or '—' }}</span>
               </td>
               <td>
-                <span class="badge" style="background-color: {% if d.activo %}var(--success){% else %}var(--danger){% endif %};">
-                  {% if d.activo %}Activo{% else %}Inactivo{% endif %}
-                </span>
+                <span class="badge badge-success">✓ Activo</span>
               </td>
               <td>
                 <div class="table-actions">
