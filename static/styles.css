@@ -107,7 +107,8 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), 
+              url('/static/universidad.jpeg') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
