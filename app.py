@@ -316,7 +316,9 @@ def ensure_user_columns():
         ('cedula', 'VARCHAR(50)'),
         ('celular', 'VARCHAR(40)'),
         ('correo_personal', 'VARCHAR(120)'),
-        ('area', 'VARCHAR(80)')
+        ('area', 'VARCHAR(80)'),
+        ('password_reset_token', 'VARCHAR(256)'),
+        ('password_reset_expires', 'DATETIME')
     ]
     with engine.connect() as conn:
         for column_name, column_type in column_specs:
