@@ -491,11 +491,26 @@ def forgot_password():
         delivery_method = request.form.get('delivery_method', 'email')
         success = False
         message = ''
+        delivery_info = ''  # Información sobre qué se envió o mostró
         
         if delivery_method == 'email':
             # Usar correo personal si está disponible, sino correo institucional
             email_to = usuario.correo_personal or usuario.correo
-            if email_to:
+            
+            # Verificar que email está configurado
+            if not app.config.get('SMTP_HOST') or not app.config.get('MAIL_FROM'):
+                # Email no configurado - mostrar código en pantalla
+                success = True
+                message = 'Email no configurado. Se mostró el código en pantalla.'
+                delivery_info = f"""
+                <div style='border: 2px solid #ffc107; padding: 15px; border-radius: 5px; background-color: #fff3cd; margin: 20px 0;'>
+                    <h4>Código de Recuperación (válido 30 minutos):</h4>
+                    <h2 style='color: #ff6b6b; font-family: monospace; letter-spacing: 3px;'>{reset_token}</h2>
+                    <p>Copia este código en el formulario de recuperación.</p>
+                </div>
+                """
+                write_audit('forgot_password_shown_in_screen', 'user', usuario.id, {'correo': correo, 'reason': 'SMTP no configurado'})
+            elif email_to:
                 reset_link = url_for('reset_password', token=reset_token, _external=True)
                 email_body = f"""Hola {usuario.nombre},
 
@@ -512,24 +527,87 @@ Saludos,
 Sistema de Horas de Bienestar"""
                 success, message = send_email(app.config, email_to, 'Recuperar contraseña - Horas Bienestar', email_body)
                 if success:
-                    write_audit('forgot_password_email_sent', 'user', usuario.id, {'correo': correo})
+                    write_audit('forgot_password_email_sent', 'user', usuario.id, {'correo': email_to})
+                    delivery_info = f"Se envió un código a tu correo: {email_to}"
                 else:
-                    write_audit('forgot_password_email_failed', 'user', usuario.id, {'correo': correo, 'error': message})
+                    # Fallback: mostrar código en pantalla
+                    success = True  # Cambiar a éxito con fallback
+                    delivery_info = f"""
+                    <div style='border: 2px solid #ff6b6b; padding: 15px; border-radius: 5px; background-color: #ffebee; margin: 20px 0;'>
+                        <h4>⚠ No se pudo enviar por email ({message})</h4>
+                        <p>Se mostró el código en pantalla. Cópialo rápidamente:</p>
+                        <h2 style='color: #ff6b6b; font-family: monospace; letter-spacing: 3px;'>{reset_token}</h2>
+                    </div>
+                    """
+                    write_audit('forgot_password_email_failed_shown_in_screen', 'user', usuario.id, 
+                              {'correo': email_to, 'error': message})
         
-        elif delivery_method == 'sms' and usuario.celular:
-            reset_code = reset_token[:8]  # Mostrar solo primeros 8 caracteres por SMS
-            sms_body = f"Tu código de recuperación de contraseña es: {reset_code}\nVálido por 30 minutos.\nNo compartas este código."
-            success, message = send_sms(app.config, usuario.celular, sms_body)
-            if success:
-                write_audit('forgot_password_sms_sent', 'user', usuario.id, {'celular': usuario.celular})
+        elif delivery_method == 'sms':
+            if not usuario.celular:
+                flash('No tienes un número de celular registrado', 'warning')
+                return render_template('forgot_password.html')
+            
+            # Verificar que Twilio está configurado
+            if not app.config.get('TWILIO_ACCOUNT_SID') or not app.config.get('TWILIO_AUTH_TOKEN'):
+                # SMS no configurado - mostrar código en pantalla
+                success = True
+                message = 'SMS no configurado. Se mostró el código en pantalla.'
+                delivery_info = f"""
+                <div style='border: 2px solid #ffc107; padding: 15px; border-radius: 5px; background-color: #fff3cd; margin: 20px 0;'>
+                    <h4>Código de Recuperación (válido 30 minutos):</h4>
+                    <h2 style='color: #ff6b6b; font-family: monospace; letter-spacing: 3px;'>{reset_token[:8].upper()}</h2>
+                    <p>Copia este código en el formulario de recuperación.</p>
+                </div>
+                """
+                write_audit('forgot_password_sms_not_configured', 'user', usuario.id, 
+                          {'celular': usuario.celular})
             else:
-                write_audit('forgot_password_sms_failed', 'user', usuario.id, {'celular': usuario.celular, 'error': message})
+                reset_code = reset_token[:8]  # Mostrar solo primeros 8 caracteres por SMS
+                sms_body = f"Tu código de recuperación de contraseña es: {reset_code}\nVálido por 30 minutos.\nNo compartas este código."
+                success, message = send_sms(app.config, usuario.celular, sms_body)
+                if success:
+                    write_audit('forgot_password_sms_sent', 'user', usuario.id, {'celular': usuario.celular})
+                    delivery_info = f"Se envió un SMS a tu celular: {usuario.celular}"
+                else:
+                    # Fallback: mostrar código en pantalla
+                    success = True  # Cambiar a éxito con fallback
+                    delivery_info = f"""
+                    <div style='border: 2px solid #ff6b6b; padding: 15px; border-radius: 5px; background-color: #ffebee; margin: 20px 0;'>
+                        <h4>⚠ No se pudo enviar SMS ({message})</h4>
+                        <p>Se mostró el código en pantalla. Cópialo rápidamente:</p>
+                        <h2 style='color: #ff6b6b; font-family: monospace; letter-spacing: 3px;'>{reset_token[:8].upper()}</h2>
+                    </div>
+                    """
+                    write_audit('forgot_password_sms_failed_shown_in_screen', 'user', usuario.id, 
+                              {'celular': usuario.celular, 'error': message})
         
         db.session.commit()
-        flash('Si el correo existe en el sistema, recibirás un código de recuperación', 'info')
-        return redirect(url_for('login'))
+        
+        if success and delivery_info:
+            # Mostrar página de confirmación con código si fue necesario
+            return render_template('forgot_password_sent.html', 
+                                 delivery_info=delivery_info, 
+                                 correo=correo,
+                                 show_code=bool(delivery_method == 'email' and not app.config.get('SMTP_HOST')))
+        elif success:
+            flash('Se envió un código de recuperación', 'success')
+            return redirect(url_for('login'))
+        else:
+            flash(f'Error al enviar: {message}', 'danger')
+            return render_template('forgot_password.html')
     
     return render_template('forgot_password.html')
+
+@app.route('/reset-password-with-code', methods=['POST'])
+def reset_password_with_code():
+    """Permite al usuario ingresar el código de recuperación manualmente"""
+    token = request.form.get('token', '').strip()
+    if not token:
+        flash('Por favor ingresa el código de recuperación', 'warning')
+        return redirect(url_for('forgot_password'))
+    
+    # Redirigir a reset_password con el token
+    return redirect(url_for('reset_password', token=token))
 
 @app.route('/reset-password/<token>', methods=['GET', 'POST'])
 def reset_password(token):

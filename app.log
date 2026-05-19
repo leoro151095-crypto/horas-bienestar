@@ -811,3 +811,411 @@
 2026-05-19 11:26:01,271 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "GET /admin HTTP/1.1" 200 -
 2026-05-19 11:26:01,317 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 2026-05-19 11:26:01,319 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:19,243 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 11:37:19,245 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 11:37:19,248 INFO  * Restarting with stat
+2026-05-19 11:37:20,427 WARNING  * Debugger is active!
+2026-05-19 11:37:20,430 INFO  * Debugger PIN: 555-149-697
+2026-05-19 11:37:26,043 INFO 127.0.0.1 - - [19/May/2026 11:37:26] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-19 11:37:26,102 INFO 127.0.0.1 - - [19/May/2026 11:37:26] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:37:26,151 INFO 127.0.0.1 - - [19/May/2026 11:37:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:37:26,154 INFO 127.0.0.1 - - [19/May/2026 11:37:26] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:26,170 INFO 127.0.0.1 - - [19/May/2026 11:37:26] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:32,299 INFO 127.0.0.1 - - [19/May/2026 11:37:32] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:37:32,342 INFO 127.0.0.1 - - [19/May/2026 11:37:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:37:32,352 INFO 127.0.0.1 - - [19/May/2026 11:37:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:35,329 INFO 127.0.0.1 - - [19/May/2026 11:37:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 11:37:35,360 INFO 127.0.0.1 - - [19/May/2026 11:37:35] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:37:35,416 INFO 127.0.0.1 - - [19/May/2026 11:37:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:37:35,418 INFO 127.0.0.1 - - [19/May/2026 11:37:35] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:39,144 INFO 127.0.0.1 - - [19/May/2026 11:37:39] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 11:37:39,172 INFO 127.0.0.1 - - [19/May/2026 11:37:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:37:39,187 INFO 127.0.0.1 - - [19/May/2026 11:37:39] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:37:50,595 INFO 127.0.0.1 - - [19/May/2026 11:37:50] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 11:37:50,608 INFO 127.0.0.1 - - [19/May/2026 11:37:50] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:37:50,645 INFO 127.0.0.1 - - [19/May/2026 11:37:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:37:50,650 INFO 127.0.0.1 - - [19/May/2026 11:37:50] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:43:44,898 INFO 127.0.0.1 - - [19/May/2026 11:43:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 11:43:44,912 INFO 127.0.0.1 - - [19/May/2026 11:43:44] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:43:44,971 INFO 127.0.0.1 - - [19/May/2026 11:43:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:43:44,974 INFO 127.0.0.1 - - [19/May/2026 11:43:44] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:43:48,605 INFO 127.0.0.1 - - [19/May/2026 11:43:48] "GET /admin/audit_logs HTTP/1.1" 200 -
+2026-05-19 11:43:48,632 INFO 127.0.0.1 - - [19/May/2026 11:43:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:43:48,642 INFO 127.0.0.1 - - [19/May/2026 11:43:48] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:43:52,524 INFO 127.0.0.1 - - [19/May/2026 11:43:52] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 11:43:52,556 INFO 127.0.0.1 - - [19/May/2026 11:43:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:43:52,561 INFO 127.0.0.1 - - [19/May/2026 11:43:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:44:06,020 INFO 127.0.0.1 - - [19/May/2026 11:44:06] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:44:06,072 INFO 127.0.0.1 - - [19/May/2026 11:44:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:44:06,074 INFO 127.0.0.1 - - [19/May/2026 11:44:06] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:44:19,324 INFO 127.0.0.1 - - [19/May/2026 11:44:19] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 11:44:19,361 INFO 127.0.0.1 - - [19/May/2026 11:44:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:44:19,372 INFO 127.0.0.1 - - [19/May/2026 11:44:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:44:25,288 INFO 127.0.0.1 - - [19/May/2026 11:44:25] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:44:25,335 INFO 127.0.0.1 - - [19/May/2026 11:44:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:44:25,344 INFO 127.0.0.1 - - [19/May/2026 11:44:25] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:45:12,514 INFO 127.0.0.1 - - [19/May/2026 11:45:12] "GET /admin/audit_logs HTTP/1.1" 200 -
+2026-05-19 11:45:12,554 INFO 127.0.0.1 - - [19/May/2026 11:45:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:45:12,558 INFO 127.0.0.1 - - [19/May/2026 11:45:12] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:45:17,654 INFO 127.0.0.1 - - [19/May/2026 11:45:17] "GET /admin/register_docente HTTP/1.1" 200 -
+2026-05-19 11:45:17,700 INFO 127.0.0.1 - - [19/May/2026 11:45:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:45:17,702 INFO 127.0.0.1 - - [19/May/2026 11:45:17] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:45:21,394 INFO 127.0.0.1 - - [19/May/2026 11:45:21] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 11:45:21,428 INFO 127.0.0.1 - - [19/May/2026 11:45:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:45:21,434 INFO 127.0.0.1 - - [19/May/2026 11:45:21] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:45:42,367 INFO 127.0.0.1 - - [19/May/2026 11:45:42] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:45:42,404 INFO 127.0.0.1 - - [19/May/2026 11:45:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:45:42,416 INFO 127.0.0.1 - - [19/May/2026 11:45:42] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:45:44,080 INFO 127.0.0.1 - - [19/May/2026 11:45:44] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-19 11:45:44,117 INFO 127.0.0.1 - - [19/May/2026 11:45:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:45:44,124 INFO 127.0.0.1 - - [19/May/2026 11:45:44] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:58:01,592 INFO 127.0.0.1 - - [19/May/2026 11:58:01] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 11:58:01,608 INFO 127.0.0.1 - - [19/May/2026 11:58:01] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:58:01,646 INFO 127.0.0.1 - - [19/May/2026 11:58:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:58:01,647 INFO 127.0.0.1 - - [19/May/2026 11:58:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:58:17,966 INFO 127.0.0.1 - - [19/May/2026 11:58:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 11:58:18,046 INFO 127.0.0.1 - - [19/May/2026 11:58:18] "GET /estudiante HTTP/1.1" 200 -
+2026-05-19 11:58:18,096 INFO 127.0.0.1 - - [19/May/2026 11:58:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:58:18,097 INFO 127.0.0.1 - - [19/May/2026 11:58:18] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 15:47:35,204 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 15:47:35,206 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 15:47:35,209 INFO  * Restarting with stat
+2026-05-19 15:47:36,427 WARNING  * Debugger is active!
+2026-05-19 15:47:36,434 INFO  * Debugger PIN: 555-149-697
+2026-05-19 15:47:46,587 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-19 15:47:46,648 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "GET /login HTTP/1.1" 200 -
+2026-05-19 15:47:46,712 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 15:47:46,715 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 15:47:46,729 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 15:47:46,804 INFO 127.0.0.1 - - [19/May/2026 15:47:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 15:48:23,253 INFO 127.0.0.1 - - [19/May/2026 15:48:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 15:48:23,277 INFO 127.0.0.1 - - [19/May/2026 15:48:23] "GET /admin HTTP/1.1" 200 -
+2026-05-19 15:48:23,324 INFO 127.0.0.1 - - [19/May/2026 15:48:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 15:48:23,332 INFO 127.0.0.1 - - [19/May/2026 15:48:23] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 15:48:26,175 INFO 127.0.0.1 - - [19/May/2026 15:48:26] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 15:48:26,223 INFO 127.0.0.1 - - [19/May/2026 15:48:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 15:48:26,228 INFO 127.0.0.1 - - [19/May/2026 15:48:26] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:31:52,540 INFO 127.0.0.1 - - [19/May/2026 16:31:52] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 16:31:52,549 INFO 127.0.0.1 - - [19/May/2026 16:31:52] "GET /login HTTP/1.1" 200 -
+2026-05-19 16:31:52,574 INFO 127.0.0.1 - - [19/May/2026 16:31:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:31:52,600 INFO 127.0.0.1 - - [19/May/2026 16:31:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:32:02,747 INFO 127.0.0.1 - - [19/May/2026 16:32:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 16:32:02,759 INFO 127.0.0.1 - - [19/May/2026 16:32:02] "GET /admin HTTP/1.1" 200 -
+2026-05-19 16:32:02,804 INFO 127.0.0.1 - - [19/May/2026 16:32:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:32:02,805 INFO 127.0.0.1 - - [19/May/2026 16:32:02] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:13,862 INFO 127.0.0.1 - - [19/May/2026 16:33:13] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 16:33:13,883 INFO 127.0.0.1 - - [19/May/2026 16:33:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:13,890 INFO 127.0.0.1 - - [19/May/2026 16:33:13] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:19,525 INFO 127.0.0.1 - - [19/May/2026 16:33:19] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-19 16:33:19,555 INFO 127.0.0.1 - - [19/May/2026 16:33:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:19,561 INFO 127.0.0.1 - - [19/May/2026 16:33:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:25,175 INFO 127.0.0.1 - - [19/May/2026 16:33:25] "[32mPOST /admin/docentes/3/edit HTTP/1.1[0m" 302 -
+2026-05-19 16:33:25,183 INFO 127.0.0.1 - - [19/May/2026 16:33:25] "GET /admin HTTP/1.1" 200 -
+2026-05-19 16:33:25,213 INFO 127.0.0.1 - - [19/May/2026 16:33:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:25,214 INFO 127.0.0.1 - - [19/May/2026 16:33:25] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:31,024 INFO 127.0.0.1 - - [19/May/2026 16:33:31] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 16:33:31,044 INFO 127.0.0.1 - - [19/May/2026 16:33:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:31,052 INFO 127.0.0.1 - - [19/May/2026 16:33:31] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:38,206 INFO 127.0.0.1 - - [19/May/2026 16:33:38] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-19 16:33:38,232 INFO 127.0.0.1 - - [19/May/2026 16:33:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:38,233 INFO 127.0.0.1 - - [19/May/2026 16:33:38] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:40,486 INFO 127.0.0.1 - - [19/May/2026 16:33:40] "GET /admin HTTP/1.1" 200 -
+2026-05-19 16:33:40,511 INFO 127.0.0.1 - - [19/May/2026 16:33:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:40,518 INFO 127.0.0.1 - - [19/May/2026 16:33:40] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:42,547 INFO 127.0.0.1 - - [19/May/2026 16:33:42] "GET /admin/register_docente HTTP/1.1" 200 -
+2026-05-19 16:33:42,567 INFO 127.0.0.1 - - [19/May/2026 16:33:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:42,571 INFO 127.0.0.1 - - [19/May/2026 16:33:42] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:33:52,913 INFO 127.0.0.1 - - [19/May/2026 16:33:52] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 16:33:52,920 INFO 127.0.0.1 - - [19/May/2026 16:33:52] "GET /login HTTP/1.1" 200 -
+2026-05-19 16:33:52,946 INFO 127.0.0.1 - - [19/May/2026 16:33:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:33:52,950 INFO 127.0.0.1 - - [19/May/2026 16:33:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:34:09,963 INFO 127.0.0.1 - - [19/May/2026 16:34:09] "POST /login HTTP/1.1" 200 -
+2026-05-19 16:34:09,992 INFO 127.0.0.1 - - [19/May/2026 16:34:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:34:09,993 INFO 127.0.0.1 - - [19/May/2026 16:34:09] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:34:15,243 INFO 127.0.0.1 - - [19/May/2026 16:34:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 16:34:15,250 INFO 127.0.0.1 - - [19/May/2026 16:34:15] "GET /admin HTTP/1.1" 200 -
+2026-05-19 16:34:15,281 INFO 127.0.0.1 - - [19/May/2026 16:34:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:34:15,281 INFO 127.0.0.1 - - [19/May/2026 16:34:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 16:34:24,094 INFO 127.0.0.1 - - [19/May/2026 16:34:24] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 16:34:24,114 INFO 127.0.0.1 - - [19/May/2026 16:34:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 16:34:24,122 INFO 127.0.0.1 - - [19/May/2026 16:34:24] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:35:16,464 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 17:35:16,465 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 17:35:16,467 INFO  * Restarting with stat
+2026-05-19 17:35:17,155 WARNING  * Debugger is active!
+2026-05-19 17:35:17,157 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:38:06,369 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\models.py', reloading
+2026-05-19 17:38:06,582 INFO  * Restarting with stat
+2026-05-19 17:38:08,206 WARNING  * Debugger is active!
+2026-05-19 17:38:08,210 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:38:21,327 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 17:38:21,556 INFO  * Restarting with stat
+2026-05-19 17:38:22,972 WARNING  * Debugger is active!
+2026-05-19 17:38:22,977 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:39:18,405 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\migrate_add_password_reset.py', reloading
+2026-05-19 17:39:18,609 INFO  * Restarting with stat
+2026-05-19 17:39:19,955 WARNING  * Debugger is active!
+2026-05-19 17:39:19,959 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:39:31,073 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\migrate_add_password_reset.py', reloading
+2026-05-19 17:39:31,290 INFO  * Restarting with stat
+2026-05-19 17:39:32,692 WARNING  * Debugger is active!
+2026-05-19 17:39:32,698 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:39:34,746 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\models.py', reloading
+2026-05-19 17:39:34,961 INFO  * Restarting with stat
+2026-05-19 17:39:36,320 WARNING  * Debugger is active!
+2026-05-19 17:39:36,324 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:40:32,779 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:40:33,005 INFO  * Restarting with stat
+2026-05-19 17:40:34,455 WARNING  * Debugger is active!
+2026-05-19 17:40:34,458 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:40:37,506 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:40:37,708 INFO  * Restarting with stat
+2026-05-19 17:40:39,173 WARNING  * Debugger is active!
+2026-05-19 17:40:39,176 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:40:42,217 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:40:42,424 INFO  * Restarting with stat
+2026-05-19 17:40:43,700 WARNING  * Debugger is active!
+2026-05-19 17:40:43,707 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:40:46,752 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:40:46,961 INFO  * Restarting with stat
+2026-05-19 17:40:48,301 WARNING  * Debugger is active!
+2026-05-19 17:40:48,304 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:41:22,588 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:41:22,796 INFO  * Restarting with stat
+2026-05-19 17:41:24,077 WARNING  * Debugger is active!
+2026-05-19 17:41:24,082 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:41:40,233 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:41:40,457 INFO  * Restarting with stat
+2026-05-19 17:41:41,780 WARNING  * Debugger is active!
+2026-05-19 17:41:41,784 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:41:45,835 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:41:46,050 INFO  * Restarting with stat
+2026-05-19 17:41:47,351 WARNING  * Debugger is active!
+2026-05-19 17:41:47,355 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:42:24,644 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:42:24,854 INFO  * Restarting with stat
+2026-05-19 17:42:26,161 WARNING  * Debugger is active!
+2026-05-19 17:42:26,164 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:42:43,315 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:42:43,560 INFO  * Restarting with stat
+2026-05-19 17:42:44,872 WARNING  * Debugger is active!
+2026-05-19 17:42:44,875 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:43:02,020 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:43:02,230 INFO  * Restarting with stat
+2026-05-19 17:43:03,475 WARNING  * Debugger is active!
+2026-05-19 17:43:03,477 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:43:16,577 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\tests\\test_password_recovery.py', reloading
+2026-05-19 17:43:16,800 INFO  * Restarting with stat
+2026-05-19 17:43:18,109 WARNING  * Debugger is active!
+2026-05-19 17:43:18,112 INFO  * Debugger PIN: 555-149-697
+2026-05-19 17:45:01,751 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-19 17:45:01,843 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "GET /login HTTP/1.1" 200 -
+2026-05-19 17:45:01,893 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:45:01,895 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:45:01,909 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:45:01,951 INFO 127.0.0.1 - - [19/May/2026 17:45:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 17:45:11,275 INFO 127.0.0.1 - - [19/May/2026 17:45:11] "GET /forgot-password HTTP/1.1" 200 -
+2026-05-19 17:45:11,307 INFO 127.0.0.1 - - [19/May/2026 17:45:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:45:11,314 INFO 127.0.0.1 - - [19/May/2026 17:45:11] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:45:30,508 INFO 127.0.0.1 - - [19/May/2026 17:45:30] "[32mPOST /forgot-password HTTP/1.1[0m" 302 -
+2026-05-19 17:45:30,521 INFO 127.0.0.1 - - [19/May/2026 17:45:30] "GET /login HTTP/1.1" 200 -
+2026-05-19 17:45:30,555 INFO 127.0.0.1 - - [19/May/2026 17:45:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:45:30,557 INFO 127.0.0.1 - - [19/May/2026 17:45:30] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:45:46,135 INFO 127.0.0.1 - - [19/May/2026 17:45:46] "POST /login HTTP/1.1" 200 -
+2026-05-19 17:45:46,185 INFO 127.0.0.1 - - [19/May/2026 17:45:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:45:46,190 INFO 127.0.0.1 - - [19/May/2026 17:45:46] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:45:55,819 INFO 127.0.0.1 - - [19/May/2026 17:45:55] "POST /login HTTP/1.1" 200 -
+2026-05-19 17:45:55,862 INFO 127.0.0.1 - - [19/May/2026 17:45:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:45:55,865 INFO 127.0.0.1 - - [19/May/2026 17:45:55] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:46:00,895 INFO 127.0.0.1 - - [19/May/2026 17:46:00] "POST /login HTTP/1.1" 200 -
+2026-05-19 17:46:00,938 INFO 127.0.0.1 - - [19/May/2026 17:46:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:46:00,940 INFO 127.0.0.1 - - [19/May/2026 17:46:00] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:46:10,060 INFO 127.0.0.1 - - [19/May/2026 17:46:10] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-19 17:46:10,071 INFO 127.0.0.1 - - [19/May/2026 17:46:10] "GET /login HTTP/1.1" 200 -
+2026-05-19 17:46:10,131 INFO 127.0.0.1 - - [19/May/2026 17:46:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:46:10,131 INFO 127.0.0.1 - - [19/May/2026 17:46:10] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:46:10,148 INFO 127.0.0.1 - - [19/May/2026 17:46:10] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:46:12,617 INFO 127.0.0.1 - - [19/May/2026 17:46:12] "POST /login HTTP/1.1" 200 -
+2026-05-19 17:46:12,655 INFO 127.0.0.1 - - [19/May/2026 17:46:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:46:12,661 INFO 127.0.0.1 - - [19/May/2026 17:46:12] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:48:20,842 INFO 127.0.0.1 - - [19/May/2026 17:48:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 17:48:20,900 INFO 127.0.0.1 - - [19/May/2026 17:48:20] "GET /admin HTTP/1.1" 200 -
+2026-05-19 17:48:20,935 INFO 127.0.0.1 - - [19/May/2026 17:48:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:48:20,943 INFO 127.0.0.1 - - [19/May/2026 17:48:20] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:48:33,065 INFO 127.0.0.1 - - [19/May/2026 17:48:33] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 17:48:33,101 INFO 127.0.0.1 - - [19/May/2026 17:48:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:48:33,104 INFO 127.0.0.1 - - [19/May/2026 17:48:33] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:49:22,917 INFO 127.0.0.1 - - [19/May/2026 17:49:22] "GET /admin HTTP/1.1" 200 -
+2026-05-19 17:49:22,965 INFO 127.0.0.1 - - [19/May/2026 17:49:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:49:22,965 INFO 127.0.0.1 - - [19/May/2026 17:49:22] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:49:24,957 INFO 127.0.0.1 - - [19/May/2026 17:49:24] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 17:49:25,004 INFO 127.0.0.1 - - [19/May/2026 17:49:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:49:25,008 INFO 127.0.0.1 - - [19/May/2026 17:49:25] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:49:27,774 INFO 127.0.0.1 - - [19/May/2026 17:49:27] "GET /admin HTTP/1.1" 200 -
+2026-05-19 17:49:27,817 INFO 127.0.0.1 - - [19/May/2026 17:49:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:49:27,819 INFO 127.0.0.1 - - [19/May/2026 17:49:27] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:56:11,410 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\restore_db.py', reloading
+2026-05-19 17:56:11,670 INFO  * Restarting with stat
+2026-05-19 17:56:13,115 WARNING  * Debugger is active!
+2026-05-19 17:56:13,119 INFO  * Debugger PIN: 134-591-509
+2026-05-19 17:56:48,949 INFO 127.0.0.1 - - [19/May/2026 17:56:48] "[35m[1mPOST /logout HTTP/1.1[0m" 500 -
+2026-05-19 17:56:49,005 INFO 127.0.0.1 - - [19/May/2026 17:56:49] "GET /logout?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-19 17:56:49,030 INFO 127.0.0.1 - - [19/May/2026 17:56:49] "GET /logout?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-19 17:56:49,088 INFO 127.0.0.1 - - [19/May/2026 17:56:49] "GET /logout?__debugger__=yes&cmd=resource&f=console.png&s=4IwrbTrWINrtwewXQAwb HTTP/1.1" 200 -
+2026-05-19 17:56:49,139 INFO 127.0.0.1 - - [19/May/2026 17:56:49] "GET /logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-19 17:58:23,576 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 17:58:23,577 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 17:58:23,580 INFO  * Restarting with stat
+2026-05-19 17:58:24,939 WARNING  * Debugger is active!
+2026-05-19 17:58:24,942 INFO  * Debugger PIN: 825-535-561
+2026-05-19 17:59:01,262 INFO 127.0.0.1 - - [19/May/2026 17:59:01] "GET /login HTTP/1.1" 200 -
+2026-05-19 17:59:01,279 INFO 127.0.0.1 - - [19/May/2026 17:59:01] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 17:59:01,279 INFO 127.0.0.1 - - [19/May/2026 17:59:01] "GET /static/logoucc.jpeg HTTP/1.1" 200 -
+2026-05-19 17:59:01,524 INFO 127.0.0.1 - - [19/May/2026 17:59:01] "GET /static/universidad.jpeg HTTP/1.1" 200 -
+2026-05-19 17:59:01,620 INFO 127.0.0.1 - - [19/May/2026 17:59:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 17:59:11,445 INFO 127.0.0.1 - - [19/May/2026 17:59:11] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 17:59:11,462 INFO 127.0.0.1 - - [19/May/2026 17:59:11] "GET /login HTTP/1.1" 200 -
+2026-05-19 17:59:11,509 INFO 127.0.0.1 - - [19/May/2026 17:59:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:59:11,516 INFO 127.0.0.1 - - [19/May/2026 17:59:11] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:59:18,022 INFO 127.0.0.1 - - [19/May/2026 17:59:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 17:59:18,048 INFO 127.0.0.1 - - [19/May/2026 17:59:18] "GET /admin HTTP/1.1" 200 -
+2026-05-19 17:59:18,103 INFO 127.0.0.1 - - [19/May/2026 17:59:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:59:18,106 INFO 127.0.0.1 - - [19/May/2026 17:59:18] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:59:20,853 INFO 127.0.0.1 - - [19/May/2026 17:59:20] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 17:59:20,899 INFO 127.0.0.1 - - [19/May/2026 17:59:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:59:20,905 INFO 127.0.0.1 - - [19/May/2026 17:59:20] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:59:30,648 INFO 127.0.0.1 - - [19/May/2026 17:59:30] "GET /admin HTTP/1.1" 200 -
+2026-05-19 17:59:30,697 INFO 127.0.0.1 - - [19/May/2026 17:59:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:59:30,699 INFO 127.0.0.1 - - [19/May/2026 17:59:30] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:59:32,346 INFO 127.0.0.1 - - [19/May/2026 17:59:32] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 17:59:32,394 INFO 127.0.0.1 - - [19/May/2026 17:59:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 17:59:32,396 INFO 127.0.0.1 - - [19/May/2026 17:59:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 17:59:51,079 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\check_users.py', reloading
+2026-05-19 17:59:51,364 INFO  * Restarting with stat
+2026-05-19 17:59:53,162 WARNING  * Debugger is active!
+2026-05-19 17:59:53,164 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:00:15,679 INFO 127.0.0.1 - - [19/May/2026 18:00:15] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 18:00:15,731 INFO 127.0.0.1 - - [19/May/2026 18:00:15] "GET /login HTTP/1.1" 200 -
+2026-05-19 18:00:15,775 INFO 127.0.0.1 - - [19/May/2026 18:00:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:00:15,781 INFO 127.0.0.1 - - [19/May/2026 18:00:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:00:18,299 INFO 127.0.0.1 - - [19/May/2026 18:00:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 18:00:18,324 INFO 127.0.0.1 - - [19/May/2026 18:00:18] "GET /admin HTTP/1.1" 200 -
+2026-05-19 18:00:18,381 INFO 127.0.0.1 - - [19/May/2026 18:00:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:00:18,392 INFO 127.0.0.1 - - [19/May/2026 18:00:18] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:00:21,160 INFO 127.0.0.1 - - [19/May/2026 18:00:21] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 18:00:21,211 INFO 127.0.0.1 - - [19/May/2026 18:00:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:00:21,215 INFO 127.0.0.1 - - [19/May/2026 18:00:21] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:00:42,247 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 18:00:42,248 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 18:00:42,250 INFO  * Restarting with stat
+2026-05-19 18:00:43,594 WARNING  * Debugger is active!
+2026-05-19 18:00:43,599 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:00:47,329 INFO 127.0.0.1 - - [19/May/2026 18:00:47] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 18:00:47,382 INFO 127.0.0.1 - - [19/May/2026 18:00:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:00:47,386 INFO 127.0.0.1 - - [19/May/2026 18:00:47] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:03:22,334 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:03:22,605 INFO  * Restarting with stat
+2026-05-19 18:03:22,615 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:03:22,902 INFO  * Restarting with stat
+2026-05-19 18:03:24,437 WARNING  * Debugger is active!
+2026-05-19 18:03:24,440 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:03:24,798 WARNING  * Debugger is active!
+2026-05-19 18:03:24,802 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:10:02,400 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\test_render_startup.py', reloading
+2026-05-19 18:10:02,683 INFO  * Restarting with stat
+2026-05-19 18:10:03,115 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\test_render_startup.py', reloading
+2026-05-19 18:10:03,399 INFO  * Restarting with stat
+2026-05-19 18:10:04,227 WARNING  * Debugger is active!
+2026-05-19 18:10:04,231 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:10:05,020 WARNING  * Debugger is active!
+2026-05-19 18:10:05,022 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:10:06,081 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\test_render_startup.py', reloading
+2026-05-19 18:10:06,265 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\test_render_startup.py', reloading
+2026-05-19 18:10:06,416 INFO  * Restarting with stat
+2026-05-19 18:10:06,591 INFO  * Restarting with stat
+2026-05-19 18:10:08,096 WARNING  * Debugger is active!
+2026-05-19 18:10:08,099 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:10:08,114 WARNING  * Debugger is active!
+2026-05-19 18:10:08,117 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:10:28,349 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\config.py', reloading
+2026-05-19 18:10:28,681 INFO  * Restarting with stat
+2026-05-19 18:10:28,701 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\config.py', reloading
+2026-05-19 18:10:28,960 INFO  * Restarting with stat
+2026-05-19 18:10:30,302 WARNING  * Debugger is active!
+2026-05-19 18:10:30,309 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:10:30,656 WARNING  * Debugger is active!
+2026-05-19 18:10:30,661 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:13:42,758 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:13:42,814 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:13:43,261 INFO  * Restarting with stat
+2026-05-19 18:13:43,277 INFO  * Restarting with stat
+2026-05-19 18:13:44,893 WARNING  * Debugger is active!
+2026-05-19 18:13:44,896 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:13:44,996 WARNING  * Debugger is active!
+2026-05-19 18:13:45,001 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:16:37,406 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:16:37,655 INFO  * Restarting with stat
+2026-05-19 18:16:37,667 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:16:37,920 INFO  * Restarting with stat
+2026-05-19 18:16:39,523 WARNING  * Debugger is active!
+2026-05-19 18:16:39,530 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:16:39,534 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:17:51,107 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:17:51,303 INFO  * Restarting with stat
+2026-05-19 18:17:51,328 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:17:51,545 INFO  * Restarting with stat
+2026-05-19 18:17:52,727 WARNING  * Debugger is active!
+2026-05-19 18:17:52,730 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:17:53,014 WARNING  * Debugger is active!
+2026-05-19 18:17:53,018 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:18:02,841 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:18:03,045 INFO  * Restarting with stat
+2026-05-19 18:18:03,305 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:18:03,510 INFO  * Restarting with stat
+2026-05-19 18:18:04,419 WARNING  * Debugger is active!
+2026-05-19 18:18:04,422 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:18:04,916 WARNING  * Debugger is active!
+2026-05-19 18:18:04,919 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:20:31,592 INFO 127.0.0.1 - - [19/May/2026 18:20:31] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 18:20:31,640 INFO 127.0.0.1 - - [19/May/2026 18:20:31] "GET /login HTTP/1.1" 200 -
+2026-05-19 18:20:31,683 INFO 127.0.0.1 - - [19/May/2026 18:20:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:20:31,686 INFO 127.0.0.1 - - [19/May/2026 18:20:31] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:20:33,912 INFO 127.0.0.1 - - [19/May/2026 18:20:33] "GET /forgot-password HTTP/1.1" 200 -
+2026-05-19 18:20:33,949 INFO 127.0.0.1 - - [19/May/2026 18:20:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:20:33,959 INFO 127.0.0.1 - - [19/May/2026 18:20:33] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:20:56,095 INFO 127.0.0.1 - - [19/May/2026 18:20:56] "GET /login HTTP/1.1" 200 -
+2026-05-19 18:20:56,143 INFO 127.0.0.1 - - [19/May/2026 18:20:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:20:56,145 INFO 127.0.0.1 - - [19/May/2026 18:20:56] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:20:58,942 INFO 127.0.0.1 - - [19/May/2026 18:20:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 18:20:58,965 INFO 127.0.0.1 - - [19/May/2026 18:20:58] "GET /admin HTTP/1.1" 200 -
+2026-05-19 18:20:59,022 INFO 127.0.0.1 - - [19/May/2026 18:20:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 18:20:59,032 INFO 127.0.0.1 - - [19/May/2026 18:20:59] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 18:25:01,534 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\migrate_password_reset_columns.py', reloading
+2026-05-19 18:25:01,739 INFO  * Restarting with stat
+2026-05-19 18:25:01,767 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\migrate_password_reset_columns.py', reloading
+2026-05-19 18:25:01,969 INFO  * Restarting with stat
+2026-05-19 18:25:03,336 WARNING  * Debugger is active!
+2026-05-19 18:25:03,340 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:25:03,351 WARNING  * Debugger is active!
+2026-05-19 18:25:03,354 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:26:09,904 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:26:10,034 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:26:10,140 INFO  * Restarting with stat
+2026-05-19 18:26:10,276 INFO  * Restarting with stat
+2026-05-19 18:26:11,556 WARNING  * Debugger is active!
+2026-05-19 18:26:11,559 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:26:11,732 WARNING  * Debugger is active!
+2026-05-19 18:26:11,735 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:26:37,798 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:26:38,000 INFO  * Restarting with stat
+2026-05-19 18:26:38,418 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:26:38,668 INFO  * Restarting with stat
+2026-05-19 18:26:39,397 WARNING  * Debugger is active!
+2026-05-19 18:26:39,402 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:26:40,162 WARNING  * Debugger is active!
+2026-05-19 18:26:40,166 INFO  * Debugger PIN: 825-535-561
