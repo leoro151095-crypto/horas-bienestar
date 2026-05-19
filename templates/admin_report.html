@@ -1,17 +1,138 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Reporte de horas</h2>
-  <table>
-    <tr><th>Documento</th><th>Nombre</th><th>Horas acumuladas</th><th>Horas faltantes</th></tr>
-    {% for r in report %}
-      <tr>
-        <td>{{ r.student.numero_documento }}</td>
-        <td>{{ r.student.primer_nombre }} {{ r.student.primer_apellido }}</td>
-        <td>{{ '%.2f'|format(r.total_horas) }}</td>
-        <td>{{ r.horas_faltantes }}</td>
+<div class="page-header" style="margin-bottom: 2rem;">
+  <h1 style="font-size: 1.75rem; margin-bottom: 1rem;">Reporte de horas</h1>
+  
+  <div class="search-container" style="margin-bottom: 1.5rem;">
+    <input 
+      type="text" 
+      id="searchInput" 
+      class="form-input" 
+      placeholder="Buscar por cédula o nombre..." 
+      style="max-width: 400px; padding: 0.6rem 1rem; border: 2px solid var(--gray-300);"
+    >
+    <small style="display: block; margin-top: 0.5rem; color: var(--gray-600);">
+      Ingresa documento o nombre para filtrar resultados
+    </small>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background: linear-gradient(135deg, var(--primary), var(--primary-dark, #0878A1)); color: white;">
+        <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Cédula</th>
+        <th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600;">Nombre</th>
+        <th style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">Horas Acumuladas</th>
+        <th style="padding: 0.75rem 1rem; text-align: center; font-weight: 600;">Horas Faltantes</th>
       </tr>
-    {% else %}
-      <tr><td colspan="4">No hay datos</td></tr>
-    {% endfor %}
+    </thead>
+    <tbody id="reportTable">
+      {% for r in report %}
+        <tr class="table-row" data-search="{{ r.student.numero_documento }} {{ r.student.primer_nombre }} {{ r.student.primer_apellido }}">
+          <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200);">
+            <strong>{{ r.student.numero_documento }}</strong>
+          </td>
+          <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200);">
+            {{ r.student.primer_nombre }} {{ r.student.primer_apellido }}
+          </td>
+          <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); text-align: center; color: var(--success-color, #2ecc71);">
+            <strong>{{ '%.2f'|format(r.total_horas) }}</strong>
+          </td>
+          <td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); text-align: center; 
+            {% if r.horas_faltantes <= 0 %}
+              color: var(--success-color, #2ecc71); font-weight: 600;
+            {% elif r.horas_faltantes <= 10 %}
+              color: var(--warning-color, #f39c12); font-weight: 600;
+            {% else %}
+              color: var(--danger-color, #e74c3c); font-weight: 600;
+            {% endif %}
+          ">
+            {{ r.horas_faltantes }}
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="4" style="padding: 2rem; text-align: center; color: var(--gray-500);">
+            No hay datos disponibles
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
   </table>
+</div>
+
+<script>
+document.getElementById('searchInput').addEventListener('keyup', function() {
+  const searchTerm = this.value.toLowerCase();
+  const rows = document.querySelectorAll('#reportTable .table-row');
+  let visibleCount = 0;
+
+  rows.forEach(row => {
+    const searchData = row.getAttribute('data-search').toLowerCase();
+    if (searchData.includes(searchTerm)) {
+      row.style.display = '';
+      visibleCount++;
+    } else {
+      row.style.display = 'none';
+    }
+  });
+
+  // Si no hay resultados, mostrar mensaje
+  if (visibleCount === 0 && searchTerm.length > 0) {
+    const noResults = document.getElementById('noResults');
+    if (!noResults) {
+      const tbody = document.getElementById('reportTable');
+      const emptyRow = document.createElement('tr');
+      emptyRow.id = 'noResults';
+      emptyRow.innerHTML = `
+        <td colspan="4" style="padding: 2rem; text-align: center; color: var(--gray-500);">
+          No se encontraron resultados para: <strong>${this.value}</strong>
+        </td>
+      `;
+      tbody.appendChild(emptyRow);
+    }
+  } else {
+    const noResults = document.getElementById('noResults');
+    if (noResults) {
+      noResults.remove();
+    }
+  }
+});
+</script>
+
+<style>
+.table-responsive {
+  overflow-x: auto;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+.table-row:hover {
+  background-color: rgba(16, 167, 199, 0.05);
+}
+
+.table th {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 0.5rem !important;
+    font-size: 0.85rem;
+  }
+
+  .search-container input {
+    max-width: 100% !important;
+  }
+}
+</style>
 {% endblock %}
