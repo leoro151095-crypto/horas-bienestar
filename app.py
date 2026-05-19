@@ -1164,11 +1164,20 @@ def estudiante_dashboard():
     else:
         progress_percent = 100.0 if total_horas > 0 else 0.0
     
-    # Filtrar solo actividades futuras (fecha >= hoy)
-    now = datetime.now(timezone.utc).date()
+    # Filtrar solo actividades vigentes o futuras (fecha >= ahora, considerando hora)
+    now = datetime.now(timezone.utc)
     activities = Activity.query.filter(
         Activity.fecha >= now
     ).order_by(Activity.fecha).all()
+    
+    return render_template(
+        'estudiante_dashboard.html',
+        total_horas=total_horas,
+        horas_faltantes=horas_faltantes,
+        required_hours=required_hours,
+        progress_percent=progress_percent,
+        student=student,
+        activities=activities
     
     return render_template(
         'estudiante_dashboard.html',
