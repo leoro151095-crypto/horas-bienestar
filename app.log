@@ -1,0 +1,813 @@
+2026-05-09 09:08:28,331 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-09 09:08:28,332 INFO [33mPress CTRL+C to quit[0m
+2026-05-09 09:08:28,334 INFO  * Restarting with stat
+2026-05-09 09:08:29,755 WARNING  * Debugger is active!
+2026-05-09 09:08:29,759 INFO  * Debugger PIN: 643-498-238
+2026-05-09 09:09:27,649 INFO 127.0.0.1 - - [09/May/2026 09:09:27] "GET /login HTTP/1.1" 200 -
+2026-05-09 09:09:27,681 INFO 127.0.0.1 - - [09/May/2026 09:09:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-09 09:09:30,231 INFO 127.0.0.1 - - [09/May/2026 09:09:30] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-09 09:09:30,314 INFO 127.0.0.1 - - [09/May/2026 09:09:30] "GET /admin HTTP/1.1" 200 -
+2026-05-09 09:09:30,355 INFO 127.0.0.1 - - [09/May/2026 09:09:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-09 09:47:39,022 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-09 09:47:39,023 INFO [33mPress CTRL+C to quit[0m
+2026-05-09 09:47:39,026 INFO  * Restarting with stat
+2026-05-09 09:47:40,511 WARNING  * Debugger is active!
+2026-05-09 09:47:40,514 INFO  * Debugger PIN: 643-498-238
+2026-05-09 09:47:45,270 INFO 127.0.0.1 - - [09/May/2026 09:47:45] "GET /admin HTTP/1.1" 200 -
+2026-05-09 09:47:45,306 INFO 127.0.0.1 - - [09/May/2026 09:47:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-09 14:24:33,419 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-09 14:24:33,421 INFO [33mPress CTRL+C to quit[0m
+2026-05-09 14:24:33,423 INFO  * Restarting with stat
+2026-05-09 14:24:34,638 WARNING  * Debugger is active!
+2026-05-09 14:24:34,644 INFO  * Debugger PIN: 643-498-238
+2026-05-09 14:24:41,738 INFO 127.0.0.1 - - [09/May/2026 14:24:41] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-09 14:24:41,842 INFO 127.0.0.1 - - [09/May/2026 14:24:41] "GET /login HTTP/1.1" 200 -
+2026-05-09 14:24:41,897 INFO 127.0.0.1 - - [09/May/2026 14:24:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-09 14:24:41,960 INFO 127.0.0.1 - - [09/May/2026 14:24:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-09 14:25:23,797 INFO 127.0.0.1 - - [09/May/2026 14:25:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-09 14:25:23,864 INFO 127.0.0.1 - - [09/May/2026 14:25:23] "GET /admin HTTP/1.1" 200 -
+2026-05-09 14:25:23,909 INFO 127.0.0.1 - - [09/May/2026 14:25:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-10 11:39:25,970 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-10 11:39:25,971 INFO [33mPress CTRL+C to quit[0m
+2026-05-10 11:39:25,973 INFO  * Restarting with stat
+2026-05-10 11:39:27,283 WARNING  * Debugger is active!
+2026-05-10 11:39:27,289 INFO  * Debugger PIN: 643-498-238
+2026-05-10 11:39:35,807 INFO 127.0.0.1 - - [10/May/2026 11:39:35] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-10 11:39:35,921 INFO 127.0.0.1 - - [10/May/2026 11:39:35] "GET /login HTTP/1.1" 200 -
+2026-05-10 11:39:35,990 INFO 127.0.0.1 - - [10/May/2026 11:39:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-10 11:39:36,058 INFO 127.0.0.1 - - [10/May/2026 11:39:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-10 11:39:38,572 INFO 127.0.0.1 - - [10/May/2026 11:39:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-10 11:39:38,642 INFO 127.0.0.1 - - [10/May/2026 11:39:38] "GET /admin HTTP/1.1" 200 -
+2026-05-10 11:39:38,679 INFO 127.0.0.1 - - [10/May/2026 11:39:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:20:05,188 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-11 15:20:05,188 INFO [33mPress CTRL+C to quit[0m
+2026-05-11 15:20:05,191 INFO  * Restarting with stat
+2026-05-11 15:20:06,562 WARNING  * Debugger is active!
+2026-05-11 15:20:06,567 INFO  * Debugger PIN: 643-498-238
+2026-05-11 15:20:25,703 INFO 127.0.0.1 - - [11/May/2026 15:20:25] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-11 15:20:25,809 INFO 127.0.0.1 - - [11/May/2026 15:20:25] "GET /login HTTP/1.1" 200 -
+2026-05-11 15:20:25,886 INFO 127.0.0.1 - - [11/May/2026 15:20:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:20:25,959 INFO 127.0.0.1 - - [11/May/2026 15:20:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-11 15:20:59,574 INFO 127.0.0.1 - - [11/May/2026 15:20:59] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-11 15:20:59,639 INFO 127.0.0.1 - - [11/May/2026 15:20:59] "GET /admin HTTP/1.1" 200 -
+2026-05-11 15:20:59,677 INFO 127.0.0.1 - - [11/May/2026 15:20:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:23:29,388 INFO 127.0.0.1 - - [11/May/2026 15:23:29] "GET /admin/students/2/edit HTTP/1.1" 200 -
+2026-05-11 15:23:29,448 INFO 127.0.0.1 - - [11/May/2026 15:23:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:23:34,061 INFO 127.0.0.1 - - [11/May/2026 15:23:34] "GET /admin HTTP/1.1" 200 -
+2026-05-11 15:23:34,095 INFO 127.0.0.1 - - [11/May/2026 15:23:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:23:49,010 INFO 127.0.0.1 - - [11/May/2026 15:23:49] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-11 15:23:49,049 INFO 127.0.0.1 - - [11/May/2026 15:23:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:23:58,953 INFO 127.0.0.1 - - [11/May/2026 15:23:58] "GET /admin/export_students HTTP/1.1" 200 -
+2026-05-11 15:24:29,543 INFO 127.0.0.1 - - [11/May/2026 15:24:29] "GET /admin?cedula=1067945140 HTTP/1.1" 200 -
+2026-05-11 15:24:29,579 INFO 127.0.0.1 - - [11/May/2026 15:24:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:24:42,505 INFO 127.0.0.1 - - [11/May/2026 15:24:42] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-11 15:24:42,547 INFO 127.0.0.1 - - [11/May/2026 15:24:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:24:57,905 INFO 127.0.0.1 - - [11/May/2026 15:24:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-11 15:24:57,918 INFO 127.0.0.1 - - [11/May/2026 15:24:57] "GET /login HTTP/1.1" 200 -
+2026-05-11 15:24:57,945 INFO 127.0.0.1 - - [11/May/2026 15:24:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:25:14,000 INFO 127.0.0.1 - - [11/May/2026 15:25:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-11 15:25:14,059 INFO 127.0.0.1 - - [11/May/2026 15:25:14] "GET /estudiante HTTP/1.1" 200 -
+2026-05-11 15:25:14,093 INFO 127.0.0.1 - - [11/May/2026 15:25:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:25:42,105 INFO 127.0.0.1 - - [11/May/2026 15:25:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-11 15:25:42,114 INFO 127.0.0.1 - - [11/May/2026 15:25:42] "GET /login HTTP/1.1" 200 -
+2026-05-11 15:25:42,147 INFO 127.0.0.1 - - [11/May/2026 15:25:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:25:48,865 INFO 127.0.0.1 - - [11/May/2026 15:25:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-11 15:25:48,876 INFO 127.0.0.1 - - [11/May/2026 15:25:48] "GET /admin HTTP/1.1" 200 -
+2026-05-11 15:25:48,912 INFO 127.0.0.1 - - [11/May/2026 15:25:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:25:57,610 INFO 127.0.0.1 - - [11/May/2026 15:25:57] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-11 15:25:57,645 INFO 127.0.0.1 - - [11/May/2026 15:25:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:26:07,176 INFO 127.0.0.1 - - [11/May/2026 15:26:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-11 15:26:07,182 INFO 127.0.0.1 - - [11/May/2026 15:26:07] "GET /login HTTP/1.1" 200 -
+2026-05-11 15:26:07,213 INFO 127.0.0.1 - - [11/May/2026 15:26:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:26:17,309 INFO 127.0.0.1 - - [11/May/2026 15:26:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-11 15:26:17,357 INFO 127.0.0.1 - - [11/May/2026 15:26:17] "GET /docente HTTP/1.1" 200 -
+2026-05-11 15:26:17,399 INFO 127.0.0.1 - - [11/May/2026 15:26:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:26:22,038 INFO 127.0.0.1 - - [11/May/2026 15:26:22] "GET /admin/create_activity HTTP/1.1" 200 -
+2026-05-11 15:26:22,066 INFO 127.0.0.1 - - [11/May/2026 15:26:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:26:47,057 INFO 127.0.0.1 - - [11/May/2026 15:26:47] "[32mPOST /admin/create_activity HTTP/1.1[0m" 302 -
+2026-05-11 15:26:47,070 INFO 127.0.0.1 - - [11/May/2026 15:26:47] "GET /docente HTTP/1.1" 200 -
+2026-05-11 15:26:47,110 INFO 127.0.0.1 - - [11/May/2026 15:26:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-11 15:26:57,791 INFO 127.0.0.1 - - [11/May/2026 15:26:57] "GET /docente/generate_qr/4 HTTP/1.1" 200 -
+2026-05-14 18:10:52,824 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-14 18:10:52,826 INFO [33mPress CTRL+C to quit[0m
+2026-05-14 18:10:52,830 INFO  * Restarting with stat
+2026-05-14 18:10:54,121 WARNING  * Debugger is active!
+2026-05-14 18:10:54,126 INFO  * Debugger PIN: 555-149-697
+2026-05-14 18:13:00,666 INFO 127.0.0.1 - - [14/May/2026 18:13:00] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-14 18:13:00,701 INFO 127.0.0.1 - - [14/May/2026 18:13:00] "GET /login HTTP/1.1" 200 -
+2026-05-14 18:13:00,768 INFO 127.0.0.1 - - [14/May/2026 18:13:00] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 18:13:00,846 INFO 127.0.0.1 - - [14/May/2026 18:13:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-14 21:05:08,241 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-14 21:05:08,243 INFO [33mPress CTRL+C to quit[0m
+2026-05-14 21:05:08,245 INFO  * Restarting with stat
+2026-05-14 21:05:09,494 WARNING  * Debugger is active!
+2026-05-14 21:05:09,501 INFO  * Debugger PIN: 555-149-697
+2026-05-14 21:05:22,280 INFO 127.0.0.1 - - [14/May/2026 21:05:22] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-14 21:05:22,319 INFO 127.0.0.1 - - [14/May/2026 21:05:22] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:05:22,363 INFO 127.0.0.1 - - [14/May/2026 21:05:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:05:22,421 INFO 127.0.0.1 - - [14/May/2026 21:05:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-14 21:05:24,972 INFO 127.0.0.1 - - [14/May/2026 21:05:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 21:05:25,011 INFO 127.0.0.1 - - [14/May/2026 21:05:25] "GET /admin HTTP/1.1" 200 -
+2026-05-14 21:05:25,040 INFO 127.0.0.1 - - [14/May/2026 21:05:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:06:30,300 INFO 127.0.0.1 - - [14/May/2026 21:06:30] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-14 21:06:30,334 INFO 127.0.0.1 - - [14/May/2026 21:06:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:07:37,867 INFO 127.0.0.1 - - [14/May/2026 21:07:37] "[32mPOST /admin/register_student HTTP/1.1[0m" 302 -
+2026-05-14 21:07:37,880 INFO 127.0.0.1 - - [14/May/2026 21:07:37] "GET /admin HTTP/1.1" 200 -
+2026-05-14 21:07:37,907 INFO 127.0.0.1 - - [14/May/2026 21:07:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:07:59,969 INFO 127.0.0.1 - - [14/May/2026 21:07:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-14 21:07:59,980 INFO 127.0.0.1 - - [14/May/2026 21:07:59] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:08:00,015 INFO 127.0.0.1 - - [14/May/2026 21:08:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:08:02,112 INFO 127.0.0.1 - - [14/May/2026 21:08:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 21:08:02,125 INFO 127.0.0.1 - - [14/May/2026 21:08:02] "GET /admin HTTP/1.1" 200 -
+2026-05-14 21:08:02,153 INFO 127.0.0.1 - - [14/May/2026 21:08:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:35:28,820 INFO 127.0.0.1 - - [14/May/2026 21:35:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-14 21:35:28,889 INFO 127.0.0.1 - - [14/May/2026 21:35:28] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:35:28,917 INFO 127.0.0.1 - - [14/May/2026 21:35:28] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 21:44:21,347 INFO 127.0.0.1 - - [14/May/2026 21:44:21] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:44:21,401 INFO 127.0.0.1 - - [14/May/2026 21:44:21] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 21:44:33,363 INFO 127.0.0.1 - - [14/May/2026 21:44:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 21:44:33,379 INFO 127.0.0.1 - - [14/May/2026 21:44:33] "GET /admin HTTP/1.1" 200 -
+2026-05-14 21:44:33,423 INFO 127.0.0.1 - - [14/May/2026 21:44:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:44:52,997 INFO 127.0.0.1 - - [14/May/2026 21:44:52] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-14 21:44:53,009 INFO 127.0.0.1 - - [14/May/2026 21:44:53] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:44:53,042 INFO 127.0.0.1 - - [14/May/2026 21:44:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 21:52:33,774 INFO 127.0.0.1 - - [14/May/2026 21:52:33] "GET /login HTTP/1.1" 200 -
+2026-05-14 21:52:33,808 INFO 127.0.0.1 - - [14/May/2026 21:52:33] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 22:02:42,161 INFO 127.0.0.1 - - [14/May/2026 22:02:42] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:02:42,196 INFO 127.0.0.1 - - [14/May/2026 22:02:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:18:41,252 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-14 22:18:41,253 INFO [33mPress CTRL+C to quit[0m
+2026-05-14 22:18:41,255 INFO  * Restarting with stat
+2026-05-14 22:18:42,461 WARNING  * Debugger is active!
+2026-05-14 22:18:42,465 INFO  * Debugger PIN: 555-149-697
+2026-05-14 22:18:49,225 INFO 127.0.0.1 - - [14/May/2026 22:18:49] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:18:49,269 INFO 127.0.0.1 - - [14/May/2026 22:18:49] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 22:19:27,237 INFO 127.0.0.1 - - [14/May/2026 22:19:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 22:19:27,294 INFO 127.0.0.1 - - [14/May/2026 22:19:27] "GET /admin HTTP/1.1" 200 -
+2026-05-14 22:19:27,336 INFO 127.0.0.1 - - [14/May/2026 22:19:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:19:33,408 INFO 127.0.0.1 - - [14/May/2026 22:19:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-14 22:19:33,417 INFO 127.0.0.1 - - [14/May/2026 22:19:33] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:19:33,462 INFO 127.0.0.1 - - [14/May/2026 22:19:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:21:03,125 INFO 127.0.0.1 - - [14/May/2026 22:21:03] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:21:03,165 INFO 127.0.0.1 - - [14/May/2026 22:21:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:22:29,025 INFO 127.0.0.1 - - [14/May/2026 22:22:29] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:22:29,077 INFO 127.0.0.1 - - [14/May/2026 22:22:29] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 22:22:45,369 INFO 127.0.0.1 - - [14/May/2026 22:22:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 22:22:45,390 INFO 127.0.0.1 - - [14/May/2026 22:22:45] "GET /admin HTTP/1.1" 200 -
+2026-05-14 22:22:45,432 INFO 127.0.0.1 - - [14/May/2026 22:22:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:28:03,241 INFO 127.0.0.1 - - [14/May/2026 22:28:03] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-14 22:28:03,253 INFO 127.0.0.1 - - [14/May/2026 22:28:03] "GET /login HTTP/1.1" 200 -
+2026-05-14 22:28:03,307 INFO 127.0.0.1 - - [14/May/2026 22:28:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:30:58,057 INFO 127.0.0.1 - - [14/May/2026 22:30:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-14 22:30:58,074 INFO 127.0.0.1 - - [14/May/2026 22:30:58] "GET /admin HTTP/1.1" 200 -
+2026-05-14 22:30:58,120 INFO 127.0.0.1 - - [14/May/2026 22:30:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-14 22:35:27,726 INFO 127.0.0.1 - - [14/May/2026 22:35:27] "GET /admin HTTP/1.1" 200 -
+2026-05-14 22:35:27,789 INFO 127.0.0.1 - - [14/May/2026 22:35:27] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-14 22:35:52,629 INFO 127.0.0.1 - - [14/May/2026 22:35:52] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-14 22:35:52,665 INFO 127.0.0.1 - - [14/May/2026 22:35:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-15 21:25:56,390 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-15 21:25:56,391 INFO [33mPress CTRL+C to quit[0m
+2026-05-15 21:25:56,393 INFO  * Restarting with stat
+2026-05-15 21:25:57,090 WARNING  * Debugger is active!
+2026-05-15 21:25:57,094 INFO  * Debugger PIN: 555-149-697
+2026-05-15 21:26:15,968 INFO 127.0.0.1 - - [15/May/2026 21:26:15] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-15 21:26:16,031 INFO 127.0.0.1 - - [15/May/2026 21:26:16] "GET /login HTTP/1.1" 200 -
+2026-05-15 21:26:16,074 INFO 127.0.0.1 - - [15/May/2026 21:26:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-15 21:26:16,128 INFO 127.0.0.1 - - [15/May/2026 21:26:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-15 21:27:05,627 INFO 127.0.0.1 - - [15/May/2026 21:27:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-15 21:27:05,659 INFO 127.0.0.1 - - [15/May/2026 21:27:05] "GET /admin HTTP/1.1" 200 -
+2026-05-15 21:27:05,682 INFO 127.0.0.1 - - [15/May/2026 21:27:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-15 21:59:03,527 INFO 127.0.0.1 - - [15/May/2026 21:59:03] "GET /admin HTTP/1.1" 200 -
+2026-05-15 21:59:03,579 INFO 127.0.0.1 - - [15/May/2026 21:59:03] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-16 15:11:37,687 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-16 15:11:37,688 INFO [33mPress CTRL+C to quit[0m
+2026-05-16 15:11:37,690 INFO  * Restarting with stat
+2026-05-16 15:11:38,366 WARNING  * Debugger is active!
+2026-05-16 15:11:38,369 INFO  * Debugger PIN: 555-149-697
+2026-05-16 15:23:36,187 INFO 127.0.0.1 - - [16/May/2026 15:23:36] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-16 15:23:36,247 INFO 127.0.0.1 - - [16/May/2026 15:23:36] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:23:36,282 INFO 127.0.0.1 - - [16/May/2026 15:23:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:23:36,347 INFO 127.0.0.1 - - [16/May/2026 15:23:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-16 15:23:51,062 INFO 127.0.0.1 - - [16/May/2026 15:23:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 15:23:51,116 INFO 127.0.0.1 - - [16/May/2026 15:23:51] "GET /admin HTTP/1.1" 200 -
+2026-05-16 15:23:51,147 INFO 127.0.0.1 - - [16/May/2026 15:23:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:25:55,496 INFO 127.0.0.1 - - [16/May/2026 15:25:55] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-16 15:25:55,516 INFO 127.0.0.1 - - [16/May/2026 15:25:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:00,748 INFO 127.0.0.1 - - [16/May/2026 15:26:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 15:26:00,757 INFO 127.0.0.1 - - [16/May/2026 15:26:00] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:26:00,783 INFO 127.0.0.1 - - [16/May/2026 15:26:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:17,103 INFO 127.0.0.1 - - [16/May/2026 15:26:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 15:26:17,158 INFO 127.0.0.1 - - [16/May/2026 15:26:17] "GET /estudiante HTTP/1.1" 200 -
+2026-05-16 15:26:17,191 INFO 127.0.0.1 - - [16/May/2026 15:26:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:34,459 INFO 127.0.0.1 - - [16/May/2026 15:26:34] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 15:26:34,470 INFO 127.0.0.1 - - [16/May/2026 15:26:34] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:26:34,507 INFO 127.0.0.1 - - [16/May/2026 15:26:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:36,770 INFO 127.0.0.1 - - [16/May/2026 15:26:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 15:26:36,784 INFO 127.0.0.1 - - [16/May/2026 15:26:36] "GET /admin HTTP/1.1" 200 -
+2026-05-16 15:26:36,808 INFO 127.0.0.1 - - [16/May/2026 15:26:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:42,934 INFO 127.0.0.1 - - [16/May/2026 15:26:42] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-16 15:26:42,950 INFO 127.0.0.1 - - [16/May/2026 15:26:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:26:50,483 INFO 127.0.0.1 - - [16/May/2026 15:26:50] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 15:26:50,490 INFO 127.0.0.1 - - [16/May/2026 15:26:50] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:26:50,511 INFO 127.0.0.1 - - [16/May/2026 15:26:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:04,881 INFO 127.0.0.1 - - [16/May/2026 15:27:04] "POST /login HTTP/1.1" 200 -
+2026-05-16 15:27:04,906 INFO 127.0.0.1 - - [16/May/2026 15:27:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:10,006 INFO 127.0.0.1 - - [16/May/2026 15:27:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 15:27:10,020 INFO 127.0.0.1 - - [16/May/2026 15:27:10] "GET /admin HTTP/1.1" 200 -
+2026-05-16 15:27:10,042 INFO 127.0.0.1 - - [16/May/2026 15:27:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:18,250 INFO 127.0.0.1 - - [16/May/2026 15:27:18] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-16 15:27:18,276 INFO 127.0.0.1 - - [16/May/2026 15:27:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:27,451 INFO 127.0.0.1 - - [16/May/2026 15:27:27] "[32mPOST /admin/reset_docente_password/3 HTTP/1.1[0m" 302 -
+2026-05-16 15:27:27,464 INFO 127.0.0.1 - - [16/May/2026 15:27:27] "GET /admin HTTP/1.1" 200 -
+2026-05-16 15:27:27,493 INFO 127.0.0.1 - - [16/May/2026 15:27:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:34,663 INFO 127.0.0.1 - - [16/May/2026 15:27:34] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 15:27:34,669 INFO 127.0.0.1 - - [16/May/2026 15:27:34] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:27:34,691 INFO 127.0.0.1 - - [16/May/2026 15:27:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:27:49,103 INFO 127.0.0.1 - - [16/May/2026 15:27:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 15:27:49,157 INFO 127.0.0.1 - - [16/May/2026 15:27:49] "GET /docente HTTP/1.1" 200 -
+2026-05-16 15:27:49,185 INFO 127.0.0.1 - - [16/May/2026 15:27:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 15:28:14,927 INFO 127.0.0.1 - - [16/May/2026 15:28:14] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 15:28:14,955 INFO 127.0.0.1 - - [16/May/2026 15:28:14] "GET /login HTTP/1.1" 200 -
+2026-05-16 15:28:14,992 INFO 127.0.0.1 - - [16/May/2026 15:28:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:01:45,952 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-16 21:01:45,953 INFO [33mPress CTRL+C to quit[0m
+2026-05-16 21:01:45,955 INFO  * Restarting with stat
+2026-05-16 21:01:47,194 WARNING  * Debugger is active!
+2026-05-16 21:01:47,199 INFO  * Debugger PIN: 555-149-697
+2026-05-16 21:01:52,688 INFO 127.0.0.1 - - [16/May/2026 21:01:52] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-16 21:01:52,777 INFO 127.0.0.1 - - [16/May/2026 21:01:52] "GET /login HTTP/1.1" 200 -
+2026-05-16 21:01:52,839 INFO 127.0.0.1 - - [16/May/2026 21:01:52] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-16 21:01:52,841 INFO 127.0.0.1 - - [16/May/2026 21:01:52] "GET /static/logoucc.jpeg HTTP/1.1" 200 -
+2026-05-16 21:01:52,995 INFO 127.0.0.1 - - [16/May/2026 21:01:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-16 21:01:55,225 INFO 127.0.0.1 - - [16/May/2026 21:01:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 21:01:55,269 INFO 127.0.0.1 - - [16/May/2026 21:01:55] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:01:55,311 INFO 127.0.0.1 - - [16/May/2026 21:01:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:09:00,869 INFO 127.0.0.1 - - [16/May/2026 21:09:00] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:09:00,905 INFO 127.0.0.1 - - [16/May/2026 21:09:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:09:02,075 INFO 127.0.0.1 - - [16/May/2026 21:09:02] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:09:02,112 INFO 127.0.0.1 - - [16/May/2026 21:09:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:09:04,517 INFO 127.0.0.1 - - [16/May/2026 21:09:04] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 21:09:04,529 INFO 127.0.0.1 - - [16/May/2026 21:09:04] "GET /login HTTP/1.1" 200 -
+2026-05-16 21:09:04,561 INFO 127.0.0.1 - - [16/May/2026 21:09:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:09:04,565 INFO 127.0.0.1 - - [16/May/2026 21:09:04] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-16 21:09:06,964 INFO 127.0.0.1 - - [16/May/2026 21:09:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 21:09:06,979 INFO 127.0.0.1 - - [16/May/2026 21:09:06] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:09:07,021 INFO 127.0.0.1 - - [16/May/2026 21:09:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:12:44,412 INFO 127.0.0.1 - - [16/May/2026 21:12:44] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:12:44,448 INFO 127.0.0.1 - - [16/May/2026 21:12:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:12:45,631 INFO 127.0.0.1 - - [16/May/2026 21:12:45] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:12:45,668 INFO 127.0.0.1 - - [16/May/2026 21:12:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:12:54,028 INFO 127.0.0.1 - - [16/May/2026 21:12:54] "GET /static/logoucc.jpeg HTTP/1.1" 200 -
+2026-05-16 21:13:05,254 INFO 127.0.0.1 - - [16/May/2026 21:13:05] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:13:05,289 INFO 127.0.0.1 - - [16/May/2026 21:13:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:13:07,748 INFO 127.0.0.1 - - [16/May/2026 21:13:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-16 21:13:07,760 INFO 127.0.0.1 - - [16/May/2026 21:13:07] "GET /login HTTP/1.1" 200 -
+2026-05-16 21:13:07,798 INFO 127.0.0.1 - - [16/May/2026 21:13:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-16 21:13:07,800 INFO 127.0.0.1 - - [16/May/2026 21:13:07] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-16 21:13:10,110 INFO 127.0.0.1 - - [16/May/2026 21:13:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-16 21:13:10,126 INFO 127.0.0.1 - - [16/May/2026 21:13:10] "GET /admin HTTP/1.1" 200 -
+2026-05-16 21:13:10,164 INFO 127.0.0.1 - - [16/May/2026 21:13:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:12:34,141 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 19:12:34,141 INFO [33mPress CTRL+C to quit[0m
+2026-05-18 19:12:34,144 INFO  * Restarting with stat
+2026-05-18 19:12:34,996 WARNING  * Debugger is active!
+2026-05-18 19:12:35,000 INFO  * Debugger PIN: 555-149-697
+2026-05-18 19:12:40,942 INFO 127.0.0.1 - - [18/May/2026 19:12:40] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:12:47,418 INFO 127.0.0.1 - - [18/May/2026 19:12:47] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 19:12:47,526 INFO 127.0.0.1 - - [18/May/2026 19:12:47] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:12:47,577 INFO 127.0.0.1 - - [18/May/2026 19:12:47] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:12:47,591 INFO 127.0.0.1 - - [18/May/2026 19:12:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:12:47,673 INFO 127.0.0.1 - - [18/May/2026 19:12:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-18 19:14:15,994 INFO 127.0.0.1 - - [18/May/2026 19:14:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 19:14:16,061 INFO 127.0.0.1 - - [18/May/2026 19:14:16] "GET /admin HTTP/1.1" 200 -
+2026-05-18 19:14:16,101 INFO 127.0.0.1 - - [18/May/2026 19:14:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:29:37,396 INFO 127.0.0.1 - - [18/May/2026 19:29:37] "GET /admin HTTP/1.1" 200 -
+2026-05-18 19:29:37,431 INFO 127.0.0.1 - - [18/May/2026 19:29:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:29:37,433 INFO 127.0.0.1 - - [18/May/2026 19:29:37] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:29:51,832 INFO 127.0.0.1 - - [18/May/2026 19:29:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 19:29:51,844 INFO 127.0.0.1 - - [18/May/2026 19:29:51] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:29:51,877 INFO 127.0.0.1 - - [18/May/2026 19:29:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:29:51,878 INFO 127.0.0.1 - - [18/May/2026 19:29:51] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:30:06,697 INFO 127.0.0.1 - - [18/May/2026 19:30:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 19:30:06,708 INFO 127.0.0.1 - - [18/May/2026 19:30:06] "GET /admin HTTP/1.1" 200 -
+2026-05-18 19:30:06,752 INFO 127.0.0.1 - - [18/May/2026 19:30:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:30:06,753 INFO 127.0.0.1 - - [18/May/2026 19:30:06] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:30:20,699 INFO 127.0.0.1 - - [18/May/2026 19:30:20] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 19:30:20,707 INFO 127.0.0.1 - - [18/May/2026 19:30:20] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:30:20,741 INFO 127.0.0.1 - - [18/May/2026 19:30:20] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:30:20,742 INFO 127.0.0.1 - - [18/May/2026 19:30:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:30:37,229 INFO 127.0.0.1 - - [18/May/2026 19:30:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 19:30:37,258 INFO 127.0.0.1 - - [18/May/2026 19:30:37] "GET /estudiante HTTP/1.1" 200 -
+2026-05-18 19:30:37,296 INFO 127.0.0.1 - - [18/May/2026 19:30:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:30:37,301 INFO 127.0.0.1 - - [18/May/2026 19:30:37] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:31:15,445 INFO 127.0.0.1 - - [18/May/2026 19:31:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 19:31:15,450 INFO 127.0.0.1 - - [18/May/2026 19:31:15] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:31:15,478 INFO 127.0.0.1 - - [18/May/2026 19:31:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:31:15,480 INFO 127.0.0.1 - - [18/May/2026 19:31:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:31:17,153 INFO 127.0.0.1 - - [18/May/2026 19:31:17] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 19:31:17,162 INFO 127.0.0.1 - - [18/May/2026 19:31:17] "GET /admin HTTP/1.1" 200 -
+2026-05-18 19:31:17,207 INFO 127.0.0.1 - - [18/May/2026 19:31:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:31:17,209 INFO 127.0.0.1 - - [18/May/2026 19:31:17] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:31:20,252 INFO 127.0.0.1 - - [18/May/2026 19:31:20] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-18 19:31:20,277 INFO 127.0.0.1 - - [18/May/2026 19:31:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:31:20,285 INFO 127.0.0.1 - - [18/May/2026 19:31:20] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:32:40,439 INFO 127.0.0.1 - - [18/May/2026 19:32:40] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:32:40,472 INFO 127.0.0.1 - - [18/May/2026 19:32:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:32:40,476 INFO 127.0.0.1 - - [18/May/2026 19:32:40] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:32:58,034 INFO 127.0.0.1 - - [18/May/2026 19:32:58] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 19:32:58,046 INFO 127.0.0.1 - - [18/May/2026 19:32:58] "GET /admin HTTP/1.1" 200 -
+2026-05-18 19:32:58,086 INFO 127.0.0.1 - - [18/May/2026 19:32:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:32:58,087 INFO 127.0.0.1 - - [18/May/2026 19:32:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:33:01,752 INFO 127.0.0.1 - - [18/May/2026 19:33:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 19:33:01,762 INFO 127.0.0.1 - - [18/May/2026 19:33:01] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:33:01,787 INFO 127.0.0.1 - - [18/May/2026 19:33:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:33:01,796 INFO 127.0.0.1 - - [18/May/2026 19:33:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:33:07,862 INFO 127.0.0.1 - - [18/May/2026 19:33:07] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:33:07,896 INFO 127.0.0.1 - - [18/May/2026 19:33:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:33:07,901 INFO 127.0.0.1 - - [18/May/2026 19:33:07] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:47:02,616 INFO 127.0.0.1 - - [18/May/2026 19:47:02] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:47:02,639 INFO 127.0.0.1 - - [18/May/2026 19:47:02] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:47:02,648 INFO 127.0.0.1 - - [18/May/2026 19:47:02] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 19:47:02,658 INFO 127.0.0.1 - - [18/May/2026 19:47:02] "GET /static/fondo.jpeg HTTP/1.1" 200 -
+2026-05-18 19:47:12,173 INFO 127.0.0.1 - - [18/May/2026 19:47:12] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:47:12,202 INFO 127.0.0.1 - - [18/May/2026 19:47:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:47:12,203 INFO 127.0.0.1 - - [18/May/2026 19:47:12] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:48:45,162 INFO 127.0.0.1 - - [18/May/2026 19:48:45] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:48:45,184 INFO 127.0.0.1 - - [18/May/2026 19:48:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:48:45,188 INFO 127.0.0.1 - - [18/May/2026 19:48:45] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:57:57,039 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 19:57:57,040 INFO [33mPress CTRL+C to quit[0m
+2026-05-18 19:57:57,042 INFO  * Restarting with stat
+2026-05-18 19:57:57,866 WARNING  * Debugger is active!
+2026-05-18 19:57:57,867 INFO  * Debugger PIN: 555-149-697
+2026-05-18 19:58:13,319 INFO 127.0.0.1 - - [18/May/2026 19:58:13] "GET /login HTTP/1.1" 200 -
+2026-05-18 19:58:13,340 INFO 127.0.0.1 - - [18/May/2026 19:58:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 19:58:13,343 INFO 127.0.0.1 - - [18/May/2026 19:58:13] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 19:58:13,355 INFO 127.0.0.1 - - [18/May/2026 19:58:13] "[36mGET /static/fondo.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:01:23,777 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 20:01:23,778 INFO [33mPress CTRL+C to quit[0m
+2026-05-18 20:01:23,779 INFO  * Restarting with stat
+2026-05-18 20:01:24,483 WARNING  * Debugger is active!
+2026-05-18 20:01:24,485 INFO  * Debugger PIN: 555-149-697
+2026-05-18 20:01:34,451 INFO 127.0.0.1 - - [18/May/2026 20:01:34] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:01:34,498 INFO 127.0.0.1 - - [18/May/2026 20:01:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:01:34,499 INFO 127.0.0.1 - - [18/May/2026 20:01:34] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:04:47,468 INFO 127.0.0.1 - - [18/May/2026 20:04:47] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:04:47,487 INFO 127.0.0.1 - - [18/May/2026 20:04:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:04:47,492 INFO 127.0.0.1 - - [18/May/2026 20:04:47] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:04:48,638 INFO 127.0.0.1 - - [18/May/2026 20:04:48] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:04:48,659 INFO 127.0.0.1 - - [18/May/2026 20:04:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:04:48,662 INFO 127.0.0.1 - - [18/May/2026 20:04:48] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:05:19,460 INFO 127.0.0.1 - - [18/May/2026 20:05:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:05:27,553 INFO 127.0.0.1 - - [18/May/2026 20:05:27] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 20:05:27,561 INFO 127.0.0.1 - - [18/May/2026 20:05:27] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:05:27,579 INFO 127.0.0.1 - - [18/May/2026 20:05:27] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 20:05:27,580 INFO 127.0.0.1 - - [18/May/2026 20:05:27] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:05:27,831 INFO 127.0.0.1 - - [18/May/2026 20:05:27] "GET /static/fondo.jpeg HTTP/1.1" 200 -
+2026-05-18 20:07:19,379 INFO 127.0.0.1 - - [18/May/2026 20:07:19] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:07:19,397 INFO 127.0.0.1 - - [18/May/2026 20:07:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:07:19,404 INFO 127.0.0.1 - - [18/May/2026 20:07:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:07:21,329 INFO 127.0.0.1 - - [18/May/2026 20:07:21] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:07:21,346 INFO 127.0.0.1 - - [18/May/2026 20:07:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:07:21,354 INFO 127.0.0.1 - - [18/May/2026 20:07:21] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:07:22,517 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:07:22,534 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:07:22,537 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:07:22,750 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:07:22,769 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:07:22,772 INFO 127.0.0.1 - - [18/May/2026 20:07:22] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:08:57,442 INFO 127.0.0.1 - - [18/May/2026 20:08:57] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:08:57,465 INFO 127.0.0.1 - - [18/May/2026 20:08:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:08:57,470 INFO 127.0.0.1 - - [18/May/2026 20:08:57] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,218 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:08:58,241 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,242 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,365 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:08:58,385 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,388 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,576 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:08:58,593 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:08:58,597 INFO 127.0.0.1 - - [18/May/2026 20:08:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:15:14,579 INFO 127.0.0.1 - - [18/May/2026 20:15:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:15:14,607 INFO 127.0.0.1 - - [18/May/2026 20:15:14] "GET /admin HTTP/1.1" 200 -
+2026-05-18 20:15:14,634 INFO 127.0.0.1 - - [18/May/2026 20:15:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:15:14,639 INFO 127.0.0.1 - - [18/May/2026 20:15:14] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:15:19,584 INFO 127.0.0.1 - - [18/May/2026 20:15:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:15:19,593 INFO 127.0.0.1 - - [18/May/2026 20:15:19] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:15:19,616 INFO 127.0.0.1 - - [18/May/2026 20:15:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:15:19,617 INFO 127.0.0.1 - - [18/May/2026 20:15:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:15:44,823 INFO 127.0.0.1 - - [18/May/2026 20:15:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:15:44,833 INFO 127.0.0.1 - - [18/May/2026 20:15:44] "GET /admin HTTP/1.1" 200 -
+2026-05-18 20:15:44,863 INFO 127.0.0.1 - - [18/May/2026 20:15:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:15:44,864 INFO 127.0.0.1 - - [18/May/2026 20:15:44] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:15:52,463 INFO 127.0.0.1 - - [18/May/2026 20:15:52] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-18 20:15:52,500 INFO 127.0.0.1 - - [18/May/2026 20:15:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:15:52,501 INFO 127.0.0.1 - - [18/May/2026 20:15:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:15:57,464 INFO 127.0.0.1 - - [18/May/2026 20:15:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:15:57,476 INFO 127.0.0.1 - - [18/May/2026 20:15:57] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:15:57,503 INFO 127.0.0.1 - - [18/May/2026 20:15:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:15:57,506 INFO 127.0.0.1 - - [18/May/2026 20:15:57] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:16:14,945 INFO 127.0.0.1 - - [18/May/2026 20:16:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:16:14,962 INFO 127.0.0.1 - - [18/May/2026 20:16:14] "GET /docente HTTP/1.1" 200 -
+2026-05-18 20:16:14,995 INFO 127.0.0.1 - - [18/May/2026 20:16:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:16:14,996 INFO 127.0.0.1 - - [18/May/2026 20:16:14] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:16:29,601 INFO 127.0.0.1 - - [18/May/2026 20:16:29] "GET /docente/generate_qr/1 HTTP/1.1" 200 -
+2026-05-18 20:17:17,415 INFO 127.0.0.1 - - [18/May/2026 20:17:17] "GET /asistencia/eyJhY3RpdmlkYWRfaWQiOjF9.agu57Q.LMofgkWE8OMYlL6ZzV1Km5lmeWM HTTP/1.1" 200 -
+2026-05-18 20:17:17,453 INFO 127.0.0.1 - - [18/May/2026 20:17:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:17:17,454 INFO 127.0.0.1 - - [18/May/2026 20:17:17] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 20:56:07,711 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 20:56:07,712 INFO [33mPress CTRL+C to quit[0m
+2026-05-18 20:56:07,714 INFO  * Restarting with stat
+2026-05-18 20:56:08,969 WARNING  * Debugger is active!
+2026-05-18 20:56:08,972 INFO  * Debugger PIN: 555-149-697
+2026-05-18 20:56:13,180 INFO 127.0.0.1 - - [18/May/2026 20:56:13] "GET /docente HTTP/1.1" 200 -
+2026-05-18 20:56:16,546 INFO 127.0.0.1 - - [18/May/2026 20:56:16] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2026-05-18 20:56:27,674 INFO 127.0.0.1 - - [18/May/2026 20:56:27] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 20:56:27,701 INFO 127.0.0.1 - - [18/May/2026 20:56:27] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:56:27,766 INFO 127.0.0.1 - - [18/May/2026 20:56:27] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 20:56:35,944 INFO 127.0.0.1 - - [18/May/2026 20:56:35] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:56:35,980 INFO 127.0.0.1 - - [18/May/2026 20:56:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:56:36,856 INFO 127.0.0.1 - - [18/May/2026 20:56:36] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:56:36,887 INFO 127.0.0.1 - - [18/May/2026 20:56:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:56:40,420 INFO 127.0.0.1 - - [18/May/2026 20:56:40] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2026-05-18 20:56:44,574 INFO 127.0.0.1 - - [18/May/2026 20:56:44] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2026-05-18 20:56:49,946 INFO 127.0.0.1 - - [18/May/2026 20:56:49] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 20:56:49,964 INFO 127.0.0.1 - - [18/May/2026 20:56:49] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:56:50,011 INFO 127.0.0.1 - - [18/May/2026 20:56:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:56:53,058 INFO 127.0.0.1 - - [18/May/2026 20:56:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:56:53,135 INFO 127.0.0.1 - - [18/May/2026 20:56:53] "GET /admin HTTP/1.1" 200 -
+2026-05-18 20:56:53,177 INFO 127.0.0.1 - - [18/May/2026 20:56:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:57:13,401 INFO 127.0.0.1 - - [18/May/2026 20:57:13] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2026-05-18 20:57:29,169 INFO 127.0.0.1 - - [18/May/2026 20:57:29] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 20:57:29,183 INFO 127.0.0.1 - - [18/May/2026 20:57:29] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:57:29,250 INFO 127.0.0.1 - - [18/May/2026 20:57:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:57:36,461 INFO 127.0.0.1 - - [18/May/2026 20:57:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:57:36,482 INFO 127.0.0.1 - - [18/May/2026 20:57:36] "GET /admin HTTP/1.1" 200 -
+2026-05-18 20:57:36,523 INFO 127.0.0.1 - - [18/May/2026 20:57:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:57:42,903 INFO 127.0.0.1 - - [18/May/2026 20:57:42] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2026-05-18 20:58:24,104 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-18 20:58:24,377 INFO  * Restarting with stat
+2026-05-18 20:58:25,899 WARNING  * Debugger is active!
+2026-05-18 20:58:25,902 INFO  * Debugger PIN: 555-149-697
+2026-05-18 20:58:36,500 INFO 127.0.0.1 - - [18/May/2026 20:58:36] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:58:36,548 INFO 127.0.0.1 - - [18/May/2026 20:58:36] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:58:36,596 INFO 127.0.0.1 - - [18/May/2026 20:58:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:58:49,550 INFO 127.0.0.1 - - [18/May/2026 20:58:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:58:49,563 INFO 127.0.0.1 - - [18/May/2026 20:58:49] "GET /login?next=/logout HTTP/1.1" 200 -
+2026-05-18 20:58:49,600 INFO 127.0.0.1 - - [18/May/2026 20:58:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:58:56,530 INFO 127.0.0.1 - - [18/May/2026 20:58:56] "[32mPOST /login?next=/logout HTTP/1.1[0m" 302 -
+2026-05-18 20:58:56,578 INFO 127.0.0.1 - - [18/May/2026 20:58:56] "GET /admin HTTP/1.1" 200 -
+2026-05-18 20:58:56,616 INFO 127.0.0.1 - - [18/May/2026 20:58:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:59:00,518 INFO 127.0.0.1 - - [18/May/2026 20:59:00] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:59:00,531 INFO 127.0.0.1 - - [18/May/2026 20:59:00] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:59:00,559 INFO 127.0.0.1 - - [18/May/2026 20:59:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:59:20,322 INFO 127.0.0.1 - - [18/May/2026 20:59:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 20:59:20,358 INFO 127.0.0.1 - - [18/May/2026 20:59:20] "GET /docente HTTP/1.1" 200 -
+2026-05-18 20:59:20,403 INFO 127.0.0.1 - - [18/May/2026 20:59:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 20:59:49,669 INFO 127.0.0.1 - - [18/May/2026 20:59:49] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 20:59:49,683 INFO 127.0.0.1 - - [18/May/2026 20:59:49] "GET /login HTTP/1.1" 200 -
+2026-05-18 20:59:49,722 INFO 127.0.0.1 - - [18/May/2026 20:59:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:01:28,965 INFO 127.0.0.1 - - [18/May/2026 21:01:28] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:01:29,019 INFO 127.0.0.1 - - [18/May/2026 21:01:29] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:01:38,036 INFO 127.0.0.1 - - [18/May/2026 21:01:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 21:01:38,059 INFO 127.0.0.1 - - [18/May/2026 21:01:38] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:01:38,100 INFO 127.0.0.1 - - [18/May/2026 21:01:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:03:52,775 INFO 127.0.0.1 - - [18/May/2026 21:03:52] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 21:03:52,868 INFO 127.0.0.1 - - [18/May/2026 21:03:52] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:03:52,914 INFO 127.0.0.1 - - [18/May/2026 21:03:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:03:52,928 INFO 127.0.0.1 - - [18/May/2026 21:03:52] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:13:11,895 INFO 127.0.0.1 - - [18/May/2026 21:13:11] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:13:11,941 INFO 127.0.0.1 - - [18/May/2026 21:13:11] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:13:11,960 INFO 127.0.0.1 - - [18/May/2026 21:13:11] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:13:26,830 INFO 127.0.0.1 - - [18/May/2026 21:13:26] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 21:13:26,844 INFO 127.0.0.1 - - [18/May/2026 21:13:26] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:13:26,889 INFO 127.0.0.1 - - [18/May/2026 21:13:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:19:47,912 INFO 127.0.0.1 - - [18/May/2026 21:19:47] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:19:47,953 INFO 127.0.0.1 - - [18/May/2026 21:19:47] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:19:47,969 INFO 127.0.0.1 - - [18/May/2026 21:19:47] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:20:58,751 INFO 127.0.0.1 - - [18/May/2026 21:20:58] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:20:58,808 INFO 127.0.0.1 - - [18/May/2026 21:20:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:20:58,826 INFO 127.0.0.1 - - [18/May/2026 21:20:58] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:22:34,464 INFO 127.0.0.1 - - [18/May/2026 21:22:34] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:22:34,514 INFO 127.0.0.1 - - [18/May/2026 21:22:34] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:22:34,529 INFO 127.0.0.1 - - [18/May/2026 21:22:34] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:22:44,686 INFO 127.0.0.1 - - [18/May/2026 21:22:44] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 21:22:44,698 INFO 127.0.0.1 - - [18/May/2026 21:22:44] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:22:44,732 INFO 127.0.0.1 - - [18/May/2026 21:22:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:22:44,738 INFO 127.0.0.1 - - [18/May/2026 21:22:44] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:22:56,893 INFO 127.0.0.1 - - [18/May/2026 21:22:56] "POST /login HTTP/1.1" 200 -
+2026-05-18 21:22:56,931 INFO 127.0.0.1 - - [18/May/2026 21:22:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:22:56,940 INFO 127.0.0.1 - - [18/May/2026 21:22:56] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:23:00,962 INFO 127.0.0.1 - - [18/May/2026 21:23:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 21:23:00,977 INFO 127.0.0.1 - - [18/May/2026 21:23:00] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:23:01,018 INFO 127.0.0.1 - - [18/May/2026 21:23:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:23:01,019 INFO 127.0.0.1 - - [18/May/2026 21:23:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:23:07,828 INFO 127.0.0.1 - - [18/May/2026 21:23:07] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-18 21:23:07,869 INFO 127.0.0.1 - - [18/May/2026 21:23:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:23:07,876 INFO 127.0.0.1 - - [18/May/2026 21:23:07] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:23:14,972 INFO 127.0.0.1 - - [18/May/2026 21:23:14] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 21:23:14,985 INFO 127.0.0.1 - - [18/May/2026 21:23:14] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:23:15,025 INFO 127.0.0.1 - - [18/May/2026 21:23:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:23:15,027 INFO 127.0.0.1 - - [18/May/2026 21:23:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:23:27,683 INFO 127.0.0.1 - - [18/May/2026 21:23:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 21:23:27,695 INFO 127.0.0.1 - - [18/May/2026 21:23:27] "GET /docente HTTP/1.1" 200 -
+2026-05-18 21:23:27,741 INFO 127.0.0.1 - - [18/May/2026 21:23:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:23:27,742 INFO 127.0.0.1 - - [18/May/2026 21:23:27] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:23:50,694 INFO 127.0.0.1 - - [18/May/2026 21:23:50] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 21:23:50,705 INFO 127.0.0.1 - - [18/May/2026 21:23:50] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:23:50,745 INFO 127.0.0.1 - - [18/May/2026 21:23:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:23:50,750 INFO 127.0.0.1 - - [18/May/2026 21:23:50] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:25:32,679 INFO 127.0.0.1 - - [18/May/2026 21:25:32] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:25:32,722 INFO 127.0.0.1 - - [18/May/2026 21:25:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:25:32,735 INFO 127.0.0.1 - - [18/May/2026 21:25:32] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:27:26,017 INFO 127.0.0.1 - - [18/May/2026 21:27:26] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:27:26,067 INFO 127.0.0.1 - - [18/May/2026 21:27:26] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:27:26,076 INFO 127.0.0.1 - - [18/May/2026 21:27:26] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:28:30,505 INFO 127.0.0.1 - - [18/May/2026 21:28:30] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:28:30,546 INFO 127.0.0.1 - - [18/May/2026 21:28:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:28:30,548 INFO 127.0.0.1 - - [18/May/2026 21:28:30] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:28:32,468 INFO 127.0.0.1 - - [18/May/2026 21:28:32] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:28:32,509 INFO 127.0.0.1 - - [18/May/2026 21:28:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:28:32,517 INFO 127.0.0.1 - - [18/May/2026 21:28:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:29:09,991 INFO 127.0.0.1 - - [18/May/2026 21:29:09] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:29:10,041 INFO 127.0.0.1 - - [18/May/2026 21:29:10] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:29:10,058 INFO 127.0.0.1 - - [18/May/2026 21:29:10] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:30:36,758 INFO 127.0.0.1 - - [18/May/2026 21:30:36] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:30:36,816 INFO 127.0.0.1 - - [18/May/2026 21:30:36] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:30:36,827 INFO 127.0.0.1 - - [18/May/2026 21:30:36] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:31:27,652 INFO 127.0.0.1 - - [18/May/2026 21:31:27] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:31:27,721 INFO 127.0.0.1 - - [18/May/2026 21:31:27] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:31:27,733 INFO 127.0.0.1 - - [18/May/2026 21:31:27] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:32:32,859 INFO 127.0.0.1 - - [18/May/2026 21:32:32] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:32:32,924 INFO 127.0.0.1 - - [18/May/2026 21:32:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:32:32,947 INFO 127.0.0.1 - - [18/May/2026 21:32:32] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-18 21:33:09,355 INFO 127.0.0.1 - - [18/May/2026 21:33:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-18 21:33:09,376 INFO 127.0.0.1 - - [18/May/2026 21:33:09] "GET /admin HTTP/1.1" 200 -
+2026-05-18 21:33:09,435 INFO 127.0.0.1 - - [18/May/2026 21:33:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:33:09,437 INFO 127.0.0.1 - - [18/May/2026 21:33:09] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:33:17,235 INFO 127.0.0.1 - - [18/May/2026 21:33:17] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-18 21:33:17,278 INFO 127.0.0.1 - - [18/May/2026 21:33:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:33:17,289 INFO 127.0.0.1 - - [18/May/2026 21:33:17] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:34:13,127 INFO 127.0.0.1 - - [18/May/2026 21:34:13] "GET /admin/register_docente HTTP/1.1" 200 -
+2026-05-18 21:34:13,163 INFO 127.0.0.1 - - [18/May/2026 21:34:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:34:13,172 INFO 127.0.0.1 - - [18/May/2026 21:34:13] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:34:32,541 INFO 127.0.0.1 - - [18/May/2026 21:34:32] "GET /admin/export_students HTTP/1.1" 200 -
+2026-05-18 21:34:47,978 INFO 127.0.0.1 - - [18/May/2026 21:34:47] "GET /admin/audit_logs HTTP/1.1" 200 -
+2026-05-18 21:34:48,011 INFO 127.0.0.1 - - [18/May/2026 21:34:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:34:48,016 INFO 127.0.0.1 - - [18/May/2026 21:34:48] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:35:01,737 INFO 127.0.0.1 - - [18/May/2026 21:35:01] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-18 21:35:01,749 INFO 127.0.0.1 - - [18/May/2026 21:35:01] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:35:01,790 INFO 127.0.0.1 - - [18/May/2026 21:35:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:35:01,798 INFO 127.0.0.1 - - [18/May/2026 21:35:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:35:06,452 INFO 127.0.0.1 - - [18/May/2026 21:35:06] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:35:06,488 INFO 127.0.0.1 - - [18/May/2026 21:35:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:35:06,493 INFO 127.0.0.1 - - [18/May/2026 21:35:06] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:38:27,051 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-18 21:38:27,289 INFO  * Restarting with stat
+2026-05-18 21:38:28,681 WARNING  * Debugger is active!
+2026-05-18 21:38:28,684 INFO  * Debugger PIN: 555-149-697
+2026-05-18 21:44:25,418 INFO 127.0.0.1 - - [18/May/2026 21:44:25] "GET /login HTTP/1.1" 200 -
+2026-05-18 21:44:25,443 INFO 127.0.0.1 - - [18/May/2026 21:44:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-18 21:44:25,444 INFO 127.0.0.1 - - [18/May/2026 21:44:25] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-18 21:54:01,882 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-18 21:54:02,044 INFO  * Restarting with stat
+2026-05-18 21:57:12,094 INFO  * Restarting with stat
+2026-05-18 21:57:22,507 INFO  * Restarting with stat
+2026-05-18 21:57:23,879 WARNING  * Debugger is active!
+2026-05-18 21:57:23,883 INFO  * Debugger PIN: 134-591-509
+2026-05-18 21:57:54,559 INFO 127.0.0.1 - - [18/May/2026 21:57:54] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-18 21:57:54,576 INFO 127.0.0.1 - - [18/May/2026 21:57:54] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-18 21:57:54,583 INFO 127.0.0.1 - - [18/May/2026 21:57:54] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-18 21:57:54,595 INFO 127.0.0.1 - - [18/May/2026 21:57:54] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=bzd3ZCMTK12PIJTj4Q7l HTTP/1.1" 200 -
+2026-05-18 21:57:54,633 INFO 127.0.0.1 - - [18/May/2026 21:57:54] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-19 06:41:44,545 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 06:41:44,546 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 06:41:44,548 INFO  * Restarting with stat
+2026-05-19 06:41:45,727 WARNING  * Debugger is active!
+2026-05-19 06:41:45,730 INFO  * Debugger PIN: 555-149-697
+2026-05-19 06:42:05,899 INFO 127.0.0.1 - - [19/May/2026 06:42:05] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-19 06:42:05,968 INFO 127.0.0.1 - - [19/May/2026 06:42:05] "GET /login HTTP/1.1" 200 -
+2026-05-19 06:42:06,031 INFO 127.0.0.1 - - [19/May/2026 06:42:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:42:06,034 INFO 127.0.0.1 - - [19/May/2026 06:42:06] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:42:06,097 INFO 127.0.0.1 - - [19/May/2026 06:42:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-19 06:42:09,556 INFO 127.0.0.1 - - [19/May/2026 06:42:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 06:42:09,603 INFO 127.0.0.1 - - [19/May/2026 06:42:09] "GET /admin HTTP/1.1" 200 -
+2026-05-19 06:42:09,640 INFO 127.0.0.1 - - [19/May/2026 06:42:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:42:09,652 INFO 127.0.0.1 - - [19/May/2026 06:42:09] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:42:46,434 INFO 127.0.0.1 - - [19/May/2026 06:42:46] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 06:42:46,449 INFO 127.0.0.1 - - [19/May/2026 06:42:46] "GET /login HTTP/1.1" 200 -
+2026-05-19 06:42:46,488 INFO 127.0.0.1 - - [19/May/2026 06:42:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:42:46,490 INFO 127.0.0.1 - - [19/May/2026 06:42:46] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:45:12,264 INFO 127.0.0.1 - - [19/May/2026 06:45:12] "GET /login HTTP/1.1" 200 -
+2026-05-19 06:45:12,303 INFO 127.0.0.1 - - [19/May/2026 06:45:12] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:45:12,335 INFO 127.0.0.1 - - [19/May/2026 06:45:12] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 06:50:18,124 INFO 127.0.0.1 - - [19/May/2026 06:50:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 06:50:18,143 INFO 127.0.0.1 - - [19/May/2026 06:50:18] "GET /admin HTTP/1.1" 200 -
+2026-05-19 06:50:18,188 INFO 127.0.0.1 - - [19/May/2026 06:50:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:50:18,189 INFO 127.0.0.1 - - [19/May/2026 06:50:18] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:50:21,480 INFO 127.0.0.1 - - [19/May/2026 06:50:21] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 06:50:21,537 INFO 127.0.0.1 - - [19/May/2026 06:50:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:50:21,539 INFO 127.0.0.1 - - [19/May/2026 06:50:21] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:52:05,669 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 06:52:05,887 INFO  * Restarting with stat
+2026-05-19 06:52:07,407 WARNING  * Debugger is active!
+2026-05-19 06:52:07,411 INFO  * Debugger PIN: 555-149-697
+2026-05-19 06:52:19,671 INFO 127.0.0.1 - - [19/May/2026 06:52:19] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 06:52:19,715 INFO 127.0.0.1 - - [19/May/2026 06:52:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 06:52:19,731 INFO 127.0.0.1 - - [19/May/2026 06:52:19] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 06:55:35,900 INFO 127.0.0.1 - - [19/May/2026 06:55:35] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 06:55:35,927 INFO 127.0.0.1 - - [19/May/2026 06:55:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 06:55:35,933 INFO 127.0.0.1 - - [19/May/2026 06:55:35] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:10:31,248 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 07:10:31,489 INFO  * Restarting with stat
+2026-05-19 07:10:32,948 WARNING  * Debugger is active!
+2026-05-19 07:10:32,951 INFO  * Debugger PIN: 555-149-697
+2026-05-19 07:14:07,589 INFO 127.0.0.1 - - [19/May/2026 07:14:07] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 07:14:07,628 INFO 127.0.0.1 - - [19/May/2026 07:14:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:07,638 INFO 127.0.0.1 - - [19/May/2026 07:14:07] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:14:10,283 INFO 127.0.0.1 - - [19/May/2026 07:14:10] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 07:14:10,307 INFO 127.0.0.1 - - [19/May/2026 07:14:10] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:14:10,347 INFO 127.0.0.1 - - [19/May/2026 07:14:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:10,349 INFO 127.0.0.1 - - [19/May/2026 07:14:10] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:14:15,245 INFO 127.0.0.1 - - [19/May/2026 07:14:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 07:14:15,290 INFO 127.0.0.1 - - [19/May/2026 07:14:15] "GET /admin HTTP/1.1" 200 -
+2026-05-19 07:14:15,337 INFO 127.0.0.1 - - [19/May/2026 07:14:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:15,339 INFO 127.0.0.1 - - [19/May/2026 07:14:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:14:22,545 INFO 127.0.0.1 - - [19/May/2026 07:14:22] "GET /admin/docentes/3/edit HTTP/1.1" 200 -
+2026-05-19 07:14:22,574 INFO 127.0.0.1 - - [19/May/2026 07:14:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:22,576 INFO 127.0.0.1 - - [19/May/2026 07:14:22] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:14:29,113 INFO 127.0.0.1 - - [19/May/2026 07:14:29] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 07:14:29,125 INFO 127.0.0.1 - - [19/May/2026 07:14:29] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:14:29,161 INFO 127.0.0.1 - - [19/May/2026 07:14:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:29,163 INFO 127.0.0.1 - - [19/May/2026 07:14:29] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:14:42,259 INFO 127.0.0.1 - - [19/May/2026 07:14:42] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 07:14:42,327 INFO 127.0.0.1 - - [19/May/2026 07:14:42] "GET /docente HTTP/1.1" 200 -
+2026-05-19 07:14:42,359 INFO 127.0.0.1 - - [19/May/2026 07:14:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:14:42,363 INFO 127.0.0.1 - - [19/May/2026 07:14:42] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:15:04,357 INFO 127.0.0.1 - - [19/May/2026 07:15:04] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 07:15:04,371 INFO 127.0.0.1 - - [19/May/2026 07:15:04] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:15:04,404 INFO 127.0.0.1 - - [19/May/2026 07:15:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:15:04,410 INFO 127.0.0.1 - - [19/May/2026 07:15:04] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:16:22,913 INFO 127.0.0.1 - - [19/May/2026 07:16:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 07:16:22,958 INFO 127.0.0.1 - - [19/May/2026 07:16:22] "GET /estudiante HTTP/1.1" 200 -
+2026-05-19 07:16:23,014 INFO 127.0.0.1 - - [19/May/2026 07:16:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:16:23,016 INFO 127.0.0.1 - - [19/May/2026 07:16:23] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:17:27,404 INFO 127.0.0.1 - - [19/May/2026 07:17:27] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 07:17:27,419 INFO 127.0.0.1 - - [19/May/2026 07:17:27] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:17:27,466 INFO 127.0.0.1 - - [19/May/2026 07:17:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:17:27,469 INFO 127.0.0.1 - - [19/May/2026 07:17:27] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:17:30,358 INFO 127.0.0.1 - - [19/May/2026 07:17:30] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:17:30,400 INFO 127.0.0.1 - - [19/May/2026 07:17:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:17:30,406 INFO 127.0.0.1 - - [19/May/2026 07:17:30] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:24:29,406 INFO 127.0.0.1 - - [19/May/2026 07:24:29] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:24:29,457 INFO 127.0.0.1 - - [19/May/2026 07:24:29] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:24:29,474 INFO 127.0.0.1 - - [19/May/2026 07:24:29] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 07:24:29,490 INFO 127.0.0.1 - - [19/May/2026 07:24:29] "GET /static/universidad.jpeg HTTP/1.1" 200 -
+2026-05-19 07:28:58,688 INFO 127.0.0.1 - - [19/May/2026 07:28:58] "GET /login HTTP/1.1" 200 -
+2026-05-19 07:28:58,725 INFO 127.0.0.1 - - [19/May/2026 07:28:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 07:28:58,727 INFO 127.0.0.1 - - [19/May/2026 07:28:58] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 07:28:58,743 INFO 127.0.0.1 - - [19/May/2026 07:28:58] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:23:55,636 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-19 08:23:55,637 INFO [33mPress CTRL+C to quit[0m
+2026-05-19 08:23:55,640 INFO  * Restarting with stat
+2026-05-19 08:23:56,992 WARNING  * Debugger is active!
+2026-05-19 08:23:56,995 INFO  * Debugger PIN: 555-149-697
+2026-05-19 08:24:01,692 INFO 127.0.0.1 - - [19/May/2026 08:24:01] "GET /login HTTP/1.1" 200 -
+2026-05-19 08:24:01,735 INFO 127.0.0.1 - - [19/May/2026 08:24:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:24:01,750 INFO 127.0.0.1 - - [19/May/2026 08:24:01] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 08:24:01,764 INFO 127.0.0.1 - - [19/May/2026 08:24:01] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:26:06,772 INFO 127.0.0.1 - - [19/May/2026 08:26:06] "GET /login HTTP/1.1" 200 -
+2026-05-19 08:26:06,810 INFO 127.0.0.1 - - [19/May/2026 08:26:06] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:26:06,841 INFO 127.0.0.1 - - [19/May/2026 08:26:06] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 08:26:06,860 INFO 127.0.0.1 - - [19/May/2026 08:26:06] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:47:00,143 INFO 127.0.0.1 - - [19/May/2026 08:47:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 08:47:00,216 INFO 127.0.0.1 - - [19/May/2026 08:47:00] "GET /admin HTTP/1.1" 200 -
+2026-05-19 08:47:00,265 INFO 127.0.0.1 - - [19/May/2026 08:47:00] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:47:00,275 INFO 127.0.0.1 - - [19/May/2026 08:47:00] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 08:50:33,832 INFO 127.0.0.1 - - [19/May/2026 08:50:33] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 08:50:33,843 INFO 127.0.0.1 - - [19/May/2026 08:50:33] "GET /login HTTP/1.1" 200 -
+2026-05-19 08:50:33,891 INFO 127.0.0.1 - - [19/May/2026 08:50:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 08:50:33,893 INFO 127.0.0.1 - - [19/May/2026 08:50:33] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:50:33,908 INFO 127.0.0.1 - - [19/May/2026 08:50:33] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 08:50:36,466 INFO 127.0.0.1 - - [19/May/2026 08:50:36] "GET /login HTTP/1.1" 200 -
+2026-05-19 08:50:36,508 INFO 127.0.0.1 - - [19/May/2026 08:50:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 08:50:36,514 INFO 127.0.0.1 - - [19/May/2026 08:50:36] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:51:30,838 INFO 127.0.0.1 - - [19/May/2026 09:51:30] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 09:51:30,854 INFO 127.0.0.1 - - [19/May/2026 09:51:30] "GET /admin HTTP/1.1" 200 -
+2026-05-19 09:51:30,903 INFO 127.0.0.1 - - [19/May/2026 09:51:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:51:30,904 INFO 127.0.0.1 - - [19/May/2026 09:51:30] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:51:46,347 INFO 127.0.0.1 - - [19/May/2026 09:51:46] "GET /admin/students/3/edit HTTP/1.1" 200 -
+2026-05-19 09:51:46,388 INFO 127.0.0.1 - - [19/May/2026 09:51:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:51:46,390 INFO 127.0.0.1 - - [19/May/2026 09:51:46] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:51:51,998 INFO 127.0.0.1 - - [19/May/2026 09:51:51] "GET /admin HTTP/1.1" 200 -
+2026-05-19 09:51:52,039 INFO 127.0.0.1 - - [19/May/2026 09:51:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:51:52,045 INFO 127.0.0.1 - - [19/May/2026 09:51:52] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:51:57,525 INFO 127.0.0.1 - - [19/May/2026 09:51:57] "GET /admin/register_student HTTP/1.1" 200 -
+2026-05-19 09:51:57,570 INFO 127.0.0.1 - - [19/May/2026 09:51:57] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:51:57,572 INFO 127.0.0.1 - - [19/May/2026 09:51:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:52:10,989 INFO 127.0.0.1 - - [19/May/2026 09:52:10] "GET /admin HTTP/1.1" 200 -
+2026-05-19 09:52:11,018 INFO 127.0.0.1 - - [19/May/2026 09:52:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:52:11,028 INFO 127.0.0.1 - - [19/May/2026 09:52:11] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 09:52:26,207 INFO 127.0.0.1 - - [19/May/2026 09:52:26] "GET /admin/reports HTTP/1.1" 200 -
+2026-05-19 09:52:26,244 INFO 127.0.0.1 - - [19/May/2026 09:52:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 09:52:26,253 INFO 127.0.0.1 - - [19/May/2026 09:52:26] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:10:23,009 INFO 127.0.0.1 - - [19/May/2026 10:10:23] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 10:10:23,089 INFO 127.0.0.1 - - [19/May/2026 10:10:23] "GET /login HTTP/1.1" 200 -
+2026-05-19 10:10:23,135 INFO 127.0.0.1 - - [19/May/2026 10:10:23] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 10:10:23,136 INFO 127.0.0.1 - - [19/May/2026 10:10:23] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:10:23,165 INFO 127.0.0.1 - - [19/May/2026 10:10:23] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:10:26,094 INFO 127.0.0.1 - - [19/May/2026 10:10:26] "GET /login HTTP/1.1" 200 -
+2026-05-19 10:10:26,115 INFO 127.0.0.1 - - [19/May/2026 10:10:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:10:26,121 INFO 127.0.0.1 - - [19/May/2026 10:10:26] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:34:10,491 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 10:34:10,673 INFO  * Restarting with stat
+2026-05-19 10:34:12,173 WARNING  * Debugger is active!
+2026-05-19 10:34:12,174 INFO  * Debugger PIN: 555-149-697
+2026-05-19 10:35:19,443 INFO 127.0.0.1 - - [19/May/2026 10:35:19] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 10:35:19,589 INFO 127.0.0.1 - - [19/May/2026 10:35:19] "GET /admin HTTP/1.1" 200 -
+2026-05-19 10:35:19,621 INFO 127.0.0.1 - - [19/May/2026 10:35:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:35:19,625 INFO 127.0.0.1 - - [19/May/2026 10:35:19] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:35:23,852 INFO 127.0.0.1 - - [19/May/2026 10:35:23] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 10:35:23,870 INFO 127.0.0.1 - - [19/May/2026 10:35:23] "GET /login HTTP/1.1" 200 -
+2026-05-19 10:35:23,904 INFO 127.0.0.1 - - [19/May/2026 10:35:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:35:23,905 INFO 127.0.0.1 - - [19/May/2026 10:35:23] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:42:15,000 INFO 127.0.0.1 - - [19/May/2026 10:42:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 10:42:15,020 INFO 127.0.0.1 - - [19/May/2026 10:42:15] "GET /admin HTTP/1.1" 200 -
+2026-05-19 10:42:15,069 INFO 127.0.0.1 - - [19/May/2026 10:42:15] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:42:15,082 INFO 127.0.0.1 - - [19/May/2026 10:42:15] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 10:44:10,209 INFO 127.0.0.1 - - [19/May/2026 10:44:10] "GET /admin/register_docente HTTP/1.1" 200 -
+2026-05-19 10:44:10,230 INFO 127.0.0.1 - - [19/May/2026 10:44:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:44:10,230 INFO 127.0.0.1 - - [19/May/2026 10:44:10] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:44:28,953 INFO 127.0.0.1 - - [19/May/2026 10:44:28] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 10:44:28,960 INFO 127.0.0.1 - - [19/May/2026 10:44:28] "GET /login HTTP/1.1" 200 -
+2026-05-19 10:44:28,985 INFO 127.0.0.1 - - [19/May/2026 10:44:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:44:28,987 INFO 127.0.0.1 - - [19/May/2026 10:44:28] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:44:28,994 INFO 127.0.0.1 - - [19/May/2026 10:44:28] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 10:46:27,937 INFO 127.0.0.1 - - [19/May/2026 10:46:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 10:46:27,954 INFO 127.0.0.1 - - [19/May/2026 10:46:27] "GET /admin HTTP/1.1" 200 -
+2026-05-19 10:46:28,012 INFO 127.0.0.1 - - [19/May/2026 10:46:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 10:46:28,013 INFO 127.0.0.1 - - [19/May/2026 10:46:28] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:00:38,155 INFO 127.0.0.1 - - [19/May/2026 11:00:38] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 11:00:38,169 INFO 127.0.0.1 - - [19/May/2026 11:00:38] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:00:38,220 INFO 127.0.0.1 - - [19/May/2026 11:00:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:00:38,223 INFO 127.0.0.1 - - [19/May/2026 11:00:38] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:00:54,143 INFO 127.0.0.1 - - [19/May/2026 11:00:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 11:00:54,161 INFO 127.0.0.1 - - [19/May/2026 11:00:54] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:00:54,219 INFO 127.0.0.1 - - [19/May/2026 11:00:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:00:54,223 INFO 127.0.0.1 - - [19/May/2026 11:00:54] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:12:14,299 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 11:12:14,518 INFO  * Restarting with stat
+2026-05-19 11:12:15,912 WARNING  * Debugger is active!
+2026-05-19 11:12:15,915 INFO  * Debugger PIN: 555-149-697
+2026-05-19 11:13:33,200 INFO 127.0.0.1 - - [19/May/2026 11:13:33] "[32mPOST /logout HTTP/1.1[0m" 302 -
+2026-05-19 11:13:33,248 INFO 127.0.0.1 - - [19/May/2026 11:13:33] "GET /login HTTP/1.1" 200 -
+2026-05-19 11:13:33,296 INFO 127.0.0.1 - - [19/May/2026 11:13:33] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:13:33,314 INFO 127.0.0.1 - - [19/May/2026 11:13:33] "GET /static/styles.css HTTP/1.1" 200 -
+2026-05-19 11:13:33,331 INFO 127.0.0.1 - - [19/May/2026 11:13:33] "[36mGET /static/universidad.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:14:36,852 INFO 127.0.0.1 - - [19/May/2026 11:14:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-19 11:14:36,905 INFO 127.0.0.1 - - [19/May/2026 11:14:36] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:14:36,956 INFO 127.0.0.1 - - [19/May/2026 11:14:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:14:36,960 INFO 127.0.0.1 - - [19/May/2026 11:14:36] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:22:15,700 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 11:22:15,957 INFO  * Restarting with stat
+2026-05-19 11:22:17,460 WARNING  * Debugger is active!
+2026-05-19 11:22:17,463 INFO  * Debugger PIN: 555-149-697
+2026-05-19 11:23:20,274 INFO 127.0.0.1 - - [19/May/2026 11:23:20] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:23:20,318 INFO 127.0.0.1 - - [19/May/2026 11:23:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:23:20,323 INFO 127.0.0.1 - - [19/May/2026 11:23:20] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:25:09,104 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 11:25:09,518 INFO  * Restarting with stat
+2026-05-19 11:25:11,169 WARNING  * Debugger is active!
+2026-05-19 11:25:11,172 INFO  * Debugger PIN: 555-149-697
+2026-05-19 11:25:25,032 INFO 127.0.0.1 - - [19/May/2026 11:25:25] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:25:25,071 INFO 127.0.0.1 - - [19/May/2026 11:25:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:25:25,078 INFO 127.0.0.1 - - [19/May/2026 11:25:25] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:25:32,331 INFO 127.0.0.1 - - [19/May/2026 11:25:32] "GET /admin/view_students HTTP/1.1" 200 -
+2026-05-19 11:25:32,368 INFO 127.0.0.1 - - [19/May/2026 11:25:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:25:32,377 INFO 127.0.0.1 - - [19/May/2026 11:25:32] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:25:42,407 INFO 127.0.0.1 - - [19/May/2026 11:25:42] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:25:42,451 INFO 127.0.0.1 - - [19/May/2026 11:25:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:25:42,454 INFO 127.0.0.1 - - [19/May/2026 11:25:42] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:25:46,596 INFO 127.0.0.1 - - [19/May/2026 11:25:46] "GET /admin/view_docentes HTTP/1.1" 200 -
+2026-05-19 11:25:46,637 INFO 127.0.0.1 - - [19/May/2026 11:25:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:25:46,644 INFO 127.0.0.1 - - [19/May/2026 11:25:46] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -
+2026-05-19 11:26:01,271 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "GET /admin HTTP/1.1" 200 -
+2026-05-19 11:26:01,317 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2026-05-19 11:26:01,319 INFO 127.0.0.1 - - [19/May/2026 11:26:01] "[36mGET /static/logoucc.jpeg HTTP/1.1[0m" 304 -

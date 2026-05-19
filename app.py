@@ -413,13 +413,7 @@ def admin_dashboard():
     if current_user.rol != 'admin':
         flash('Acceso denegado', 'danger')
         return redirect(url_for('index'))
-    cedula_query = (request.args.get('cedula') or '').strip()
-    students_query = Student.query
-    if cedula_query:
-        students_query = students_query.filter(Student.numero_documento.contains(cedula_query))
-    students = students_query.order_by(Student.id.desc()).all()
-    docentes = User.query.filter_by(rol='docente').order_by(User.id.desc()).all()
-    return render_template('admin_dashboard.html', students=students, docentes=docentes, cedula_query=cedula_query)
+    return render_template('admin_dashboard.html')
 
 
 @app.route('/admin/multimedia-demo')
@@ -429,6 +423,30 @@ def admin_multimedia_demo():
         flash('Acceso denegado', 'danger')
         return redirect(url_for('index'))
     return render_template('admin_multimedia_demo.html')
+
+
+@app.route('/admin/view_students')
+@login_required
+def view_students():
+    if current_user.rol != 'admin':
+        flash('Acceso denegado', 'danger')
+        return redirect(url_for('index'))
+    cedula_query = (request.args.get('cedula') or '').strip()
+    students_query = Student.query
+    if cedula_query:
+        students_query = students_query.filter(Student.numero_documento.contains(cedula_query))
+    students = students_query.order_by(Student.id.desc()).all()
+    return render_template('admin_view_students.html', students=students, cedula_query=cedula_query)
+
+
+@app.route('/admin/view_docentes')
+@login_required
+def view_docentes():
+    if current_user.rol != 'admin':
+        flash('Acceso denegado', 'danger')
+        return redirect(url_for('index'))
+    docentes = User.query.filter_by(rol='docente').order_by(User.id.desc()).all()
+    return render_template('admin_view_docentes.html', docentes=docentes)
 
 
 @app.route('/admin/students/<int:student_id>/edit', methods=['GET', 'POST'])

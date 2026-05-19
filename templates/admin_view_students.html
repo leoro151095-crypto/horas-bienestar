@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Estudiantes Registrados</h1>
+  <p class="dashboard-subtitle">Listado completo de estudiantes en el sistema</p>
+</div>
+
+<!-- Búsqueda -->
+<div class="card mb-3">
+  <form method="get" class="flex gap-2" style="gap: var(--spacing-md);">
+    <input 
+      type="text" 
+      name="cedula" 
+      placeholder="Buscar estudiante por cédula..." 
+      class="form-input" 
+      style="flex: 1;">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+    {% if cedula_query %}
+      <a href="{{ url_for('view_students') }}" class="btn btn-secondary">Limpiar</a>
+    {% endif %}
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Volver</a>
+  </form>
+</div>
+
+<!-- Estudiantes -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="card-title">Estudiantes</div>
+      <div class="card-subtitle">Total: {{ students|length }} registrados</div>
+    </div>
+  </div>
+  <div class="card-content">
+    {% if students %}
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Documento</th>
+              <th>Nombre</th>
+              <th>Programa</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for s in students %}
+            <tr>
+              <td>
+                <span style="font-weight: 700; color: var(--primary);">{{ s.numero_documento }}</span>
+              </td>
+              <td>
+                <div style="font-weight: 600; color: var(--gray-900);">{{ s.primer_nombre }} {% if s.segundo_nombre %}{{ s.segundo_nombre }}{% endif %}</div>
+                <div style="font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem;">{{ s.primer_apellido }} {% if s.segundo_apellido %}{{ s.segundo_apellido }}{% endif %}</div>
+              </td>
+              <td><span class="badge badge-primary">{{ s.programa or '-' }}</span></td>
+              <td><span style="font-size: 0.85rem;">{{ s.correo_institucional or '—' }}</span></td>
+              <td>
+                <div class="table-actions">
+                  <a href="{{ url_for('edit_student', student_id=s.id) }}" class="btn btn-sm btn-primary" title="Editar estudiante">✏️ Editar</a>
+                  <form method="post" action="{{ url_for('reset_student_password', student_id=s.id) }}" onsubmit="return confirm('¿Resetear contraseña?');" style="display: inline;">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+                    <button class="btn btn-sm btn-secondary" type="submit" title="Resetear contraseña">🔑 Reset</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 2rem; color: var(--gray-500);">
+        <p>No hay estudiantes registrados.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

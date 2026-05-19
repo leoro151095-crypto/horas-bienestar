@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Docentes Registrados</h1>
+  <p class="dashboard-subtitle">Listado completo de docentes en el sistema</p>
+</div>
+
+<!-- Botón volver -->
+<div class="card mb-3">
+  <div style="display: flex; gap: var(--spacing-md);">
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Volver</a>
+  </div>
+</div>
+
+<!-- Docentes -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="card-title">Docentes</div>
+      <div class="card-subtitle">Total: {{ docentes|length }} registrados</div>
+    </div>
+  </div>
+  <div class="card-content">
+    {% if docentes %}
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for d in docentes %}
+            <tr>
+              <td>
+                <div style="font-weight: 600; color: var(--gray-900);">{{ d.nombre }}</div>
+              </td>
+              <td>
+                <span style="font-size: 0.85rem;">{{ d.email or '—' }}</span>
+              </td>
+              <td>
+                <span class="badge" style="background-color: {% if d.activo %}var(--success){% else %}var(--danger){% endif %};">
+                  {% if d.activo %}Activo{% else %}Inactivo{% endif %}
+                </span>
+              </td>
+              <td>
+                <div class="table-actions">
+                  <a href="{{ url_for('edit_docente', docente_id=d.id) }}" class="btn btn-sm btn-primary" title="Editar docente">✏️ Editar</a>
+                  <form method="post" action="{{ url_for('reset_docente_password', docente_id=d.id) }}" onsubmit="return confirm('¿Resetear contraseña?');" style="display: inline;">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+                    <button class="btn btn-sm btn-secondary" type="submit" title="Resetear contraseña">🔑 Reset</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 2rem; color: var(--gray-500);">
+        <p>No hay docentes registrados.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
