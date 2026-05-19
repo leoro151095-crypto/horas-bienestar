@@ -306,35 +306,44 @@ def ensure_default_admin():
 
 
 def ensure_user_columns():
+    """Asegurar que la tabla users tiene todas las columnas necesarias."""
     engine = db.get_engine()
     inspector = inspect(engine)
     if 'users' not in inspector.get_table_names():
         return
+    
     existing_columns = {col['name'] for col in inspector.get_columns('users')}
-    
-    # Detectar tipo de BD para usar el tipo de dato correcto
     dialect_name = engine.dialect.name.lower()
-    timestamp_type = 'TIMESTAMP' if 'postgres' in dialect_name else 'DATETIME'
     
+    # Specs de columnas: (nombre, tipo_para_otros, tipo_para_postgres)
     column_specs = [
-        ('apellido', 'VARCHAR(120)'),
-        ('cedula', 'VARCHAR(50)'),
-        ('celular', 'VARCHAR(40)'),
-        ('correo_personal', 'VARCHAR(120)'),
-        ('area', 'VARCHAR(80)'),
-        ('password_reset_token', 'VARCHAR(256)'),
-        ('password_reset_expires', timestamp_type)
+        ('apellido', 'VARCHAR(120)', 'VARCHAR(120)'),
+        ('cedula', 'VARCHAR(50)', 'VARCHAR(50)'),
+        ('celular', 'VARCHAR(40)', 'VARCHAR(40)'),
+        ('correo_personal', 'VARCHAR(120)', 'VARCHAR(120)'),
+        ('area', 'VARCHAR(80)', 'VARCHAR(80)'),
+        ('password_reset_token', 'VARCHAR(256)', 'VARCHAR(256)'),
+        ('password_reset_expires', 'DATETIME', 'TIMESTAMP'),  # Importante: TIMESTAMP para PostgreSQL
     ]
+    
     with engine.connect() as conn:
-        for column_name, column_type in column_specs:
+        for column_name, column_type_other, column_type_pg in column_specs:
             if column_name not in existing_columns:
+                # Seleccionar el tipo correcto según la BD
+                column_type = column_type_pg if 'postgres' in dialect_name else column_type_other
                 try:
-                    conn.execute(text(f'ALTER TABLE users ADD COLUMN {column_name} {column_type}'))
+                    sql = f'ALTER TABLE users ADD COLUMN {column_name} {column_type}'
+                    logging.info(f'Ejecutando: {sql}')
+                    conn.execute(text(sql))
+                    conn.commit()
                 except Exception as e:
-                    # Si la columna ya existe, continuar
-                    if 'already exists' not in str(e).lower() and 'column' not in str(e).lower():
+                    conn.rollback()
+                    error_msg = str(e).lower()
+                    # Solo loguear si es un error real (no si la columna ya existe)
+                    if 'already exists' not in error_msg and 'duplicate' not in error_msg:
                         logging.warning(f'Error agregando columna {column_name}: {e}')
-        conn.commit()
+            else:
+                logging.debug(f'Columna {column_name} ya existe')
 
 
 def bootstrap_persistent_data():
