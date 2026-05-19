@@ -129,9 +129,9 @@ button, input, textarea, select {
 }
 
 .login-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.50);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-2xl);
   padding: 0.6rem;
   width: 100%;
@@ -186,10 +186,10 @@ button, input, textarea, select {
 .form-input {
   width: 100%;
   padding: 0.4rem 0.6rem;
-  border: 1px solid var(--gray-300);
+  border: 1px solid rgba(209, 213, 219, 0.6);
   border-radius: var(--radius-lg);
   font-size: 0.75rem;
-  background-color: var(--gray-50);
+  background-color: rgba(249, 250, 251, 0.50);
   transition: all var(--transition-base);
   color: var(--gray-800);
 }
