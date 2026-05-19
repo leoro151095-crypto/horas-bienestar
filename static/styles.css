@@ -250,6 +250,22 @@ button, input, textarea, select {
   line-height: 1;
 }
 
+.forgot-password-link {
+  font-size: 0.7rem;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.forgot-password-link:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+  background: rgba(16, 167, 199, 0.1);
+}
+
 /* =========================================
    NAVBAR / HEADER
    ========================================= */
