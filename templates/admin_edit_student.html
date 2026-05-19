@@ -1,52 +1,130 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Editar Estudiante</h2>
-  <form method="post">
-    <label>Tipo documento:
-      <select name="tipo_documento" required>
-        <option value="" disabled {% if not student.tipo_documento %}selected{% endif %}>Seleccione...</option>
-        <option value="cc" {% if student.tipo_documento == 'cc' %}selected{% endif %}>CC</option>
-        <option value="ti" {% if student.tipo_documento == 'ti' %}selected{% endif %}>TI</option>
-        <option value="cex" {% if student.tipo_documento == 'cex' %}selected{% endif %}>CEX</option>
-      </select>
-    </label><br>
-    <label>Número documento: <input name="numero_documento" required value="{{ student.numero_documento or '' }}"></label><br>
-    <label>Primer nombre: <input name="primer_nombre" required value="{{ student.primer_nombre or '' }}"></label><br>
-    <label>Segundo nombre: <input name="segundo_nombre" value="{{ student.segundo_nombre or '' }}"></label><br>
-    <label>Primer apellido: <input name="primer_apellido" required value="{{ student.primer_apellido or '' }}"></label><br>
-    <label>Segundo apellido: <input name="segundo_apellido" value="{{ student.segundo_apellido or '' }}"></label><br>
-    <div class="field-row">
-      <label for="correo_institucional">Correo institucional:</label>
-      <input id="correo_institucional" name="correo_institucional" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co" value="{{ student.correo_institucional or '' }}">
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Editar Información del Estudiante</h1>
+  <p class="dashboard-subtitle">Actualiza los datos de {{ student.primer_nombre }} {{ student.primer_apellido }}</p>
+</div>
+
+<div class="card" style="max-width: 800px;">
+  <form method="post" id="edit-form" class="form-content">
+    <!-- Documento -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="tipo_documento" class="form-label">Tipo de documento *</label>
+        <select name="tipo_documento" id="tipo_documento" class="form-select" required>
+          <option value="" disabled {% if not student.tipo_documento %}selected{% endif %}>Seleccione...</option>
+          <option value="cc" {% if student.tipo_documento == 'cc' %}selected{% endif %}>Cédula de Ciudadanía</option>
+          <option value="ti" {% if student.tipo_documento == 'ti' %}selected{% endif %}>Tarjeta de Identidad</option>
+          <option value="cex" {% if student.tipo_documento == 'cex' %}selected{% endif %}>Cédula de Extranjería</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="numero_documento" class="form-label">Número de documento *</label>
+        <input type="text" id="numero_documento" name="numero_documento" class="form-input" required value="{{ student.numero_documento or '' }}">
+      </div>
     </div>
-    <div class="field-row">
-      <label for="correo_personal">Correo personal:</label>
-      <input id="correo_personal" name="correo_personal" type="email" value="{{ student.correo_personal or '' }}">
+
+    <!-- Nombres y Apellidos -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="primer_nombre" class="form-label">Primer nombre *</label>
+        <input type="text" id="primer_nombre" name="primer_nombre" class="form-input" required value="{{ student.primer_nombre or '' }}">
+      </div>
+
+      <div class="form-group">
+        <label for="segundo_nombre" class="form-label">Segundo nombre</label>
+        <input type="text" id="segundo_nombre" name="segundo_nombre" class="form-input" value="{{ student.segundo_nombre or '' }}">
+      </div>
     </div>
-    <label>Celular: <input name="celular" value="{{ student.celular or '' }}"></label><br>
-    <label>Dirección: <input name="direccion" value="{{ student.direccion or '' }}"></label><br>
-    <label>Programa: <input name="programa" value="{{ student.programa or '' }}"></label><br>
-    <button type="submit">Guardar cambios</button>
-    <a class="btn" href="{{ url_for('admin_dashboard') }}">Cancelar</a>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="primer_apellido" class="form-label">Primer apellido *</label>
+        <input type="text" id="primer_apellido" name="primer_apellido" class="form-input" required value="{{ student.primer_apellido or '' }}">
+      </div>
+
+      <div class="form-group">
+        <label for="segundo_apellido" class="form-label">Segundo apellido</label>
+        <input type="text" id="segundo_apellido" name="segundo_apellido" class="form-input" value="{{ student.segundo_apellido or '' }}">
+      </div>
+    </div>
+
+    <!-- Correos -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="correo_institucional" class="form-label">Correo institucional *</label>
+        <input type="email" id="correo_institucional" name="correo_institucional" class="form-input" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" value="{{ student.correo_institucional or '' }}">
+        <small class="form-hint">Debe terminar en @campusucc.edu.co</small>
+      </div>
+
+      <div class="form-group">
+        <label for="correo_personal" class="form-label">Correo personal</label>
+        <input type="email" id="correo_personal" name="correo_personal" class="form-input" value="{{ student.correo_personal or '' }}">
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="tel" id="celular" name="celular" class="form-input" value="{{ student.celular or '' }}" maxlength="10" pattern="[0-9]{10}">
+        <small class="form-hint">10 dígitos sin espacios</small>
+      </div>
+
+      <div class="form-group">
+        <label for="programa" class="form-label">Programa académico</label>
+        <input type="text" id="programa" name="programa" class="form-input" value="{{ student.programa or '' }}">
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="form-group">
+      <label for="direccion" class="form-label">Dirección</label>
+      <input type="text" id="direccion" name="direccion" class="form-input" value="{{ student.direccion or '' }}">
+    </div>
+
+    <!-- Botones -->
+    <div style="display: flex; gap: var(--spacing-md); justify-content: flex-end;">
+      <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancelar</a>
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </div>
   </form>
-  <script>
-    (function(){
-      const form = document.querySelector('form');
-      if (!form) return;
-      form.addEventListener('submit', function(e){
-        const correo = form.querySelector('input[name="correo_institucional"]');
-        const pn = form.querySelector('input[name="primer_nombre"]');
-        const pa = form.querySelector('input[name="primer_apellido"]');
-        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
-          e.preventDefault();
-          alert('El correo institucional debe terminar en @campusucc.edu.co');
-          return;
-        }
-        if ((pn && !pn.value.trim()) || (pa && !pa.value.trim())){
-          e.preventDefault();
-          alert('Primer nombre y primer apellido son obligatorios');
-        }
-      });
-    })();
-  </script>
+</div>
+
+<script>
+  (function(){
+    const form = document.getElementById('edit-form');
+    form.addEventListener('submit', function(e){
+      const correo = document.getElementById('correo_institucional').value;
+      const celular = document.getElementById('celular').value;
+      
+      if (correo && !correo.toLowerCase().endsWith('@campusucc.edu.co')){
+        e.preventDefault();
+        alert('El correo institucional debe terminar en @campusucc.edu.co');
+        return;
+      }
+      
+      if (celular && celular.length !== 10){
+        e.preventDefault();
+        alert('El celular debe tener exactamente 10 dígitos');
+        return;
+      }
+      
+      if (celular && !/^\d{10}$/.test(celular)){
+        e.preventDefault();
+        alert('El celular solo debe contener números');
+        return;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+</style>
 {% endblock %}

@@ -1,46 +1,109 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Crear Docente</h2>
-  <form method="post">
-    <label>Nombres: <input name="nombre" required></label><br>
-    <label>Apellidos: <input name="apellido" required></label><br>
-    <label>Cédula: <input name="cedula" required></label><br>
-    <label>Celular: <input name="celular"></label><br>
-    <div class="field-row">
-      <label for="correo_personal">Correo personal:</label>
-      <input id="correo_personal" name="correo_personal" type="email">
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Crear Nuevo Docente</h1>
+  <p class="dashboard-subtitle">Registra un nuevo docente en el sistema</p>
+</div>
+
+<div class="card" style="max-width: 700px;">
+  <form method="post" id="docente-form" class="form-content">
+    <!-- Nombres y Apellidos -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="nombre" class="form-label">Nombres *</label>
+        <input type="text" id="nombre" name="nombre" class="form-input" required placeholder="Ej: Juan Carlos">
+      </div>
+
+      <div class="form-group">
+        <label for="apellido" class="form-label">Apellidos *</label>
+        <input type="text" id="apellido" name="apellido" class="form-input" required placeholder="Ej: García López">
+      </div>
     </div>
-    <div class="field-row">
-      <label for="correo_institucional">Correo institucional:</label>
-      <input id="correo_institucional" name="correo" type="email" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" title="Debe usar una cuenta @campusucc.edu.co">
+
+    <!-- Cédula y Celular -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="cedula" class="form-label">Cédula *</label>
+        <input type="text" id="cedula" name="cedula" class="form-input" required placeholder="Ej: 1234567890">
+      </div>
+
+      <div class="form-group">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="tel" id="celular" name="celular" class="form-input" placeholder="3001234567" maxlength="10" pattern="[0-9]{10}">
+        <small class="form-hint">10 dígitos sin espacios</small>
+      </div>
     </div>
-    <label>Área:
-      <select name="area" required>
-        <option value="" disabled selected>Seleccione...</option>
-        <option value="FUTBOL">FUTBOL</option>
-        <option value="DANZA">DANZA</option>
+
+    <!-- Correos -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="correo" class="form-label">Correo institucional *</label>
+        <input type="email" id="correo" name="correo" class="form-input" required pattern="[A-Za-z0-9._%+-]+@campusucc\.edu\.co" placeholder="docente@campusucc.edu.co">
+        <small class="form-hint">Debe terminar en @campusucc.edu.co</small>
+      </div>
+
+      <div class="form-group">
+        <label for="correo_personal" class="form-label">Correo personal</label>
+        <input type="email" id="correo_personal" name="correo_personal" class="form-input" placeholder="docente@example.com">
+      </div>
+    </div>
+
+    <!-- Área -->
+    <div class="form-group">
+      <label for="area" class="form-label">Área de bienestar *</label>
+      <select name="area" id="area" class="form-select" required>
+        <option value="" disabled selected>Seleccione área...</option>
+        <option value="FUTBOL">Fútbol</option>
+        <option value="DANZA">Danza</option>
       </select>
-    </label><br>
-    <button type="submit">Crear docente</button>
-    <p>Contraseña inicial del docente: últimos 4 dígitos de la cédula. El docente deberá cambiarla en su primer acceso.</p>
+    </div>
+
+    <!-- Info -->
+    <div class="alert alert-info" style="margin: var(--spacing-lg) 0;">
+      <strong>Nota:</strong> La contraseña inicial será los últimos 4 dígitos de la cédula. El docente deberá cambiarla en su primer acceso.
+    </div>
+
+    <!-- Botones -->
+    <div style="display: flex; gap: var(--spacing-md); justify-content: flex-end;">
+      <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancelar</a>
+      <button type="submit" class="btn btn-primary">Crear docente</button>
+    </div>
   </form>
-  <script>
-    (function(){
-      const form = document.querySelector('form');
-      if (!form) return;
-      form.addEventListener('submit', function(e){
-        const correo = form.querySelector('input[name="correo"]');
-        const correoPersonal = form.querySelector('input[name="correo_personal"]');
-        if (correo && correo.value && !correo.value.toLowerCase().endsWith('@campusucc.edu.co')){
-          e.preventDefault();
-          alert('El correo institucional debe terminar en @campusucc.edu.co');
-          return;
-        }
-        if (correoPersonal && correoPersonal.value && correoPersonal.type === 'email' && !correoPersonal.value.includes('@')){
-          e.preventDefault();
-          alert('El correo personal no es válido');
-        }
-      });
-    })();
-  </script>
+</div>
+
+<script>
+  (function(){
+    const form = document.getElementById('docente-form');
+    form.addEventListener('submit', function(e){
+      const correo = document.getElementById('correo').value;
+      const celular = document.getElementById('celular').value;
+      
+      if (correo && !correo.toLowerCase().endsWith('@campusucc.edu.co')){
+        e.preventDefault();
+        alert('El correo institucional debe terminar en @campusucc.edu.co');
+        return;
+      }
+      
+      if (celular && celular.length !== 10){
+        e.preventDefault();
+        alert('El celular debe tener exactamente 10 dígitos');
+        return;
+      }
+      
+      if (celular && !/^\d{10}$/.test(celular)){
+        e.preventDefault();
+        alert('El celular solo debe contener números');
+        return;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+</style>
 {% endblock %}

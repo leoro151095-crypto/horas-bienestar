@@ -1,16 +1,91 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Registrar asistencia - {{ actividad.nombre }}</h2>
-  <form method="post" action="{{ url_for('attendance_submit', token=token) }}">
-    <label>Tipo documento:
-      <select name="tipo_documento" required>
-        <option value="" disabled selected>Seleccione...</option>
-        <option value="cc">CC</option>
-        <option value="ti">TI</option>
-        <option value="cex">CEX</option>
-      </select>
-    </label><br>
-    <label>Número documento: <input name="numero_documento" required></label><br>
-    <button type="submit">Registrar</button>
-  </form>
+<div style="max-width: 600px; margin: 2rem auto;">
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Registrar Asistencia</div>
+        <div class="card-subtitle">Confirma tu identidad para registrar asistencia</div>
+      </div>
+    </div>
+    
+    <form method="post" action="{{ url_for('attendance_submit', token=token) }}" id="attendance-form" class="form-content">
+      <!-- Información de la actividad -->
+      <div class="alert alert-info">
+        <strong>{{ actividad.nombre }}</strong><br/>
+        <span style="font-size: 0.875rem;">Créditos: {{ '%.1f'|format(actividad.horas or 0) }} horas</span>
+      </div>
+
+      <!-- Tipo de documento -->
+      <div class="form-group">
+        <label for="tipo_documento" class="form-label">Tipo de documento *</label>
+        <select name="tipo_documento" id="tipo_documento" class="form-select" required>
+          <option value="" disabled selected>Seleccione el tipo de documento...</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="cex">Cédula de Extranjería</option>
+        </select>
+      </div>
+
+      <!-- Número de documento -->
+      <div class="form-group">
+        <label for="numero_documento" class="form-label">Número de documento *</label>
+        <input 
+          type="text" 
+          id="numero_documento" 
+          name="numero_documento" 
+          class="form-input" 
+          required 
+          placeholder="Ingresa tu número de documento"
+          autocomplete="off">
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="btn btn-primary btn-block">Registrar asistencia</button>
+    </form>
+
+    <!-- Footer con información -->
+    <div style="margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); border-top: 1px solid var(--gray-200); text-align: center;">
+      <div style="font-size: 0.875rem; color: var(--gray-600); line-height: 1.6;">
+        <div style="margin-bottom: 0.5rem;"><strong>Actividad:</strong> {{ actividad.nombre }}</div>
+        <div><strong>Créditos:</strong> {{ '%.1f'|format(actividad.horas or 0) }} horas</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const form = document.getElementById('attendance-form');
+    form.addEventListener('submit', function(e){
+      const numero = document.getElementById('numero_documento').value.trim();
+      
+      if (!numero){
+        e.preventDefault();
+        alert('Debes ingresar tu número de documento');
+        document.getElementById('numero_documento').focus();
+        return;
+      }
+      
+      if (!/^\d+$/.test(numero)){
+        e.preventDefault();
+        alert('El número de documento solo puede contener dígitos');
+        document.getElementById('numero_documento').focus();
+        return;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+</style>
 {% endblock %}

@@ -1,13 +1,78 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Asistencia registrada</h2>
-  <p>Estudiante: {{ student.primer_nombre }} - {{ student.numero_documento }}</p>
-  <p>Actividad: {{ actividad.nombre }}</p>
-  {% if notify_result %}
-    <h3>Notificaciones</h3>
-    <ul>
-      <li>Email: {% if notify_result.email_ok %}enviado{% else %}no enviado{% endif %} ({{ notify_result.email_msg }})</li>
-      <li>SMS: {% if notify_result.sms_ok %}enviado{% else %}no enviado{% endif %} ({{ notify_result.sms_msg }})</li>
-    </ul>
-  {% endif %}
+<div style="max-width: 600px; margin: 3rem auto;">
+  <div class="card">
+    <div style="text-align: center; padding: var(--spacing-2xl) var(--spacing-lg);">
+      <div style="font-size: 4rem; margin-bottom: var(--spacing-lg); animation: scale-in 0.5s ease-out;">✓</div>
+      
+      <h2 style="color: var(--secondary); font-size: 1.75rem; margin-bottom: var(--spacing-md);">
+        ¡Asistencia Registrada!
+      </h2>
+      
+      <div class="alert alert-success" style="margin-bottom: var(--spacing-lg);">
+        Tu asistencia ha sido registrada exitosamente en el sistema.
+      </div>
+
+      <div style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); text-align: left;">
+        <div style="margin-bottom: var(--spacing-md);">
+          <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.25rem;">Estudiante:</div>
+          <div style="font-weight: 600; font-size: 1.125rem;">{{ student.primer_nombre }} {{ student.primer_apellido }}</div>
+          <div style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">{{ student.numero_documento }}</div>
+        </div>
+
+        <div style="border-top: 1px solid var(--gray-200); padding-top: var(--spacing-md);">
+          <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.25rem;">Actividad:</div>
+          <div style="font-weight: 600; font-size: 1.125rem;">{{ actividad.nombre }}</div>
+          <div style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">
+            {{ '%.1f'|format(actividad.horas or 0) }} horas de bienestar
+          </div>
+        </div>
+      </div>
+
+      {% if notify_result %}
+      <div style="border-top: 1px solid var(--gray-200); padding-top: var(--spacing-lg);">
+        <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: var(--spacing-md); color: var(--gray-700);">
+          Notificaciones
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+          <div style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm); background: {{ 'rgba(140, 198, 63, 0.1)' if notify_result.email_ok else 'rgba(239, 68, 68, 0.1)' }}; border-radius: var(--radius-md);">
+            <span style="font-size: 1.2rem;">{{ '✓' if notify_result.email_ok else '✕' }}</span>
+            <div style="flex: 1; text-align: left; font-size: 0.875rem;">
+              <div>Email: <strong>{{ 'Enviado' if notify_result.email_ok else 'No enviado' }}</strong></div>
+              <div style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.125rem;">{{ notify_result.email_msg }}</div>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm); background: {{ 'rgba(140, 198, 63, 0.1)' if notify_result.sms_ok else 'rgba(239, 68, 68, 0.1)' }}; border-radius: var(--radius-md);">
+            <span style="font-size: 1.2rem;">{{ '✓' if notify_result.sms_ok else '✕' }}</span>
+            <div style="flex: 1; text-align: left; font-size: 0.875rem;">
+              <div>SMS: <strong>{{ 'Enviado' if notify_result.sms_ok else 'No enviado' }}</strong></div>
+              <div style="font-size: 0.75rem; color: var(--gray-600); margin-top: 0.125rem;">{{ notify_result.sms_msg }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <div style="margin-top: var(--spacing-2xl);">
+        <p style="color: var(--gray-500); font-size: 0.875rem; margin-bottom: var(--spacing-lg);">
+          Puedes cerrar esta ventana o volver a escanear otro QR.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scale-in {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
 {% endblock %}

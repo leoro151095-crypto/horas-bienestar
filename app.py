@@ -76,6 +76,14 @@ def get_last4_digits(value):
     return digits[-4:]
 
 
+def validate_phone(phone):
+    """Valida que el teléfono tenga exactamente 10 dígitos"""
+    if not phone:
+        return True  # Opcional
+    digits = ''.join(ch for ch in phone if ch.isdigit())
+    return len(digits) == 10 and digits == phone.strip()
+
+
 def get_csrf_token():
     token = session.get('_csrf_token')
     if not token:
@@ -390,7 +398,7 @@ def login():
         flash('Credenciales inválidas', 'danger')
     return render_template('login.html')
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     session.pop('force_password_change', None)
@@ -741,9 +749,17 @@ def register_student():
         return redirect(url_for('index'))
     if request.method == 'POST':
         data = request.form
+        
+        # Validar correo institucional
         correo_institucional = (data.get('correo_institucional') or '').strip().lower()
         if not is_institutional_email(correo_institucional):
             flash(f'El correo institucional debe terminar en {INSTITUTIONAL_DOMAIN}', 'danger')
+            return render_template('admin_register.html')
+
+        # Validar teléfono si se proporciona
+        celular = (data.get('celular') or '').strip()
+        if celular and not validate_phone(celular):
+            flash('El celular debe contener exactamente 10 dígitos', 'danger')
             return render_template('admin_register.html')
 
         initial_password = get_last4_digits(data.get('numero_documento'))
@@ -760,7 +776,7 @@ def register_student():
             segundo_apellido=data.get('segundo_apellido'),
             correo_institucional=correo_institucional,
             correo_personal=data.get('correo_personal'),
-            celular=data.get('celular'),
+            celular=celular,
             direccion=data.get('direccion'),
             programa=data.get('programa')
         )
@@ -843,6 +859,11 @@ def register_docente():
 
         if correo_personal and '@' not in correo_personal:
             flash('El correo personal no es válido', 'danger')
+            return render_template('admin_register_docente.html')
+
+        # Validar teléfono si se proporciona
+        if celular and not validate_phone(celular):
+            flash('El celular debe contener exactamente 10 dígitos', 'danger')
             return render_template('admin_register_docente.html')
 
         if area not in ('FUTBOL', 'DANZA'):
@@ -1142,7 +1163,13 @@ def estudiante_dashboard():
         progress_percent = min(100.0, max(0.0, (total_horas / required_hours) * 100.0))
     else:
         progress_percent = 100.0 if total_horas > 0 else 0.0
-    activities = Activity.query.order_by(Activity.fecha).all()
+    
+    # Filtrar solo actividades futuras (fecha >= hoy)
+    now = datetime.now(timezone.utc).date()
+    activities = Activity.query.filter(
+        Activity.fecha >= now
+    ).order_by(Activity.fecha).all()
+    
     return render_template(
         'estudiante_dashboard.html',
         total_horas=total_horas,
@@ -1185,14 +1212,14 @@ def attendance_submit(token):
 
     tipo = request.form.get('tipo_documento')
     numero = request.form.get('numero_documento')
+    
+    # Validar que el estudiante exista
     student = Student.query.filter_by(numero_documento=numero).first()
     if not student:
-        # crear estudiante mínimo o pedir registro
-        student = Student(tipo_documento=tipo, numero_documento=numero, primer_nombre='Desconocido', primer_apellido='')
-        db.session.add(student)
-        db.session.flush()
-        write_audit('student_created', 'student', student.id, {'source': 'qr_scan_minimal'})
+        # Estudiante no registrado - mostrar error específico
+        write_audit('attendance_student_not_found', 'attendance', None, {'numero_documento': numero, 'actividad_id': actividad_id})
         db.session.commit()
+        return render_template('student_not_registered.html')
 
     # evitar registro duplicado para la misma actividad
     existing = Attendance.query.filter_by(estudiante_id=student.id, actividad_id=actividad.id).first()

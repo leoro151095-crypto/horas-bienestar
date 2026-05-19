@@ -1,51 +1,117 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Panel Estudiante</h2>
-  <div class="card">
-    <div class="card-header">
-      <h3>Bienvenido, {{ current_user.nombre }}</h3>
-    </div>
-    <div class="card-body">
-      <p>Correo: {{ current_user.correo }}</p>
-      <p>Rol: {{ current_user.rol }}</p>
-      <p>Horas acumuladas: {{ '%.2f'|format(total_horas) }}</p>
-      <p>Horas faltantes: {{ '%.2f'|format(horas_faltantes) }} de {{ '%.2f'|format(required_hours) }}</p>
-      <div class="progress-wrap" aria-label="Progreso de horas de bienestar">
-        <div class="progress-track">
-          <div class="progress-fill" style="width: {{ '%.2f'|format(progress_percent) }}%"></div>
-        </div>
-        <p class="progress-text">Progreso: {{ '%.2f'|format(progress_percent) }}%</p>
-      </div>
-    </div>
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Bienvenido, {{ current_user.nombre }}</h1>
+  <p class="dashboard-subtitle">Gestiona tu progreso de bienestar académico</p>
+</div>
+
+<!-- Stats Cards -->
+<div class="dashboard-grid">
+  <div class="card stat-card">
+    <div class="stat-value">{{ '%.1f'|format(total_horas) }}</div>
+    <div class="stat-label">Horas acumuladas</div>
+    <div class="stat-change positive">Progreso activo</div>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>Actividades disponibles</h3>
+  <div class="card stat-card">
+    <div class="stat-value">{{ '%.1f'|format(horas_faltantes) }}</div>
+    <div class="stat-label">Horas faltantes</div>
+    <div class="stat-change">de {{ '%.1f'|format(required_hours) }} requeridas</div>
+  </div>
+
+  <div class="card stat-card">
+    <div class="stat-value">{{ '%.0f'|format(progress_percent) }}%</div>
+    <div class="stat-label">Avance general</div>
+    {% if progress_percent >= 100 %}
+      <div class="stat-change positive">Completado</div>
+    {% elif progress_percent >= 75 %}
+      <div class="stat-change positive">Casi completado</div>
+    {% else %}
+      <div class="stat-change">En progreso</div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Progreso -->
+<div class="card mb-3">
+  <div class="card-header">
+    <div>
+      <div class="card-title">Progreso de horas</div>
+      <div class="card-subtitle">{{ '%.1f'|format(total_horas) }} de {{ '%.1f'|format(required_hours) }} horas completadas</div>
     </div>
-    <div class="card-body">
-      {% if activities %}
+  </div>
+  <div class="card-content">
+    <div class="progress-label">
+      <span>Progreso general</span>
+      <span>{{ '%.0f'|format(progress_percent) }}%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-fill" style="width: {{ '%.0f'|format(progress_percent) }}%"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Actividades -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <div class="card-title">Actividades disponibles</div>
+      <div class="card-subtitle">Próximas actividades en las que puedes participar</div>
+    </div>
+  </div>
+  <div class="card-content">
+    {% if activities %}
+      <div class="table-wrapper">
         <table class="table">
           <thead>
             <tr>
               <th>Actividad</th>
-              <th>Horas</th>
-              <th>Fecha</th>
+              <th>Créditos</th>
+              <th>Fecha y hora</th>
+              <th>Estado</th>
             </tr>
           </thead>
           <tbody>
             {% for activity in activities %}
               <tr>
-                <td>{{ activity.nombre }}</td>
-                <td>{{ '%.2f'|format(activity.horas or 0.0) }}</td>
-                <td>{{ activity.fecha.strftime('%d/%m/%Y %H:%M') if activity.fecha else 'Sin fecha' }}</td>
+                <td>
+                  <div style="font-weight: 600; color: var(--gray-900);">{{ activity.nombre }}</div>
+                  {% if activity.descripcion %}
+                    <div style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.25rem;">{{ activity.descripcion[:60] }}</div>
+                  {% endif %}
+                </td>
+                <td>
+                  <span class="badge badge-primary">{{ '%.1f'|format(activity.horas or 0.0) }} hrs</span>
+                </td>
+                <td style="white-space: nowrap;">
+                  {% if activity.fecha %}
+                    <div style="font-weight: 500; color: var(--gray-900);">{{ activity.fecha.strftime('%d/%m/%Y') }}</div>
+                    <div style="font-size: 0.875rem; color: var(--gray-500);">{{ activity.fecha.strftime('%H:%M') }}</div>
+                  {% else %}
+                    <span style="color: var(--gray-400);">Sin fecha</span>
+                  {% endif %}
+                </td>
+                <td>
+                  <span class="badge badge-success">Disponible</span>
+                </td>
               </tr>
             {% endfor %}
           </tbody>
         </table>
-      {% else %}
-        <p>No hay actividades registradas todavía.</p>
-      {% endif %}
-    </div>
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 3rem 1rem; color: var(--gray-500);">
+        <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--gray-300);">📅</div>
+        <p style="font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem;">No hay actividades disponibles</p>
+        <p style="font-size: 0.875rem;">Las próximas actividades aparecerán aquí</p>
+      </div>
+    {% endif %}
   </div>
+</div>
+
+<style>
+  .mb-3 {
+    margin-bottom: var(--spacing-lg);
+  }
+</style>
 {% endblock %}

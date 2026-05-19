@@ -4,33 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bienestar Universitario UCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
-  <body class="{% if request.endpoint == 'login' %}login-page{% endif %}{% if current_user.is_authenticated %} has-bg user-{{ current_user.rol }}{% endif %}">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-badge">UCC</div>
-        <div>
-          <h1>Bienestar Universitario UCC</h1>
-          <small>LR-JC-ED</small>
+  <body class="{% if request.endpoint == 'login' %}login-page{% endif %}">
+    {% if current_user.is_authenticated %}
+    <nav class="navbar">
+      <div class="navbar-content">
+        <div class="navbar-brand">
+          <img src="{{ url_for('static', filename='logoucc.jpeg') }}" alt="UCC Logo" class="navbar-logo">
+          <div>
+            <div class="navbar-title">Bienestar UCC</div>
+            <div class="navbar-subtitle">Control de asistencia</div>
+          </div>
+        </div>
+        <div class="navbar-spacer"></div>
+        <div class="navbar-user">
+          <div class="user-info">
+            <div class="user-name">{{ current_user.nombre }}</div>
+            <div class="user-role">
+              {% if current_user.rol == 'admin' %}
+                Administrador
+              {% elif current_user.rol == 'docente' %}
+                Docente
+              {% else %}
+                Estudiante
+              {% endif %}
+            </div>
+          </div>
+          <form method="post" action="{{ url_for('logout') }}" style="margin: 0;">
+            <button type="submit" class="navbar-logout">Cerrar sesión</button>
+          </form>
         </div>
       </div>
-      <div class="actions">
-        {% if current_user.is_authenticated %}
-          <a href="{{ url_for('logout') }}">Cerrar sesión</a>
-        {% endif %}
-      </div>
-    </header>
-    <main class="container {% if request.endpoint == 'login' %}login-wrap{% endif %}">
+    </nav>
+    {% endif %}
+    <main class="{% if request.endpoint != 'login' %}container{% else %}login-page{% endif %}">
+      {% if request.endpoint != 'login' %}
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-          <ul class="flash-list">
           {% for category, msg in messages %}
-            <li class="{{ category }}">{{ msg }}</li>
+            <div class="alert alert-{{ category }}">{{ msg }}</div>
           {% endfor %}
-          </ul>
         {% endif %}
       {% endwith %}
+      {% endif %}
 
       {% block content %}{% endblock %}
     </main>

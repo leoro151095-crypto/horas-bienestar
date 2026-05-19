@@ -1,24 +1,122 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Editar actividad</h2>
-  <form method="post" id="edit-activity-form">
-    <label>Nombre: <input name="nombre" id="act-nombre" required value="{{ actividad.nombre }}"></label><br>
-    <label>Fecha (opcional): <input name="fecha" type="date" value="{{ actividad.fecha.strftime('%Y-%m-%d') if actividad.fecha else '' }}"></label><br>
-    <label>Hora (opcional): <input name="hora" type="time" value="{{ actividad.fecha.strftime('%H:%M') if actividad.fecha else '' }}"></label><br>
-    <label>Horas: <input name="horas" id="act-horas" type="number" step="0.5" min="0" value="{{ actividad.horas or 0 }}"></label><br>
-    <button type="submit">Guardar cambios</button>
-    <a class="btn" href="{{ url_for('docente_dashboard') if current_user.rol == 'docente' else url_for('admin_dashboard') }}">Cancelar</a>
-  </form>
+<div class="dashboard-header">
+  <h1 class="dashboard-title">Editar Actividad</h1>
+  <p class="dashboard-subtitle">Actualiza los detalles de la actividad</p>
+</div>
 
-  <script>
-    (function(){
-      const form = document.getElementById('edit-activity-form');
-      form.addEventListener('submit', function(e){
-        const nombre = document.getElementById('act-nombre').value.trim();
-        const horas = document.getElementById('act-horas').value;
-        if (!nombre){ e.preventDefault(); alert('El nombre de la actividad es obligatorio'); return; }
-        if (horas && Number(horas) < 0){ e.preventDefault(); alert('Horas debe ser un número positivo'); return; }
-      });
-    })();
-  </script>
+<div class="card" style="max-width: 700px;">
+  <form method="post" id="edit-activity-form" class="form-content">
+    <!-- Nombre -->
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre de la actividad *</label>
+      <input 
+        type="text" 
+        id="nombre" 
+        name="nombre" 
+        class="form-input" 
+        required 
+        value="{{ actividad.nombre }}" 
+        placeholder="Ej: Torneo de Fútbol"
+        maxlength="200">
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea 
+        id="descripcion" 
+        name="descripcion" 
+        class="form-textarea" 
+        placeholder="Detalles adicionales de la actividad"
+        maxlength="500">{{ actividad.descripcion or '' }}</textarea>
+      <small class="form-hint">Máximo 500 caracteres</small>
+    </div>
+
+    <!-- Fecha y Hora -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg);">
+      <div class="form-group">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input 
+          type="date" 
+          id="fecha" 
+          name="fecha" 
+          class="form-input" 
+          value="{{ actividad.fecha.strftime('%Y-%m-%d') if actividad.fecha else '' }}">
+      </div>
+
+      <div class="form-group">
+        <label for="hora" class="form-label">Hora</label>
+        <input 
+          type="time" 
+          id="hora" 
+          name="hora" 
+          class="form-input" 
+          value="{{ actividad.fecha.strftime('%H:%M') if actividad.fecha else '' }}">
+      </div>
+    </div>
+
+    <!-- Horas -->
+    <div class="form-group">
+      <label for="horas" class="form-label">Créditos de bienestar *</label>
+      <input 
+        type="number" 
+        id="horas" 
+        name="horas" 
+        class="form-input" 
+        step="0.5" 
+        min="0.5"
+        max="100"
+        required 
+        value="{{ actividad.horas or 0 }}" 
+        placeholder="Ej: 2">
+      <small class="form-hint">Usa decimales para horas parciales (ej: 2.5)</small>
+    </div>
+
+    <!-- Botones -->
+    <div style="display: flex; gap: var(--spacing-md); justify-content: flex-end;">
+      <a href="{{ url_for('docente_dashboard') if current_user.rol == 'docente' else url_for('admin_dashboard') }}" class="btn btn-secondary">Cancelar</a>
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  (function(){
+    const form = document.getElementById('edit-activity-form');
+    form.addEventListener('submit', function(e){
+      const nombre = document.getElementById('nombre').value.trim();
+      const horas = document.getElementById('horas').value;
+      
+      if (!nombre){
+        e.preventDefault();
+        alert('El nombre de la actividad es obligatorio');
+        document.getElementById('nombre').focus();
+        return;
+      }
+      
+      if (!horas || Number(horas) < 0.5){
+        e.preventDefault();
+        alert('Debes especificar horas válidas (mínimo 0.5)');
+        document.getElementById('horas').focus();
+        return;
+      }
+
+      if (Number(horas) > 100){
+        e.preventDefault();
+        alert('Las horas no pueden exceder 100');
+        document.getElementById('horas').focus();
+        return;
+      }
+    });
+  })();
+</script>
+
+<style>
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+</style>
 {% endblock %}

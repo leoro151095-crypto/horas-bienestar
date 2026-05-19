@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Asistencia ya registrada</h2>
-  <p>El estudiante {{ student.primer_nombre }} ({{ student.numero_documento }}) ya registró asistencia para la actividad: <strong>{{ actividad.nombre }}</strong>.</p>
+<div style="max-width: 600px; margin: 3rem auto;">
+  <div class="card">
+    <div style="text-align: center; padding: var(--spacing-2xl) var(--spacing-lg);">
+      <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">⚠️</div>
+      
+      <h2 style="color: var(--warning); font-size: 1.75rem; margin-bottom: var(--spacing-md);">
+        Asistencia ya registrada
+      </h2>
+      
+      <div class="alert alert-warning" style="margin-bottom: var(--spacing-lg);">
+        Este estudiante ya ha registrado asistencia para esta actividad. No se puede registrar dos veces.
+      </div>
+
+      <div style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); text-align: left;">
+        <div style="margin-bottom: var(--spacing-md);">
+          <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.25rem;">Estudiante:</div>
+          <div style="font-weight: 600; font-size: 1.125rem;">{{ student.primer_nombre }} {{ student.primer_apellido }}</div>
+          <div style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">{{ student.numero_documento }}</div>
+        </div>
+
+        <div style="border-top: 1px solid var(--gray-200); padding-top: var(--spacing-md);">
+          <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.25rem;">Actividad:</div>
+          <div style="font-weight: 600; font-size: 1.125rem;">{{ actividad.nombre }}</div>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--spacing-2xl);">
+        <p style="color: var(--gray-500); font-size: 0.875rem;">
+          Si crees que esto es un error, contacta con el administrador del sistema.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
