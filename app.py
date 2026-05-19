@@ -1181,16 +1181,6 @@ def estudiante_dashboard():
     )
 
 
-@app.route('/docente')
-@login_required
-def docente_dashboard():
-    if current_user.rol != 'docente':
-        flash('Acceso denegado', 'danger')
-        return redirect(url_for('index'))
-    activities = Activity.query.all()
-    return render_template('docente_dashboard.html', activities=activities)
-
-
 @app.route('/asistencia/<token>', endpoint='attendance_scan')
 def attendance_scan(token):
     data = verify_token(app.config['SECRET_KEY'], token, max_age=1800)
