@@ -106,11 +106,12 @@ button, input, textarea, select {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), 
               url('/static/universidad.jpeg') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
+  padding-right: 60px;
 }
 
 .login-page::before {
