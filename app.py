@@ -385,7 +385,6 @@ def login():
                 session.pop('force_password_change', None)
             write_audit('login_success', 'user', usuario.id, {'correo': correo})
             db.session.commit()
-            flash('Ingresó correctamente', 'success')
             if usuario.rol == 'admin':
                 return redirect(url_for('admin_dashboard'))
             elif usuario.rol == 'docente':
@@ -406,7 +405,6 @@ def logout():
     db.session.commit()
     logout_user()
     # Después de cerrar sesión redirigimos al login
-    flash('Sesión cerrada', 'success')
     return redirect(url_for('login'))
 
 @app.route('/admin')
