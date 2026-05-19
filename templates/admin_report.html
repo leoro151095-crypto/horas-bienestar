@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="page-header" style="margin-bottom: 2rem;">
+  <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+    <button onclick="history.back()" class="btn btn-secondary" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem;">
+      <span>←</span> Atrás
+    </button>
+  </div>
   <h1 style="font-size: 1.75rem; margin-bottom: 1rem;">Reporte de horas</h1>
   
   <div class="search-container" style="margin-bottom: 1.5rem;">
