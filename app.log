@@ -1219,3 +1219,27 @@
 2026-05-19 18:26:39,402 INFO  * Debugger PIN: 555-149-697
 2026-05-19 18:26:40,162 WARNING  * Debugger is active!
 2026-05-19 18:26:40,166 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:45:05,643 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:05,813 INFO  * Restarting with stat
+2026-05-19 18:45:05,953 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:06,179 INFO  * Restarting with stat
+2026-05-19 18:45:07,249 WARNING  * Debugger is active!
+2026-05-19 18:45:07,252 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:45:07,589 WARNING  * Debugger is active!
+2026-05-19 18:45:07,591 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:45:14,312 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:14,479 INFO  * Restarting with stat
+2026-05-19 18:45:14,723 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:14,946 INFO  * Restarting with stat
+2026-05-19 18:45:15,767 WARNING  * Debugger is active!
+2026-05-19 18:45:15,771 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:45:16,227 WARNING  * Debugger is active!
+2026-05-19 18:45:16,229 INFO  * Debugger PIN: 825-535-561
+2026-05-19 18:45:31,880 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:32,069 INFO  * Restarting with stat
+2026-05-19 18:45:32,518 INFO  * Detected change in 'C:\\Users\\leoro\\OneDrive\\Desktop\\horas-bienestar\\app.py', reloading
+2026-05-19 18:45:32,754 INFO  * Restarting with stat
+2026-05-19 18:45:33,368 WARNING  * Debugger is active!
+2026-05-19 18:45:33,371 INFO  * Debugger PIN: 555-149-697
+2026-05-19 18:45:33,995 WARNING  * Debugger is active!
+2026-05-19 18:45:33,997 INFO  * Debugger PIN: 825-535-561
