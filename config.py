@@ -67,6 +67,11 @@ class Config:
 
     # Notificaciones email
     MAIL_FROM = os.environ.get("MAIL_FROM", "")
+    
+    # SendGrid API (Recomendado para producción)
+    SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", "")
+    
+    # SMTP (Fallback)
     SMTP_HOST = os.environ.get("SMTP_HOST", "")
     SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
     SMTP_USER = os.environ.get("SMTP_USER", "")

@@ -498,9 +498,14 @@ def forgot_password():
             email_to = usuario.correo_personal or usuario.correo
             
             # Verificar que email está configurado
-            if not app.config.get('SMTP_HOST') or not app.config.get('MAIL_FROM'):
+            has_sendgrid = bool(app.config.get('SENDGRID_API_KEY'))
+            has_smtp = bool(app.config.get('SMTP_HOST') and app.config.get('MAIL_FROM'))
+            
+            if not has_sendgrid and not has_smtp:
                 # Email no configurado - rechazar la solicitud
-                logging.error('SMTP no configurado - No se puede enviar código de recuperación')
+                logging.error('Ni SendGrid ni SMTP están configurados')
+                logging.debug(f'SENDGRID_API_KEY: {"configurado" if has_sendgrid else "NO configurado"}')
+                logging.debug(f'SMTP_HOST: {app.config.get("SMTP_HOST")}, MAIL_FROM: {app.config.get("MAIL_FROM")}')
                 flash('El sistema no está configurado para enviar correos. Contacta al administrador.', 'danger')
                 write_audit('forgot_password_smtp_not_configured', 'user', usuario.id, {'correo': correo})
                 db.session.commit()
@@ -520,17 +525,21 @@ Si el enlace no funciona, copia el código anterior y pégalo en el formulario d
 
 Saludos,
 Sistema de Horas de Bienestar"""
+                logging.info(f'Intentando enviar email de recuperación a {email_to} (método: {delivery_method})')
                 success, message = send_email(app.config, email_to, 'Recuperar contraseña - Horas Bienestar', email_body)
+                
                 if success:
+                    logging.info(f'Email de recuperación enviado exitosamente a {email_to}')
                     write_audit('forgot_password_email_sent', 'user', usuario.id, {'correo': email_to})
                     delivery_info = f"Te enviaremos el código de recuperación a tu correo: {email_to}"
                 else:
-                    # Error al enviar - no mostrar código
-                    logging.error(f'Error enviando email de recuperación: {message}')
-                    flash(f'No se pudo enviar el correo de recuperación. Intenta más tarde.', 'danger')
+                    # Error al enviar - no mostrar código NUNCA
+                    logging.error(f'Error enviando email de recuperación a {email_to}: {message}')
+                    flash(f'No se pudo enviar el correo de recuperación. Intenta más tarde o contacta al administrador.', 'danger')
                     write_audit('forgot_password_email_failed', 'user', usuario.id, 
                               {'correo': email_to, 'error': message})
                     db.session.commit()
+                    # IMPORTANTE: Nunca mostrar el código si el email falla
                     return render_template('forgot_password.html')
         
         elif delivery_method == 'sms':
@@ -550,17 +559,21 @@ Sistema de Horas de Bienestar"""
             else:
                 reset_code = reset_token[:8]  # Mostrar solo primeros 8 caracteres por SMS
                 sms_body = f"Tu código de recuperación de contraseña es: {reset_code}\nVálido por 30 minutos.\nNo compartas este código."
+                logging.info(f'Intentando enviar SMS de recuperación a {usuario.celular}')
                 success, message = send_sms(app.config, usuario.celular, sms_body)
+                
                 if success:
+                    logging.info(f'SMS de recuperación enviado exitosamente a {usuario.celular}')
                     write_audit('forgot_password_sms_sent', 'user', usuario.id, {'celular': usuario.celular})
                     delivery_info = f"Te enviaremos el código a tu celular: {usuario.celular}"
                 else:
-                    # Error al enviar - no mostrar código
-                    logging.error(f'Error enviando SMS de recuperación: {message}')
-                    flash(f'No se pudo enviar el SMS de recuperación. Intenta más tarde.', 'danger')
+                    # Error al enviar - no mostrar código NUNCA
+                    logging.error(f'Error enviando SMS de recuperación a {usuario.celular}: {message}')
+                    flash(f'No se pudo enviar el SMS de recuperación. Intenta más tarde o contacta al administrador.', 'danger')
                     write_audit('forgot_password_sms_failed', 'user', usuario.id, 
                               {'celular': usuario.celular, 'error': message})
                     db.session.commit()
+                    # IMPORTANTE: Nunca mostrar el código si el SMS falla
                     return render_template('forgot_password.html')
         
         db.session.commit()
